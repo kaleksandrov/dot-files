@@ -1,0 +1,38 @@
+filetype plugin on
+filetype indent on
+
+syntax on
+
+set autochdir
+set autoindent
+set smartindent
+set backup
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set incsearch
+set hlsearch
+set cursorline
+set number
+
+set encoding=utf8
+
+colo zmrok
+
+"source $VIMRUNTIME/vimrc_example.vim
+"source $VIMRUNTIME/mswin.vim
+"behave mswin
+
+au FileType ruby setl sw=2 sts=2 et
+
+nmap <C-f> :FindFile<CR>
+nmap <C-s> :FindFileSplit<CR>
+
+map <F2> :NERDTreeToggle<CR>
+map <F9> :!%<CR>
+map <C-S-s> :w<CR>
+map <C-d> dd<CR>
+map <C-S-f> ggVG=<CR>
+map <C-c> "+yy
+map <C-v> "+p
+
