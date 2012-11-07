@@ -1,0 +1,57 @@
+background yes
+use_xft yes
+xftfont 123:size=8
+xftalpha 0.1
+update_interval 1
+total_run_times 0
+own_window yes 
+own_window_transparent yes
+own_window_type override
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 350 5
+maximum_width 350
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color gray
+default_shade_color black
+default_outline_color green
+alignment top_right
+gap_x 420 
+gap_y 50
+no_buffers no
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 1
+override_utf8_locale yes
+use_spacer yes
+text_buffer_size 256
+
+TEXT
+${font Arial:bold:size=10}${color Tan1}MEMORY ${color DarkSlateGray}${hr 2}
+${font bold:size=8}${color white}RAM $alignc $mem / $memmax $alignr $memperc%
+${membar}
+SWAP $alignc $swap / $swapmax $alignr $swapperc%
+$swapbar
+
+${font Arial:bold:size=10}${color Tan1}HDD ${color DarkSlateGray}${hr 2}
+${font bold:size=8}${color white}
+/ $alignc ${fs_used /} / ${fs_size /} $alignr ${fs_free_perc /}%
+${fs_bar /}
+/home $alignc ${fs_used /home} / ${fs_size /home} $alignr ${fs_free_perc /home}%
+${fs_bar /home}
+
+${font Arial:bold:size=10}${color Tan2}NETWORK ${color DarkSlateGray}${hr 2}
+${font bold:size=8}${color white}IP on eth0 $alignr ${addr eth0}
+${color white}Down $alignc ${downspeed eth0} kb/s $alignr Downloaded: $alignr  ${totaldown eth0}
+${color dark red}${downspeedgraph eth0} 
+${color white}Up $alignc ${upspeed eth0} kb/s $alignr Uploaded: $alignr  ${totalup eth0}
+${color dark blue}${upspeedgraph eth0}
+${font bold:size=8}${color white}IP on wlan0 $alignr ${addr wlan0}
+${color white}Down $alignc ${downspeed wlan0} kb/s $alignr Downloaded: $alignr  ${totaldown wlan0}
+${color dark red}${downspeedgraph wlan0} 
+${color white}Up $alignc ${upspeed wlan0} kb/s $alignr Uploaded: $alignr  ${totalup wlan0}
+${color dark blue}${upspeedgraph wlan0}
+

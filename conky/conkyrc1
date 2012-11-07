@@ -1,0 +1,63 @@
+background yes
+use_xft yes
+xftfont 123:size=8
+xftalpha 0.1
+update_interval 1
+total_run_times 0
+own_window yes 
+own_window_transparent yes
+own_window_type override
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 350 5
+maximum_width 350
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color gray
+default_shade_color black
+default_outline_color green
+alignment top_right
+gap_x 40
+gap_y 50
+no_buffers no
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 1
+override_utf8_locale yes
+use_spacer yes
+text_buffer_size 256
+
+TEXT
+${font Arial:bold:size=10}${color Tan1}SYSTEM ${color DarkSlateGray} ${hr 2}
+${font bold:size=8}${color white}$sysname $kernel $alignr $machine
+Uptime $alignr${uptime}
+
+${font Arial:bold:size=10}${color Tan1}PROCESSORS ${color DarkSlateGray}${hr 2}
+${font bold:size=8}${color white}Intel Core i7$alignr${freq_g cpu0}Ghz
+
+${execi 10 sensors|grep -i "physical"}
+${execi 10 sensors|grep -i "core 0"}
+${execi 10 sensors|grep -i "core 1"}
+${execi 10 sensors|grep -i "core 2"}
+${execi 10 sensors|grep -i "core 3"}
+
+${cpugraph cpu0 00ff00 ff0000 -t}
+CPU    ${cpu cpu0}% ${cpubar cpu0 }
+${cpugraph cpu1 0000ff ff0000 -t}
+Thread0  ${cpu cpu1}% ${cpubar cpu1}
+${cpugraph cpu2 0000ff ff0000 -t}
+Thread1  ${cpu cpu2}% ${cpubar cpu2}
+${cpugraph cpu3 0000ff ff0000 -t}
+Thread2  ${cpu cpu3}% ${cpubar cpu3}
+${cpugraph cpu4 0000ff ff0000 -t}
+Thread3  ${cpu cpu4}% ${cpubar cpu4}
+${cpugraph cpu5 0000ff ff0000 -t}
+Thread4  ${cpu cpu5}% ${cpubar cpu5}
+${cpugraph cpu6 0000ff ff0000 -t}
+Thread5  ${cpu cpu6}% ${cpubar cpu6}
+${cpugraph cpu7 0000ff ff0000 -t}
+Thread6  ${cpu cpu7}% ${cpubar cpu7}
+${cpugraph cpu8 0000ff ff0000 -t}
+Thread7  ${cpu cpu8}% ${cpubar cpu8}
