@@ -14,6 +14,7 @@ set incsearch
 set hlsearch
 set cursorline
 set number
+set clipboard=unnamed
 
 set encoding=utf8
 
@@ -33,6 +34,7 @@ map <F9> :!%<CR>
 map <C-S-s> :w<CR>
 map <C-d> dd<CR>
 map <C-S-f> ggVG=<CR>
+map <C-a> ggVG
 map <C-c> "+yy
 map <C-v> "+p
-
+map <C-x> "+dd
