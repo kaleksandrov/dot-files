@@ -14,7 +14,6 @@ set incsearch
 set hlsearch
 set cursorline
 set number
-set clipboard=unnamed
 
 set encoding=utf8
 
