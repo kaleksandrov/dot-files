@@ -25,18 +25,28 @@ colo zmrok
 
 au FileType ruby setl sw=2 sts=2 et
 
-nmap <C-f> :FindFile<CR>
-nmap <C-s> :FindFileSplit<CR>
+"map <C-f> :FindFile<CR>
+"nmap <C-s> :FindFileSplit<CR>
 
 map <F2> :NERDTreeToggle<CR>
 map <F9> :!%<CR>
-map <C-S-s> :w<CR>
-map <C-d> dd<CR>
+
+"Format the code according to the filetype"
 map <C-S-f> ggVG=<CR>
+
+"Adds a new line below the current line and moves the coursor into its beginning in insert mode"
 map! <S-CR> <Esc>o
-map <S-Enter> o
-map <C-CR> <Esc>ko
+map <S-CR> o
+
+"Adds a new line above the current line and moves the coursor into its beginning in insert mode"
+map! <C-CR> <Esc>^i<CR><Esc>ki
+map <C-CR> ^i<CR><Esc>ki
+
+"Adds 2 new lines below the current line. Moves everything after the coursor
+"to the second line and places the coursor in the beginning of the first line
+"in insert mode"
 map! /<CR> <CR><C-CR>
+
 map <C-a> ggVG
 map <C-c> "+yy
 map <C-v> "+p
