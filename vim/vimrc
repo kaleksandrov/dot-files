@@ -47,6 +47,11 @@ map <C-CR> ^i<CR><Esc>ki
 "in insert mode"
 map! /<CR> <CR><C-CR>
 
+map <C-a> ^i
+map! <C-a> <ESC><C-a>
+map <C-e> $a
+map! <C-e> <ESC><C-e>
+
 map <C-a> ggVG
 map <C-c> "+yy
 map <C-v> "+p
