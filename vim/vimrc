@@ -3,7 +3,6 @@ filetype indent on
 
 syntax on
 
-set autochdir
 set autoindent
 set smartindent
 set backup
@@ -39,8 +38,12 @@ map! <S-CR> <Esc>o
 map <S-CR> o
 
 "Adds a new line above the current line and moves the coursor into its beginning in insert mode"
-map! <C-CR> <Esc>^i<CR><Esc>ki
-map <C-CR> ^i<CR><Esc>ki
+map! <C-S-CR> <Esc>^i<CR><Esc>ki
+map <C-S-CR> ^i<CR><Esc>ki
+
+"Delete the current line"
+map <C-d> <Esc>dd
+map! <C-d> <Esc>ddi
 
 "Adds 2 new lines below the current line. Moves everything after the coursor
 "to the second line and places the coursor in the beginning of the first line
@@ -52,7 +55,7 @@ map! <C-a> <ESC><C-a>
 map <C-e> $a
 map! <C-e> <ESC><C-e>
 
-map <C-a> ggVG
+map <C-S-a> ggVG
 map <C-c> "+yy
 map <C-v> "+p
 map <C-x> "+dd
