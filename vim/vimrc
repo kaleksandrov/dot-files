@@ -7,22 +7,58 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
-" Original repos on github
+" ---- Original repos on github ----
+
+" This is a VIM plugin package manager
 Bundle 'gmarik/vundle'
+
+" Adds a git client
 Bundle 'tpope/vim-fugitive'
+
+" Simpler way to use some motions in vim
 Bundle 'Lokaltog/vim-easymotion'
+
+" File browser tree. Like Navigator in Eclipse.
 Bundle 'scrooloose/nerdtree'
+
+" A pack of color schemes
 Bundle 'daviddavis/vim-colorpack'
 
-" Vim-scripts repos
+" Makes VIM understand stylus
+Bundle 'wavded/vim-stylus'
+
+" Adds tabs functionality
+Bundle 'fholgado/minibufexpl.vim'
+
+" Easy comment lines
+Bundle 'scrooloose/nerdcommenter'
+
+" -------- Vim-scripts repos -------
+
+" Auto closes brackets
 Bundle 'AutoClose'
+
+" Adds snippets functionality
 Bundle 'snipMate'
+
+" Autocomplete functionality
 Bundle 'SuperTab'
+
+" Beautifies javascript code
 Bundle 'jsbeautify'
+
+" Adds some additional utilities and functionality for developing VIM
 Bundle 'L9'
+
+" Easy find files
 Bundle 'FuzzyFinder'
-Bundle 'EasyMotion'
-Bundle 'checksyntax'
+
+" Adds syntax checking with extenral tools. 
+Bundle 'Syntastic'          
+
+" Adds tab view that is showing the methods and fields of the opened class. The same as Outline in Eclipse.
+Bundle 'Tagbar'             
+
 
 " ==================================
 " ===     Configure behavior     ===
@@ -56,7 +92,16 @@ colo zmrok
 " ==================================
 
 map <F2> :NERDTreeToggle<CR>
-map <F9> :!%<CR>
+
+" ==================================
+" ===       Configure TagBar     ===
+" ==================================
+
+map <F3> :TagbarToggle<CR>
+
+" ==================================
+" ===    Configure MiniBufExpl   ===
+" ==================================
 
 " ==================================
 " ===       Set key bindings     ===
@@ -94,7 +139,19 @@ nmap <C-v> "+p
 " Cut to clipboard
 nmap <C-x> "+dd
 
+" Go to the next buffer
+nmap <C-A-n> :bn<CR>
+
+" Go to the previous buffer
+nmap <C-A-p> :bp<CR>
+
 " ---------- Visual mode -----------
+
+" Go to the beginning of the line
+vmap <C-a> ^
+
+" Go to the end of the line
+vmap <C-e> $
 
 " Select all
 vmap a ggVG
@@ -114,7 +171,19 @@ vmap <C-v> "+p
 " Cut to clipboard
 vmap <C-x> "+dd
 
+" Go to the next buffer
+vmap <C-A-n> :bn<CR>
+
+" Go to the previous buffer
+vmap <C-A-p> :bp<CR>
+
 " ---------- Insert mode -----------
+
+" Go to the beginning of the line
+imap <C-a> ^
+
+" Go to the end of the line
+imap <C-e> $
 
 " Start case insensitive search
 imap <C-f> <ESC>/\c
@@ -136,3 +205,9 @@ imap <C-a> <ESC>^i
 
 " Go to the end of the line
 imap <C-e> <ESC>$a
+
+" Go to the next buffer
+imap <C-A-n> <ESC>:bn<CR>
+
+" Go to the previous buffer
+imap <C-A-p> <ESC>:bp<CR>
