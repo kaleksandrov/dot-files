@@ -7,14 +7,14 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
-" original repos on github
+" Original repos on github
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/nerdtree'
 Bundle 'daviddavis/vim-colorpack'
 
-" vim-scripts repos
+" Vim-scripts repos
 Bundle 'AutoClose'
 Bundle 'snipMate'
 Bundle 'SuperTab'
@@ -113,13 +113,13 @@ imap <C-f> <ESC>/\c
 " Replace
 imap <C-r> <ESC>:%s/
 
-"Adds a new line below the current line and moves the coursor into its beginning in insert mode"
+" Adds a new line below the current line and moves the coursor into its beginning in insert mode"
 imap <S-CR> <Esc>o
 
-"Adds a new line above the current line and moves the coursor into its beginning in insert mode"
+" Adds a new line above the current line and moves the coursor into its beginning in insert mode"
 imap <C-S-CR> <Esc>O
 
-"Delete the current line"
+" Delete the current line"
 imap <C-d> <Esc>ddi
 
 " Go to the beginning of the line
