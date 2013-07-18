@@ -1,2 +1,0 @@
-supertab.vmb: call delete('C:\Program Files (x86)\Vim\vimfiles/doc/supertab.txt')|call delete('C:\Program Files (x86)\Vim\vimfiles/plugin/supertab.vim')
-checksyntax.vba: call delete('C:\Program Files (x86)\Vim\vimfiles/doc/checksyntax.txt')|call delete('C:\Program Files (x86)\Vim\vimfiles/plugin/checksyntax.vim')|call delete('C:\Program Files (x86)\Vim\vimfiles/autoload/checksyntax.vim')

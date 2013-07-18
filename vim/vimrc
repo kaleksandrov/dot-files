@@ -1,4 +1,30 @@
-filetype plugin on
+" ==================================
+" ===      Configure Vundle      ===
+" ==================================
+set nocompatible 
+filetype off   
+set rtp+=~/.vim/bundle/vundle
+
+call vundle#rc()
+
+" original repos on github
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'scrooloose/nerdtree'
+Bundle 'daviddavis/vim-colorpack'
+
+" vim-scripts repos
+Bundle 'AutoClose'
+Bundle 'snipMate'
+Bundle 'SuperTab'
+Bundle 'jsbeautify'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'EasyMotion'
+Bundle 'checksyntax'
+
+filetype plugin indent on     " required!
 filetype indent on
 
 syntax on
@@ -18,44 +44,43 @@ set encoding=utf8
 
 colo zmrok
 
-"source $VIMRUNTIME/vimrc_example.vim
-"source $VIMRUNTIME/mswin.vim
-"behave mswin
-
-au FileType ruby setl sw=2 sts=2 et
-
-"map <C-f> :FindFile<CR>
-"nmap <C-s> :FindFileSplit<CR>
-
 map <F2> :NERDTreeToggle<CR>
 map <F9> :!%<CR>
 
 "Format the code according to the filetype"
-map <C-S-f> ggVG=<CR>
+vmap f =<CR>
+
+" Start case insensitive search
+map <C-f> /\c
+imap <C-f> <ESC>/\c
+
+" Replace
+map <C-r> :%s/
+imap <C-r> <ESC>:%s/
 
 "Adds a new line below the current line and moves the coursor into its beginning in insert mode"
-map! <S-CR> <Esc>o
 map <S-CR> o
+imap <S-CR> <Esc>o
 
 "Adds a new line above the current line and moves the coursor into its beginning in insert mode"
-map! <C-S-CR> <Esc>^i<CR><Esc>ki
 map <C-S-CR> ^i<CR><Esc>ki
+imap <C-S-CR> <Esc>^i<CR><Esc>ki
 
 "Delete the current line"
 map <C-d> <Esc>dd
-map! <C-d> <Esc>ddi
+imap <C-d> <Esc>ddi
 
 "Adds 2 new lines below the current line. Moves everything after the coursor
 "to the second line and places the coursor in the beginning of the first line
 "in insert mode"
-map! /<CR> <CR><C-CR>
+imap /<CR> <CR><C-CR>
 
-map <C-a> ^i
-map! <C-a> <ESC><C-a>
-map <C-e> $a
-map! <C-e> <ESC><C-e>
+map <C-a> ^
+imap <C-a> <ESC>^i
+map <C-e> $
+imap <C-e> <ESC>$a
 
-map <C-S-a> ggVG
-map <C-c> "+yy
-map <C-v> "+p
-map <C-x> "+dd
+vmap a ggVG
+vmap <C-c> "+yy
+vmap <C-v> "+p
+vmap <C-x> "+dd
