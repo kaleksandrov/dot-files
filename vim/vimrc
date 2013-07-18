@@ -1,10 +1,10 @@
 " ==================================
 " ===      Configure Vundle      ===
 " ==================================
+
 set nocompatible 
 filetype off   
 set rtp+=~/.vim/bundle/vundle
-
 call vundle#rc()
 
 " original repos on github
@@ -24,7 +24,11 @@ Bundle 'FuzzyFinder'
 Bundle 'EasyMotion'
 Bundle 'checksyntax'
 
-filetype plugin indent on     " required!
+" ==================================
+" ===     Configure behavior     ===
+" ==================================
+
+filetype plugin indent on
 filetype indent on
 
 syntax on
@@ -39,48 +43,87 @@ set incsearch
 set hlsearch
 set cursorline
 set number
-
 set encoding=utf8
 
+" ==================================
+" ===      Set color scheme      ===
+" ==================================
+
 colo zmrok
+
+" ==================================
+" ===     Configure NERD tree    ===
+" ==================================
 
 map <F2> :NERDTreeToggle<CR>
 map <F9> :!%<CR>
 
-"Format the code according to the filetype"
+" ==================================
+" ===       Set key bindings     ===
+" ==================================
+
+" ---------- Normal mode -----------
+
+" Search case insensitively
+nmap <C-f> /\c 
+
+" Go to the beginning of the line
+nmap <C-a> ^
+
+" Go to the end of the line
+nmap <C-e> $
+
+" Delete a row
+nmap <C-d> <Esc>dd
+
+" Add a new line above the current line and move the coursor on the new line
+nmap <C-S-CR> O 
+
+" Add a new line below the current line and move the coursor on the new line
+nmap <S-CR> o
+
+" Replace
+nmap <C-r> :%s/
+
+" ---------- Visual mode -----------
+
+" Select all
+vmap a ggVG
+
+" Format the selected code according to the filetype"
 vmap f =<CR>
 
+" Format all the code according to the filetype"
+vmap F af
+
+" Copy to clipboard
+vmap <C-c> "+yy
+
+" Paste from clipboard
+vmap <C-v> "+p
+
+" Cut to clipboard
+vmap <C-x> "+dd
+
+" ---------- Insert mode -----------
+
 " Start case insensitive search
-map <C-f> /\c
 imap <C-f> <ESC>/\c
 
 " Replace
-map <C-r> :%s/
 imap <C-r> <ESC>:%s/
 
 "Adds a new line below the current line and moves the coursor into its beginning in insert mode"
-map <S-CR> o
 imap <S-CR> <Esc>o
 
 "Adds a new line above the current line and moves the coursor into its beginning in insert mode"
-map <C-S-CR> ^i<CR><Esc>ki
-imap <C-S-CR> <Esc>^i<CR><Esc>ki
+imap <C-S-CR> <Esc>O
 
 "Delete the current line"
-map <C-d> <Esc>dd
 imap <C-d> <Esc>ddi
 
-"Adds 2 new lines below the current line. Moves everything after the coursor
-"to the second line and places the coursor in the beginning of the first line
-"in insert mode"
-imap /<CR> <CR><C-CR>
-
-map <C-a> ^
+" Go to the beginning of the line
 imap <C-a> <ESC>^i
-map <C-e> $
-imap <C-e> <ESC>$a
 
-vmap a ggVG
-vmap <C-c> "+yy
-vmap <C-v> "+p
-vmap <C-x> "+dd
+" Go to the end of the line
+imap <C-e> <ESC>$a
