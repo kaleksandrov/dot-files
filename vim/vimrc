@@ -59,6 +59,11 @@ Bundle 'Syntastic'
 " Adds tab view that is showing the methods and fields of the opened class. The same as Outline in Eclipse.
 Bundle 'Tagbar'             
 
+" Adds jade support
+Bundle 'jade.vim'
+
+" Adds stylus support
+Bundle 'vim-stylus'
 
 " ==================================
 " ===     Configure behavior     ===
