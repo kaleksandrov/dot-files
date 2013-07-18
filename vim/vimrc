@@ -85,6 +85,15 @@ nmap <S-CR> o
 " Replace
 nmap <C-r> :%s/
 
+" Copy to clipboard
+nmap <C-c> "+yy
+
+" Paste from clipboard
+nmap <C-v> "+p
+
+" Cut to clipboard
+nmap <C-x> "+dd
+
 " ---------- Visual mode -----------
 
 " Select all
