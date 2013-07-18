@@ -8,4 +8,4 @@
 
 3. Copy this file as ~/.vimrc
 4. Start vim/gvim
-5. Run :BundleInstall. This will install all plugins described in the .vimrc file. For more information about managint plugins read the documentation about the Vundle plugin [here](https://github.com/gmarik/vundle)
+5. Run ```:BundleInstall```. This will install all plugins described in the .vimrc file. For more information about managint plugins read the documentation about the Vundle plugin [here](https://github.com/gmarik/vundle)
