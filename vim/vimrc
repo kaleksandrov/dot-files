@@ -69,6 +69,8 @@ Bundle 'vim-stylus'
 " ===     Configure behavior     ===
 " ==================================
 
+" -------- Default behavior --------
+
 filetype plugin indent on
 filetype indent on
 
@@ -85,6 +87,11 @@ set hlsearch
 set cursorline
 set number
 set encoding=utf8
+
+" --- Custom file type behavior ----
+
+autocmd FileType jade :setlocal sw=2 ts=2 sts=2
+autocmd FileType ruby :setlocal sw=2 ts=2 sts=2
 
 " ==================================
 " ===      Set color scheme      ===
@@ -210,6 +217,9 @@ imap <C-a> <ESC>^i
 
 " Go to the end of the line
 imap <C-e> <ESC>$a
+
+" Paste from clipboard
+imap <C-v> <ESC>"+pa
 
 " Go to the next buffer
 imap <C-A-n> <ESC>:bn<CR>
