@@ -127,8 +127,6 @@ imap <C-q> <ESC>:Bclose<CR>
 " ===       Set key bindings     ===
 " ==================================
 
-" ---------- Normal mode -----------
-
 " Search case insensitively
 nmap <C-f> /\c 
 imap <C-f> <ESC>/\c
