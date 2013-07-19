@@ -33,6 +33,9 @@ Bundle 'fholgado/minibufexpl.vim'
 " Easy comment lines
 Bundle 'scrooloose/nerdcommenter'
 
+" Close a sinlge buffer without closing the window
+Bundle 'Soares/butane.vim'
+
 " -------- Vim-scripts repos -------
 
 " Auto closes brackets
@@ -87,6 +90,7 @@ set hlsearch
 set cursorline
 set number
 set encoding=utf8
+set wildchar=<Tab> wildmenu wildmode=full
 
 " --- Custom file type behavior ----
 
@@ -112,8 +116,12 @@ map <F2> :NERDTreeToggle<CR>
 map <F3> :TagbarToggle<CR>
 
 " ==================================
-" ===    Configure MiniBufExpl   ===
+" ======    Configure Butane   =====
 " ==================================
+ 
+nmap <C-q> :Bclose<CR>
+vmap <C-q> :Bclose<CR>
+imap <C-q> <ESC>:Bclose<CR>
 
 " ==================================
 " ===       Set key bindings     ===
@@ -123,47 +131,56 @@ map <F3> :TagbarToggle<CR>
 
 " Search case insensitively
 nmap <C-f> /\c 
+imap <C-f> <ESC>/\c
 
 " Go to the beginning of the line
 nmap <C-a> ^
+vmap <C-a> ^
+imap <C-a> <ESC>^i
 
 " Go to the end of the line
 nmap <C-e> $
+vmap <C-e> $
+imap <C-e> <ESC>$a
 
 " Delete a row
 nmap <C-d> <Esc>dd
-
-" Add a new line above the current line and move the coursor on the new line
-nmap <C-S-CR> O 
+imap <C-d> <Esc>ddi
 
 " Add a new line below the current line and move the coursor on the new line
 nmap <S-CR> o
+imap <S-CR> <Esc>o
+
+" Add a new line above the current line and move the coursor on the new line
+nmap <C-S-CR> O 
+imap <C-S-CR> <Esc>O
 
 " Replace
 nmap <C-r> :%s/
+imap <C-r> <ESC>:%s/
 
 " Copy to clipboard
 nmap <C-c> "+yy
+vmap <C-c> "+yy
 
 " Paste from clipboard
 nmap <C-v> "+p
+vmap <C-v> "+p
+imap <C-v> <ESC>"+pa
 
 " Cut to clipboard
 nmap <C-x> "+dd
+vmap <C-x> "+dd
 
 " Go to the next buffer
-nmap <C-A-n> :bn<CR>
+nmap <C-A-.> :bn<CR>
+vmap <C-A-.> :bn<CR>
+imap <C-A-.> <ESC>:bn<CR>
 
 " Go to the previous buffer
-nmap <C-A-p> :bp<CR>
-
-" ---------- Visual mode -----------
-
-" Go to the beginning of the line
-vmap <C-a> ^
-
-" Go to the end of the line
-vmap <C-e> $
+nmap <C-A-,> :bp<CR>
+vmap <C-A-,> :bp<CR>
+imap <C-A-,> <ESC>:bp<CR>
 
 " Select all
 vmap a ggVG
@@ -173,56 +190,3 @@ vmap f =<CR>
 
 " Format all the code according to the filetype"
 vmap F af
-
-" Copy to clipboard
-vmap <C-c> "+yy
-
-" Paste from clipboard
-vmap <C-v> "+p
-
-" Cut to clipboard
-vmap <C-x> "+dd
-
-" Go to the next buffer
-vmap <C-A-n> :bn<CR>
-
-" Go to the previous buffer
-vmap <C-A-p> :bp<CR>
-
-" ---------- Insert mode -----------
-
-" Go to the beginning of the line
-imap <C-a> ^
-
-" Go to the end of the line
-imap <C-e> $
-
-" Start case insensitive search
-imap <C-f> <ESC>/\c
-
-" Replace
-imap <C-r> <ESC>:%s/
-
-" Adds a new line below the current line and moves the coursor into its beginning in insert mode"
-imap <S-CR> <Esc>o
-
-" Adds a new line above the current line and moves the coursor into its beginning in insert mode"
-imap <C-S-CR> <Esc>O
-
-" Delete the current line"
-imap <C-d> <Esc>ddi
-
-" Go to the beginning of the line
-imap <C-a> <ESC>^i
-
-" Go to the end of the line
-imap <C-e> <ESC>$a
-
-" Paste from clipboard
-imap <C-v> <ESC>"+pa
-
-" Go to the next buffer
-imap <C-A-n> <ESC>:bn<CR>
-
-" Go to the previous buffer
-imap <C-A-p> <ESC>:bp<CR>
