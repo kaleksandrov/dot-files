@@ -36,6 +36,27 @@ Bundle 'scrooloose/nerdcommenter'
 " Close a sinlge buffer without closing the window
 Bundle 'Soares/butane.vim'
 
+" Autocomplete functionality
+Bundle 'ervandew/supertab'
+
+" Adds snippets for node.js"
+Bundle 'jamescarr/snipmate-nodejs'
+
+" Adds mustache support to vim
+Bundle 'juvenn/mustache.vim'
+
+" node.js dict for vim
+Bundle 'guileen/vim-node'
+
+" Adds coffee-script support to vim
+Bundle 'vim-coffee-script'
+
+" Adds more coloring to javascript files
+Bundle 'jelera/vim-javascript-syntax'
+
+" Adds formatting tools
+Bundle 'godlygeek/tabular'
+
 " -------- Vim-scripts repos -------
 
 " Auto closes brackets
@@ -43,9 +64,6 @@ Bundle 'AutoClose'
 
 " Adds snippets functionality
 Bundle 'snipMate'
-
-" Autocomplete functionality
-Bundle 'SuperTab'
 
 " Beautifies javascript code
 Bundle 'jsbeautify'
@@ -67,6 +85,9 @@ Bundle 'jade.vim'
 
 " Adds stylus support
 Bundle 'vim-stylus'
+
+" Detects node.js shebang and sets file type to JavaScript
+Bundle 'node.js'
 
 " ==================================
 " ===     Configure behavior     ===
@@ -97,6 +118,8 @@ set wildchar=<Tab> wildmenu wildmode=full
 autocmd FileType jade :setlocal sw=2 ts=2 sts=2
 autocmd FileType ruby :setlocal sw=2 ts=2 sts=2
 
+au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
+
 " ==================================
 " ===      Set color scheme      ===
 " ==================================
@@ -118,7 +141,7 @@ map <F3> :TagbarToggle<CR>
 " ==================================
 " ======    Configure Butane   =====
 " ==================================
- 
+
 nmap <C-q> :Bclose<CR>
 vmap <C-q> :Bclose<CR>
 imap <C-q> <ESC>:Bclose<CR>
@@ -181,7 +204,7 @@ vmap <C-A-,> :bp<CR>
 imap <C-A-,> <ESC>:bp<CR>
 
 " Select all
-vmap a ggVG
+vmap a <ESC>ggVG
 
 " Format the selected code according to the filetype"
 vmap f =<CR>
