@@ -2,7 +2,7 @@
 1. Install vim
 2. Install Vundle plugin:
 ```
-. git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 ```
 3. Copy this file as ~/.vimrc
 4. Start vim/gvim
