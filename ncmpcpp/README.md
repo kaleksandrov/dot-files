@@ -12,4 +12,4 @@ This is my configuration of the NCMPCPP client for MPD.
 ```ncmpcpp```
 4. Enjoy!! :))
 
-![screenshot](https://raw.github.com/kaleksandrov/dot-files/master/conky/screenshot.png)
+![screenshot](https://raw.github.com/kaleksandrov/dot-files/master/ncmpcpp/screenshot.png)
