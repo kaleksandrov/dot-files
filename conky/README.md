@@ -12,7 +12,7 @@ and comment out this line:
 own_window_type override
 ```
 
-#How to install
+#How to install and run
 1. Copy ```conkyrc1```, ```conkyrc2``` and ```conkyrc3``` files in your home directory as hidden files (place ```.``` at the beginning of the filename).
 2. Copy ```conky-start.sh``` and include it to your ```$PATH``` variable.
 3. Make ```conky-start.sh``` executable. 
