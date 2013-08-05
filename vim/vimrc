@@ -151,8 +151,8 @@ imap <C-q> <ESC>:Bclose<CR>
 " ==================================
 
 " Search case insensitively
-nmap <C-f> /\c 
-imap <C-f> <ESC>/\c
+nmap <C-f> /\c
+imap <C-f><ESC>/\c
 
 " Go to the beginning of the line
 nmap <C-a> ^
