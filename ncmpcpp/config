@@ -297,7 +297,7 @@ enable_window_title = "yes"
 #
 #lyrics_database = "1"
 #
-#external_editor = ""
+external_editor = "/usr/bin/gvim"
 #
 #use_console_editor = "no" (set to yes, if your editor is console app)
 #
