@@ -119,6 +119,7 @@ autocmd FileType jade :setlocal sw=2 ts=2 sts=2
 autocmd FileType ruby :setlocal sw=2 ts=2 sts=2
 
 au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
+au FileType javascript vmap f <ESC>\ff
 
 " ==================================
 " ===      Set color scheme      ===
@@ -142,9 +143,9 @@ map <F3> :TagbarToggle<CR>
 " ======    Configure Butane   =====
 " ==================================
 
-nmap <C-q> :Bclose<CR>
-vmap <C-q> :Bclose<CR>
-imap <C-q> <ESC>:Bclose<CR>
+nmap <C-w> :Bclose<CR>
+vmap <C-w> :Bclose<CR>
+imap <C-w> <ESC>:Bclose<CR>
 
 " ==================================
 " ===       Set key bindings     ===
@@ -152,7 +153,7 @@ imap <C-q> <ESC>:Bclose<CR>
 
 " Search case insensitively
 nmap <C-f> /\c
-imap <C-f><ESC>/\c
+imap <C-f> <ESC>/\c
 
 " Go to the beginning of the line
 nmap <C-a> ^
