@@ -30,7 +30,12 @@ Bundle 'wavded/vim-stylus'
 " Adds tabs functionality
 Bundle 'fholgado/minibufexpl.vim'
 
-" Easy comment lines
+" Easily comment lines
+"  
+" <Leader>cc          Comment
+" <Leader>c<Space>    Toggle comment
+" <Leader>ci          Comments selected lines individually
+" <Leader>cs          Comments sexily
 Bundle 'scrooloose/nerdcommenter'
 
 " Close a sinlge buffer without closing the window
@@ -143,9 +148,9 @@ map <F3> :TagbarToggle<CR>
 " ======    Configure Butane   =====
 " ==================================
 
-nmap <C-w> :Bclose<CR>
-vmap <C-w> :Bclose<CR>
-imap <C-w> <ESC>:Bclose<CR>
+nmap <C-q> :Bclose<CR>
+vmap <C-q> :Bclose<CR>
+imap <C-q> <ESC>:Bclose<CR>
 
 " ==================================
 " ===       Set key bindings     ===
