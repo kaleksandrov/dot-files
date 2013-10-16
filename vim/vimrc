@@ -65,7 +65,7 @@ Bundle 'godlygeek/tabular'
 " -------- Vim-scripts repos -------
 
 " Auto closes brackets
-"Bundle 'AutoClose'
+Bundle 'AutoClose'
 
 " Adds snippets functionality
 Bundle 'snipMate'
@@ -166,6 +166,16 @@ imap <C-q> <ESC>:Bclose<CR>
 " Search case insensitively
 nmap <C-f> /\c
 imap <C-f> <ESC>/\c
+
+" Move the current line up
+nnoremap <A-up> :m -2<CR>
+inoremap <A-up> <ESC>:m -2<CR>gi
+vnoremap <A-up> :m '<-2<CR>gv
+
+" Move the current line down
+nnoremap <A-down> :m +1<CR>
+inoremap <A-down> <ESC>:m +1<CR>gi
+vnoremap <A-down> :m '>+1<CR>gv
 
 " Go to the beginning of the line
 nmap <C-a> ^
