@@ -160,6 +160,14 @@ vmap <C-q> :Bclose<CR>
 imap <C-q> <ESC>:Bclose<CR>
 
 " ==================================
+" ======    Configure Butane   =====
+" ==================================
+
+nmap <C-\> \c 
+vmap <C-\> \c 
+imap <C-\> <ESC>\c 
+
+" ==================================
 " ===       Set key bindings     ===
 " ==================================
 
@@ -176,16 +184,6 @@ vnoremap <A-up> :m '<-2<CR>gv
 nnoremap <A-down> :m +1<CR>
 inoremap <A-down> <ESC>:m +1<CR>gi
 vnoremap <A-down> :m '>+1<CR>gv
-
-" Go to the beginning of the line
-nmap <C-a> ^
-vmap <C-a> ^
-imap <C-a> <ESC>^i
-
-" Go to the end of the line
-nmap <C-e> $
-vmap <C-e> $
-imap <C-e> <ESC>$a
 
 " Delete a row
 nmap <C-d> <Esc>dd
@@ -204,17 +202,17 @@ nmap <C-r> :%s/
 imap <C-r> <ESC>:%s/
 
 " Copy to clipboard
-nmap <C-c> "+yy
-vmap <C-c> "+yy
+nmap <C-ins> "+yy
+vmap <C-ins> "+yy
 
 " Paste from clipboard
-nmap <C-v> "+p
-vmap <C-v> "+p
-imap <C-v> <ESC>"+pa
+nmap <S-ins> "+p
+vmap <S-ins> "+p
+imap <S-ins> <ESC>"+pa
 
 " Cut to clipboard
-nmap <C-x> "+dd
-vmap <C-x> "+dd
+nmap <C-del> "+dd
+vmap <C-del> "+d
 
 " Go to the next buffer
 nmap <C-A-.> :bn<CR>
