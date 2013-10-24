@@ -202,17 +202,17 @@ nmap <C-r> :%s/
 imap <C-r> <ESC>:%s/
 
 " Copy to clipboard
-nmap <C-ins> "+yy
-vmap <C-ins> "+yy
+nmap <A-c> "+yy
+vmap <A-c> "+yy
 
 " Paste from clipboard
-nmap <S-ins> "+p
-vmap <S-ins> "+p
-imap <S-ins> <ESC>"+pa
+nmap <A-v> "+p
+vmap <A-v> "+p
+imap <A-v> <ESC>"+pa
 
 " Cut to clipboard
-nmap <C-del> "+dd
-vmap <C-del> "+d
+nmap <A-x> "+dd
+vmap <A-x> "+d
 
 " Go to the next buffer
 nmap <C-A-.> :bn<CR>
