@@ -10,6 +10,6 @@ This is my configuration of the NCMPCPP client for MPD.
 ```cp config $HOME/.ncmpcpp```
 3. Run ncmpcpp client.
 ```ncmpcpp```
-4. Enjoy!! :))
+4. Enjoy!!
 
 ![screenshot](https://raw.github.com/kaleksandrov/dot-files/master/ncmpcpp/screenshot.png)
