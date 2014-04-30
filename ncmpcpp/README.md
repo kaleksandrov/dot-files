@@ -13,4 +13,4 @@ This is my configuration of the NCMPCPP client for MPD.
 4. Enjoy
 
 
-![screenshot](https://raw.github.com/kaleksandrov/dot-files/master/ncmpcpp/screenshot.png)
+[screenshot](https://raw.github.com/kaleksandrov/dot-files/master/ncmpcpp/screenshot.png)
