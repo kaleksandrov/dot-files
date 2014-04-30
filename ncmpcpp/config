@@ -11,7 +11,7 @@ mpd_host = "localhost"
 #
 mpd_port = "6600"
 #
-mpd_music_dir = "/path/to/music_folder"
+mpd_music_dir = "/home/kaleksandrov/music"
 #
 mpd_connection_timeout = "5"
 #
@@ -297,7 +297,7 @@ enable_window_title = "yes"
 #
 #lyrics_database = "1"
 #
-external_editor = "/usr/bin/gvim"
+#external_editor = ""
 #
 #use_console_editor = "no" (set to yes, if your editor is console app)
 #
