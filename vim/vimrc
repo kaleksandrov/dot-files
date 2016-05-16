@@ -1,34 +1,19 @@
-" ==================================
-" ===      Configure Vundle      ===
-" ==================================
-
-set nocompatible 
-filetype off   
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-
-" ---- Original repos on github ----
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " This is a VIM plugin package manager
-Bundle 'gmarik/vundle'
-
-" Adds a git client
-Bundle 'tpope/vim-fugitive'
+Plugin 'VundleVim/Vundle.vim'
 
 " Simpler way to use some motions in vim
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'easymotion/vim-easymotion'
 
 " File browser tree. Like Navigator in Eclipse.
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 " A pack of color schemes
-Bundle 'daviddavis/vim-colorpack'
-
-" Makes VIM understand stylus
-Bundle 'wavded/vim-stylus'
-
-" Adds tabs functionality
-Bundle 'fholgado/minibufexpl.vim'
+Plugin 'daviddavis/vim-colorpack'
 
 " Easily comment lines
 "  
@@ -36,80 +21,84 @@ Bundle 'fholgado/minibufexpl.vim'
 " <Leader>c<Space>    Toggle comment
 " <Leader>ci          Comments selected lines individually
 " <Leader>cs          Comments sexily
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 
 " Close a sinlge buffer without closing the window
-Bundle 'Soares/butane.vim'
+Plugin 'Soares/butane.vim'
 
 " Autocomplete functionality
-Bundle 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 
-" Adds snippets for node.js"
-Bundle 'jamescarr/snipmate-nodejs'
-
-" Adds mustache support to vim
-Bundle 'juvenn/mustache.vim'
-
-" node.js dict for vim
-Bundle 'guileen/vim-node'
-
-" Adds coffee-script support to vim
-Bundle 'vim-coffee-script'
-
-" Adds more coloring to javascript files
-Bundle 'jelera/vim-javascript-syntax'
+" Fancy status bar
+Plugin 'bling/vim-airline'
 
 " Adds formatting tools
-Bundle 'godlygeek/tabular'
+" Example: tabularize the selected text using '=' as a separator
+" :Tabularize /=
+Plugin 'godlygeek/tabular'
 
-" -------- Vim-scripts repos -------
+" Go to command
+" let g:jedi#goto_command             = "<leader>d"
+"
+" Go to assignments
+" let g:jedi#goto_assignments_command = "<leader>g"
+"
+" Go to deffinition
+" let g:jedi#goto_definitions_command = ""
+"
+" Show docstring
+" let g:jedi#documentation_command    = "K"
+"
+" Show usages
+" let g:jedi#usages_command           = "<leader>n"
+"
+" Autocomplete
+" let g:jedi#completions_command      = "<C-Space>"
+"
+" Rename
+" let g:jedi#rename_command           = "<leader>r"
+Plugin 'davidhalter/jedi-vim'
 
-" Auto closes brackets
-Bundle 'AutoClose'
-
-" Adds snippets functionality
-Bundle 'snipMate'
-
-" Beautifies javascript code
-Bundle 'jsbeautify'
+" Adds external support for linters.
+Plugin 'syntastic'
 
 " Adds some additional utilities and functionality for developing VIM
-Bundle 'L9'
+Plugin 'L9'
 
 " Easy find files
-Bundle 'FuzzyFinder'
-
-" Adds syntax checking with extenral tools. 
-Bundle 'Syntastic'          
+Plugin 'FuzzyFinder'
 
 " Adds tab view that is showing the methods and fields of the opened class. The same as Outline in Eclipse.
-Bundle 'Tagbar'             
+Plugin 'Tagbar'             
 
-" Adds jade support
-Bundle 'jade.vim'
+Plugin 'actionscript'
 
-" Adds stylus support
-Bundle 'vim-stylus'
+"<Leader>vv  - Grep for the word under the cursor, match all occurences, like |gstar|
+"<Leader>vV  - Grep for the word under the cursor, match whole word, like |star|
+"<Leader>va  - Like vv, but add to existing list
+"<Leader>vA  - Like vV, but add to existing list
+"<Leader>vr  - Perform a global search search on the word under the cursor and prompt for a pattern with which to replace it.
+"<Leader>vo  - Select the files to search in and set grep options
+Plugin 'vim-scripts/EasyGrep'
 
-" Detects node.js shebang and sets file type to JavaScript
-Bundle 'node.js'
+Plugin 'pangloss/vim-javascript'
+
+Plugin 'othree/javascript-libraries-syntax.vim'
+
+call vundle#end()
+filetype plugin indent on
 
 " ==================================
 " ===     Configure behavior     ===
 " ==================================
-
-" -------- Default behavior --------
-
-filetype plugin indent on
-filetype indent on
 
 syntax on
 
 set autoindent
 set smartindent
 set backup
-set tabstop=4
-set shiftwidth=4
+set tabstop=3
+set shiftwidth=3
 set expandtab
 set incsearch
 set hlsearch
@@ -117,22 +106,88 @@ set cursorline
 set number
 set encoding=utf8
 set wildchar=<Tab> wildmenu wildmode=full
+set ignorecase
+set ff=unix
+set scrolloff=3
+set noshowcmd
+set hidden
+set ruler
+set laststatus=2
+set undofile
 
-" --- Custom file type behavior ----
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-autocmd FileType jade :setlocal sw=2 ts=2 sts=2
-autocmd FileType ruby :setlocal sw=2 ts=2 sts=2
+nnoremap ; :
 
-" --- Gradle configuration ---------
-au BufNewFile,BufRead *.gradle vmap <F9> <ESC>:!gradle -q 
-au BufNewFile,BufRead *.gradle imap<F9> <ESC>:!gradle -q 
-au BufNewFile,BufRead *.gradle nmap <F9> :!gradle -q 
-au BufNewFile,BufRead *.gradle set filetype=groovy
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
 
+" ==================================
+" ===     Configure VIM JS       ===
+" ==================================
+let g:javascript_enable_domhtmlcss=1
+let g:javascript_enable_domhtmlcss = 1
+let g:javascript_ignore_javaScriptdoc = 1
 
-au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
-au FileType javascript vmap f <ESC>\ff
-    
+" ==================================
+" Configure JS libs syntax highlight
+" ==================================
+
+autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
+autocmd BufReadPre *.js let b:javascript_lib_use_requirejs = 1
+
+" ==================================
+" ===     Configure Jedi-VIM     ===
+" ==================================
+
+autocmd FileType python setlocal completeopt-=preview
+autocmd BufEnter *.py set ai tw=79 sw=3 ts=3 sta et fo=croql 
+autocmd BufEnter *.sc setlocal filetype=python
+
+" ==================================
+" ===     Configure Syntastic    ===
+" ==================================
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map={ "mode": "passive" }
+let g:sytastic_enable_highlighting=1
+let g:syntastic_javascript_checkers = ['jshint']
+nmap <leader>ll :SyntasticCheck<CR>
+nmap <leader>ln :lnext<CR>
+nmap <leader>lp :lprevious<CR>
+nmap <leader>lr :SyntasticReset<CR>
+
+" ==================================
+" ===         EasyMotion         ===
+" ==================================
+
+map  <Leader>/ <Plug>(easymotion-sn)
+omap <Leader>/ <Plug>(easymotion-tn)
+"map  n <Plug>(easymotion-next)
+"map  N <Plug>(easymotion-prev)
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+let g:EasyMotion_smartcase = 1
+
+" ==================================
+" =  Configure AirLine status bar  =
+" ==================================
+let g:airline#extensions#tabline#enabled = 1
+
 " ==================================
 " ===      Set color scheme      ===
 " ==================================
@@ -143,92 +198,72 @@ colo zmrok
 " ===     Configure NERD tree    ===
 " ==================================
 
-map <F2> :NERDTreeToggle<CR>
+map <A-0> :NERDTreeFocus<CR>
 
 " ==================================
 " ===       Configure TagBar     ===
 " ==================================
 
-map <F3> :TagbarToggle<CR>
+map <A-9> :TagbarToggle<CR>
 
 " ==================================
 " ======    Configure Butane   =====
 " ==================================
 
-nmap <C-q> :Bclose<CR>
-vmap <C-q> :Bclose<CR>
-imap <C-q> <ESC>:Bclose<CR>
+nmap qq :Bclose<CR>
 
 " ==================================
-" ======    Configure Butane   =====
+" ===    Configure fuzzy find    ===
 " ==================================
 
-nmap <C-\> \c 
-vmap <C-\> \c 
-imap <C-\> <ESC>\c 
+nmap <C-e> :FufBuffer<CR>
+nmap <C-o> :FufFileWithCurrentBufferDir<CR>
+
+" ==================================
+" = Configure clipboard management =
+" ==================================
+
+" Copy to clipboard
+vmap <Leader>c "+yy
+
+" Cut to clipboard
+vmap <Leader>x "+d
+
+" Paste from clipboard
+nmap <Leader>v "+p
+vmap <Leader>v "+p
+imap <Leader>v <ESC>"+pa
+
+" ==================================
+" ===      Window navigation     ===
+" ==================================
+
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
 
 " ==================================
 " ===       Set key bindings     ===
 " ==================================
 
-" Search case insensitively
-nmap <C-f> /\c
-imap <C-f> <ESC>/\c
+" Clean the search results with ESC
+map <Space> :noh<CR>
 
-" Move the current line up
-nnoremap <A-up> :m -2<CR>
-inoremap <A-up> <ESC>:m -2<CR>gi
-vnoremap <A-up> :m '<-2<CR>gv
+" Map jj to Esc
+imap jj <Esc>
 
-" Move the current line down
-nnoremap <A-down> :m +1<CR>
-inoremap <A-down> <ESC>:m +1<CR>gi
-vnoremap <A-down> :m '>+1<CR>gv
-
-" Delete a row
-nmap <C-d> <Esc>dd
-imap <C-d> <Esc>ddi
-
-" Add a new line below the current line and move the coursor on the new line
-nmap <S-CR> o
-imap <S-CR> <Esc>o
-
-" Add a new line above the current line and move the coursor on the new line
-nmap <C-S-CR> O 
-imap <C-S-CR> <Esc>O
+" Easier moving to start/end line
+nnoremap <leader>a ^
+nnoremap <leader>e $
+vnoremap <leader>a ^
+vnoremap <leader>e $<Left>
 
 " Replace
-nmap <C-r> :%s/
-imap <C-r> <ESC>:%s/
+nmap <C-r> :%s//g<Left><Left>
+imap <C-r> <ESC><C-r>
+vmap <C-r> :s//g<Left><Left>
 
-" Copy to clipboard
-nmap <A-c> "+yy
-vmap <A-c> "+yy
-
-" Paste from clipboard
-nmap <A-v> "+p
-vmap <A-v> "+p
-imap <A-v> <ESC>"+pa
-
-" Cut to clipboard
-nmap <A-x> "+dd
-vmap <A-x> "+d
-
-" Go to the next buffer
-nmap <C-A-.> :bn<CR>
-vmap <C-A-.> :bn<CR>
-imap <C-A-.> <ESC>:bn<CR>
-
-" Go to the previous buffer
-nmap <C-A-,> :bp<CR>
-vmap <C-A-,> :bp<CR>
-imap <C-A-,> <ESC>:bp<CR>
-
-" Select all
-vmap a <ESC>ggVG
-
-" Format the selected code according to the filetype"
-vmap f =<CR>
-
-" Format all the code according to the filetype"
-vmap F af
+" New line
+imap <S-Enter> <Esc>o
+imap <C-Enter> <Esc>O
