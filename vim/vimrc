@@ -115,8 +115,8 @@ set ruler
 set laststatus=2
 set undofile
 
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nmap <silent> <Leader>ev :e $MYVIMRC<CR>
+nmap <silent> <Leader>sv :so $MYVIMRC<CR>
 
 nnoremap ; :
 
@@ -198,13 +198,13 @@ colo zmrok
 " ===     Configure NERD tree    ===
 " ==================================
 
-nmap <silent> <leader>0 :NERDTreeToggle<CR>
+nmap <silent> <Leader>0 :NERDTreeToggle<CR>
 
 " ==================================
 " ===       Configure TagBar     ===
 " ==================================
 
-nmap <silent> <leader>9 :TagbarToggle<CR>
+nmap <silent> <Leader>9 :TagbarToggle<CR>
 
 " ==================================
 " ======    Configure Butane   =====
