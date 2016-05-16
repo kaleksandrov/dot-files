@@ -6,9 +6,6 @@ call vundle#begin()
 " This is a VIM plugin package manager
 Plugin 'VundleVim/Vundle.vim'
 
-" Simpler way to use some motions in vim
-Plugin 'easymotion/vim-easymotion'
-
 " File browser tree. Like Navigator in Eclipse.
 Plugin 'scrooloose/nerdtree'
 
@@ -215,22 +212,6 @@ nnoremap <leader>ll :SyntasticCheck<CR>
 nnoremap <leader>ln :lnext<CR>
 nnoremap <leader>lp :lprevious<CR>
 nnoremap <leader>lr :SyntasticReset<CR>
-
-" ==================================
-" ===         EasyMotion         ===
-" ==================================
-
-noremap  <Leader>/ <Plug>(easymotion-sn)
-onoremap <Leader>/ <Plug>(easymotion-tn)
-"map  n <Plug>(easymotion-next)
-"map  N <Plug>(easymotion-prev)
-noremap <Leader>l <Plug>(easymotion-lineforward)
-noremap <Leader>j <Plug>(easymotion-j)
-noremap <Leader>k <Plug>(easymotion-k)
-noremap <Leader>h <Plug>(easymotion-linebackward)
-
-let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
-let g:EasyMotion_smartcase = 1
 
 " ==================================
 " =  Configure AirLine status bar  =
