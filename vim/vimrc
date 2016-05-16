@@ -198,13 +198,13 @@ colo zmrok
 " ===     Configure NERD tree    ===
 " ==================================
 
-map <A-0> :NERDTreeFocus<CR>
+nmap <silent> <leader>0 :NERDTreeToggle<CR>
 
 " ==================================
 " ===       Configure TagBar     ===
 " ==================================
 
-map <A-9> :TagbarToggle<CR>
+nmap <silent> <leader>9 :TagbarToggle<CR>
 
 " ==================================
 " ======    Configure Butane   =====
