@@ -65,9 +65,6 @@ Plugin 'syntastic'
 " Adds some additional utilities and functionality for developing VIM
 Plugin 'L9'
 
-" Easy find files
-Plugin 'FuzzyFinder'
-
 " Adds tab view that is showing the methods and fields of the opened class. The same as Outline in Eclipse.
 Plugin 'Tagbar'             
 
@@ -85,6 +82,8 @@ Plugin 'pangloss/vim-javascript'
 
 Plugin 'othree/javascript-libraries-syntax.vim'
 
+Plugin 'ctrlp.vim'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -95,35 +94,85 @@ filetype plugin indent on
 syntax on
 
 set autoindent
+set copyindent
 set smartindent
 set backup
-set tabstop=3
-set shiftwidth=3
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 set incsearch
 set hlsearch
 set cursorline
 set number
 set encoding=utf8
-set wildchar=<Tab> wildmenu wildmode=full
+set wildchar=<Tab>
+set wildmenu
+set wildmode=list:full
 set ignorecase
+set smartcase
+set smarttab
 set ff=unix
-set scrolloff=3
+set scrolloff=4
 set noshowcmd
 set hidden
 set ruler
 set laststatus=2
 set undofile
+set modelines=0
+set title
+set backupdir=~/.vim/sessions
+set dir=~/.vim/sessions
+set nowrap
+set showmatch
+set history=1000    " remember more commands and search history
+set undolevels=1000 " use many muchos levels of undo
+set visualbell      " Don't beep on error
+set noerrorbells    " Don't blink on error
+set pastetoggle=<F2>
 
-nmap <silent> <Leader>ev :e $MYVIMRC<CR>
-nmap <silent> <Leader>sv :so $MYVIMRC<CR>
+let mapleader=","
+
+nnoremap <silent> <Leader>ev :e $MYVIMRC<CR>
+nnoremap <silent> <Leader>sv :so $MYVIMRC<CR>
 
 nnoremap ; :
 
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+" tab for brackets
+nnoremap <tab> %
+vnoremap <tab> %
+
+" Remove trailing whitespace on <leader>S
+nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
+
+" Quit window on <leader>q
+nnoremap <leader>q :q<CR>
+
+" When I'm working on a thinkpad
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" Clean the search results with ESC
+noremap <Space> :noh<CR>
+
+" Map jj to Esc
+inoremap jj <Esc>
+
+" Easier moving to start/end line
+nnoremap <leader>a ^
+nnoremap <leader>e $
+vnoremap <leader>a ^
+vnoremap <leader>e $<Left>
+
+" Replace
+nnoremap <C-r> :%s//g<Left><Left>
+inoremap <C-r> <ESC><C-r>
+vnoremap <C-r> :s//g<Left><Left>
+
+" New line
+inoremap <S-Enter> <Esc>o
+inoremap <C-Enter> <Esc>O
 
 " ==================================
 " ===     Configure VIM JS       ===
@@ -162,23 +211,23 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map={ "mode": "passive" }
 let g:sytastic_enable_highlighting=1
 let g:syntastic_javascript_checkers = ['jshint']
-nmap <leader>ll :SyntasticCheck<CR>
-nmap <leader>ln :lnext<CR>
-nmap <leader>lp :lprevious<CR>
-nmap <leader>lr :SyntasticReset<CR>
+nnoremap <leader>ll :SyntasticCheck<CR>
+nnoremap <leader>ln :lnext<CR>
+nnoremap <leader>lp :lprevious<CR>
+nnoremap <leader>lr :SyntasticReset<CR>
 
 " ==================================
 " ===         EasyMotion         ===
 " ==================================
 
-map  <Leader>/ <Plug>(easymotion-sn)
-omap <Leader>/ <Plug>(easymotion-tn)
+noremap  <Leader>/ <Plug>(easymotion-sn)
+onoremap <Leader>/ <Plug>(easymotion-tn)
 "map  n <Plug>(easymotion-next)
 "map  N <Plug>(easymotion-prev)
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
+noremap <Leader>l <Plug>(easymotion-lineforward)
+noremap <Leader>j <Plug>(easymotion-j)
+noremap <Leader>k <Plug>(easymotion-k)
+noremap <Leader>h <Plug>(easymotion-linebackward)
 
 let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 let g:EasyMotion_smartcase = 1
@@ -198,72 +247,54 @@ colo zmrok
 " ===     Configure NERD tree    ===
 " ==================================
 
-nmap <silent> <Leader>0 :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>0 :NERDTreeToggle<CR>
 
 " ==================================
 " ===       Configure TagBar     ===
 " ==================================
 
-nmap <silent> <Leader>9 :TagbarToggle<CR>
+nnoremap <silent> <Leader>9 :TagbarToggle<CR>
 
 " ==================================
 " ======    Configure Butane   =====
 " ==================================
 
-nmap qq :Bclose<CR>
+nnoremap qq :Bclose<CR>
 
 " ==================================
-" ===    Configure fuzzy find    ===
+" ===    Configure CtrlP find    ===
 " ==================================
 
-nmap <C-e> :FufBuffer<CR>
-nmap <C-o> :FufFileWithCurrentBufferDir<CR>
+nnoremap <C-e> :CtrlPBuffer<CR>
+nnoremap <C-p> :CtrlP<CR>
 
 " ==================================
 " = Configure clipboard management =
 " ==================================
 
 " Copy to clipboard
-vmap <Leader>c "+yy
+vnoremap <Leader>c "+yy
 
 " Cut to clipboard
-vmap <Leader>x "+d
+vnoremap <Leader>x "+d
 
 " Paste from clipboard
-nmap <Leader>v "+p
-vmap <Leader>v "+p
-imap <Leader>v <ESC>"+pa
+nnoremap <Leader>v "+p
+vnoremap <Leader>v "+p
+inoremap <Leader>v <ESC>"+pa
 
 " ==================================
 " ===      Window navigation     ===
 " ==================================
 
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
+" Easy navigation between panes
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
-" ==================================
-" ===       Set key bindings     ===
-" ==================================
-
-" Clean the search results with ESC
-map <Space> :noh<CR>
-
-" Map jj to Esc
-imap jj <Esc>
-
-" Easier moving to start/end line
-nnoremap <leader>a ^
-nnoremap <leader>e $
-vnoremap <leader>a ^
-vnoremap <leader>e $<Left>
-
-" Replace
-nmap <C-r> :%s//g<Left><Left>
-imap <C-r> <ESC><C-r>
-vmap <C-r> :s//g<Left><Left>
-
-" New line
-imap <S-Enter> <Esc>o
-imap <C-Enter> <Esc>O
+" Don't use the arrow keys!!
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <left> <nop>
+noremap <right> <nop>
