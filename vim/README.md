@@ -12,10 +12,5 @@ This is my vim cofiguration. I hope you will find it useful :)
 1. Start vim/gvim
 1. Run ```:PluginInstall```. This will install all plugins described in the .vimrc file. 
 
-## How to contribute
-1. Fork the repo.
-1. Add cool stuff.
-1. Send a pull request.
-
 ## Additional info
 For more information about managing plugins read the documentation about the Vundle plugin [here](https://github.com/gmarik/vundle).
