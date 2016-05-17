@@ -246,6 +246,7 @@ nnoremap qq :Bclose<CR>
 
 nnoremap <C-e> :CtrlPBuffer<CR>
 nnoremap <C-p> :CtrlP<CR>
+let g:ctrlp_working_path_mode = 0
 
 " ==================================
 " = Configure clipboard management =
