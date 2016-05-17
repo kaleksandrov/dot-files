@@ -79,7 +79,7 @@ Plugin 'pangloss/vim-javascript'
 
 Plugin 'othree/javascript-libraries-syntax.vim'
 
-Plugin 'ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -124,14 +124,11 @@ set nowrap
 set showmatch
 set history=1000     " remember more commands and search history
 set undolevels=1000  " use many muchos levels of undo
-set visualbell t_vb= " Don't beep on error
 set noerrorbells     " Don't blink on error
-set pastetoggle=<F2>
+set visualbell t_vb= " Don't beep on error
 
 nnoremap <silent> <Leader>lv :e $MYVIMRC<CR>
 nnoremap <silent> <Leader>sv :so $MYVIMRC<CR>
-
-nnoremap ; :
 
 " tab for brackets
 nnoremap <tab> %
@@ -151,6 +148,8 @@ vnoremap <F1> <ESC>
 
 " Clean the search results with ESC
 noremap <Space> :noh<CR>
+
+nnoremap <Leader>w :w<CR>
 
 " Map jj to Esc
 inoremap jj <Esc>
@@ -183,13 +182,14 @@ let g:javascript_ignore_javaScriptdoc = 1
 
 autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 autocmd BufReadPre *.js let b:javascript_lib_use_requirejs = 1
+autocmd BufEnter *.js set sw=3 ts=3
 
 " ==================================
 " ===     Configure Jedi-VIM     ===
 " ==================================
 
 autocmd FileType python setlocal completeopt-=preview
-autocmd BufEnter *.py set ai tw=79 sw=3 ts=3 sta et fo=croql
+autocmd BufEnter *.py set tw=79 sw=3 ts=3 sta et fo=croql
 autocmd BufEnter *.sc setlocal filetype=python
 
 " ==================================
@@ -276,6 +276,8 @@ nnoremap qq :Bclose<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 0
+
+nnoremap <C-e> :CtrlPBuffer<CR>
 
 " ==================================
 " = Configure clipboard management =
