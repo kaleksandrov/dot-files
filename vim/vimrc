@@ -128,9 +128,7 @@ set visualbell      " Don't beep on error
 set noerrorbells    " Don't blink on error
 set pastetoggle=<F2>
 
-let mapleader=","
-
-nnoremap <silent> <Leader>ev :e $MYVIMRC<CR>
+nnoremap <silent> <Leader>lv :e $MYVIMRC<CR>
 nnoremap <silent> <Leader>sv :so $MYVIMRC<CR>
 
 nnoremap ; :
