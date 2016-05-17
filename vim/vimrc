@@ -122,10 +122,10 @@ set backupdir=~/.vim/sessions
 set dir=~/.vim/sessions
 set nowrap
 set showmatch
-set history=1000    " remember more commands and search history
-set undolevels=1000 " use many muchos levels of undo
-set visualbell      " Don't beep on error
-set noerrorbells    " Don't blink on error
+set history=1000     " remember more commands and search history
+set undolevels=1000  " use many muchos levels of undo
+set visualbell t_vb= " Don't beep on error
+set noerrorbells     " Don't blink on error
 set pastetoggle=<F2>
 
 nnoremap <silent> <Leader>lv :e $MYVIMRC<CR>
