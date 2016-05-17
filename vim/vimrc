@@ -141,7 +141,8 @@ vnoremap <tab> %
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Quit window on <leader>q
-nnoremap <leader>q :q<CR>
+nnoremap <leader>qa :qa<CR>
+nnoremap <leader>qq :q<CR>
 
 " When I'm working on a thinkpad
 inoremap <F1> <ESC>
