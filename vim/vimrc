@@ -13,7 +13,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'daviddavis/vim-colorpack'
 
 " Easily comment lines
-"  
+"
 " <Leader>cc          Comment
 " <Leader>c<Space>    Toggle comment
 " <Leader>ci          Comments selected lines individually
@@ -63,7 +63,7 @@ Plugin 'syntastic'
 Plugin 'L9'
 
 " Adds tab view that is showing the methods and fields of the opened class. The same as Outline in Eclipse.
-Plugin 'Tagbar'             
+Plugin 'Tagbar'
 
 Plugin 'actionscript'
 
@@ -188,7 +188,7 @@ autocmd BufReadPre *.js let b:javascript_lib_use_requirejs = 1
 " ==================================
 
 autocmd FileType python setlocal completeopt-=preview
-autocmd BufEnter *.py set ai tw=79 sw=3 ts=3 sta et fo=croql 
+autocmd BufEnter *.py set ai tw=79 sw=3 ts=3 sta et fo=croql
 autocmd BufEnter *.sc setlocal filetype=python
 
 " ==================================
@@ -243,6 +243,34 @@ nnoremap qq :Bclose<CR>
 " ==================================
 " ===    Configure CtrlP find    ===
 " ==================================
+
+" Basic Usage:
+"
+"     Run :CtrlP or :CtrlP [starting-directory] to invoke CtrlP in find file mode.
+"     Run :CtrlPBuffer or :CtrlPMRU to start CtrlP in find buffer or find MRU file mode.
+"     Run :CtrlPMixed to search in Files, Buffers and MRU files at the same time.
+"
+" Check :help ctrlp-commands and :help ctrlp-extensions for other commands.
+" Once CtrlP is open:
+"
+"     Press <F5> to purge the cache for the current directory to get new files, remove deleted files and apply new ignore options.
+"     Press <c-f> and <c-b> to cycle between modes.
+"     Press <c-d> to switch to filename search instead of full path.
+"     Press <c-r> to switch to regexp mode.
+"     Use <c-j>, <c-k> or the arrow keys to navigate the result list.
+"     Use <c-t> or <c-v>, <c-x> to open the selected entry in a new tab or in a new split.
+"     Use <c-n>, <c-p> to select the next/previous string in the prompt's history.
+"     Use <c-y> to create a new file and its parent directories.
+"     Use <c-z> to mark/unmark multiple files and <c-o> to open them.
+"
+" Run :help ctrlp-mappings or submit ? in CtrlP for more mapping help.
+"
+"     Submit two or more dots .. to go up the directory tree by one or multiple levels.
+"     End the input with a colon : followed by a command to execute it after opening the file:
+"         Use :25 to jump to line 25.
+"         Use :/any\:\ string to jump to the first instance of any: string.
+"         Use :+setfiletype\ myfiletype|25 to set the filetype to myfiletype then jump to line 25.
+"         Use :diffthis when opening files marked by <c-z> to run :diffthis on the first 4 files.
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
