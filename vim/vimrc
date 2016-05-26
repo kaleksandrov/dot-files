@@ -94,6 +94,7 @@ set autoindent
 set copyindent
 set smartindent
 set backup
+set writebackup
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -118,8 +119,9 @@ set laststatus=2
 set undofile
 set modelines=0
 set title
-set backupdir=~/.vim/sessions
-set dir=~/.vim/sessions
+set dir=~/.vim/sessions//
+set backupdir=~/.vim/backup//
+set undodir=~/.vim/undo//
 set nowrap
 set showmatch
 set history=1000     " remember more commands and search history
@@ -140,6 +142,9 @@ nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 " Quit window on <leader>q
 nnoremap <leader>qa :qa<CR>
 nnoremap <leader>qq :q<CR>
+nnoremap <leader>wq :wq<CR>
+nnoremap <leader>wqa :wqa<CR>
+nnoremap <leader>wa :wa<CR>
 
 " When I'm working on a thinkpad
 inoremap <F1> <ESC>
