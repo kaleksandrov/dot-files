@@ -195,6 +195,7 @@ autocmd BufEnter *.js set sw=3 ts=3
 
 autocmd FileType python setlocal completeopt-=preview
 autocmd BufEnter *.py set tw=79 sw=3 ts=3 sta et fo=croql
+autocmd BufEnter *.sc set tw=79 sw=3 ts=3 sta et fo=croql
 autocmd BufEnter *.sc setlocal filetype=python
 
 " ==================================
