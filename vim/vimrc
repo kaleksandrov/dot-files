@@ -81,6 +81,15 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 
+" Tern is a stand-alone code-analysis engine for JavaScript
+Plugin 'ternjs/tern_for_vim'
+
+" Snippets
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -197,6 +206,18 @@ autocmd FileType python setlocal completeopt-=preview
 autocmd BufEnter *.py set tw=79 sw=3 ts=3 sta et fo=croql
 autocmd BufEnter *.sc set tw=79 sw=3 ts=3 sta et fo=croql
 autocmd BufEnter *.sc setlocal filetype=python
+
+" ==================================
+" ===     Configure Tern JS      ===
+" ==================================
+autocmd BufEnter *.js nnoremap <Leader>dd :TernDef<CR>
+autocmd BufEnter *.js nnoremap <Leader>dp :TernDefPreview<CR>
+autocmd BufEnter *.js nnoremap <Leader>ds :TernDefSplit<CR>
+autocmd BufEnter *.js nnoremap <Leader>dt :TernDefTab<CR>
+autocmd BufEnter *.js nnoremap <Leader>kk :TernDoc<CR>
+autocmd BufEnter *.js nnoremap <Leader>kb :TernDocBrowse<CR>
+autocmd BufEnter *.js nnoremap <Leader>n :TernRefs<CR>
+autocmd BufEnter *.js nnoremap <Leader>r :TernRename<CR>
 
 " ==================================
 " ===     Configure Syntastic    ===
