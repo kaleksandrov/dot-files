@@ -252,7 +252,7 @@ nnoremap <leader>lr :SyntasticReset<CR>
 " ==================================
 " =====  Configure sniputils  ======
 " ==================================
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-t>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
