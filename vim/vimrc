@@ -100,6 +100,16 @@ autocmd FileType less set omnifunc=csscomplete#CompleteCSS
 " Tern is a stand-alone code-analysis engine for JavaScript
 Plugin 'ternjs/tern_for_vim'
 
+" JS beautifier
+" <Leader>ff - format
+Plugin 'vim-scripts/jsbeautify'
+
+" gS - split
+" gJ - join
+Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'gregsexton/MatchTag'
+Plugin 'tpope/vim-eunuch'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -199,6 +209,8 @@ inoremap <C-Enter> <Esc>O
 let g:javascript_enable_domhtmlcss=1
 let g:javascript_enable_domhtmlcss = 1
 let g:javascript_ignore_javaScriptdoc = 1
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
 
 " ==================================
 " Configure JS libs syntax highlight
@@ -252,7 +264,7 @@ nnoremap <leader>lr :SyntasticReset<CR>
 " ==================================
 " =====  Configure sniputils  ======
 " ==================================
-let g:UltiSnipsExpandTrigger="<c-t>"
+let g:UltiSnipsExpandTrigger="<c-space>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
@@ -355,3 +367,9 @@ noremap <up> <nop>
 noremap <down> <nop>
 noremap <left> <nop>
 noremap <right> <nop>
+
+inoremap <C-h> <ESC>i
+inoremap <C-j> <ESC>ji
+inoremap <C-k> <ESC>ki
+inoremap <C-l> <ESC>la
+inoremap <C-p> <ESC>pa
