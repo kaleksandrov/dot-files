@@ -161,6 +161,22 @@ set visualbell t_vb= " Don't beep on error
 nnoremap <silent> <Leader>lv :e $MYVIMRC<CR>
 nnoremap <silent> <Leader>sv :so $MYVIMRC<CR>
 
+" Open search and copy the current word into it
+nnoremap // /<C-r><C-w>
+
+" Toggle folded text
+" zf - create
+" zd - delete
+" zo - open
+" zO - open recursively
+" zc - close
+" zC - close recursively
+" za - toggle
+" zA - toggle recursively
+" zn - open all
+" zm - close all
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+
 " tab for brackets
 nnoremap <tab> %
 vnoremap <tab> %
