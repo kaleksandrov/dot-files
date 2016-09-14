@@ -19,7 +19,7 @@ altscreen on
 #
 # Note that TERM != "xterm-256color" within a screen window. Rather it is
 # "screen" or "screen-bce"
-# 
+#
 # terminfo and termcap for nice 256 color terminal
 # allow bold colors - necessary for some reason
 attrcolor b ".I"
@@ -32,3 +32,11 @@ termcapinfo xterm* ti@:te@
 
 # Stop visual bell
 vbell off
+bell_msg ""
+
+# make search case-insensitive
+ignorecase on
+
+# Create initial windows
+screen -t home
+select 0
