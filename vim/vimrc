@@ -108,10 +108,21 @@ Plugin 'ternjs/tern_for_vim'
 " <Leader>ff - format
 Plugin 'vim-scripts/jsbeautify'
 
-" gS - split
-" gJ - join
-Plugin 'AndrewRadev/splitjoin.vim'
+" Highlight the matching tag
 Plugin 'gregsexton/MatchTag'
+
+" UNIX file modification operations
+" :Remove
+" :Unlink
+" :Move
+" :Rename
+" :Chmod
+" :Mkdir
+" :Find
+" :Locate
+" :Wall
+" :SudoWrite
+" :SudoEdit
 Plugin 'tpope/vim-eunuch'
 
 " Support for typescript
@@ -122,6 +133,34 @@ Plugin 'othree/csscomplete.vim'
 
 " JSDOC support
 Plugin 'heavenshell/vim-jsdoc'
+
+" Manage marks
+Plugin 'kshenoy/vim-signature'
+
+" GIT support
+Plugin 'tpope/vim-fugitive'
+
+" Surround actions
+" <command><target><replacement>
+
+" Commands
+" * cs - Change Surroundings
+" * ds - Change Surroundings
+"
+" Targets
+" * symbol
+" * t - xml tag
+Plugin 'tpope/vim-surround'
+
+" Enchances the search and replace capabilities
+" :Subvert/address{,es}/reference{,s}/g
+" cr<case> - converts to the given case
+" cases
+" s - snake_case
+" m - MixedCase
+" c - camelCase
+" u - UPPER_CASE
+Plugin 'tpope/vim-abolish'
 
 call vundle#end()
 filetype plugin indent on
@@ -204,25 +243,13 @@ nnoremap <leader>qq :q<CR>
 nnoremap <leader>wq :wq<CR>
 nnoremap <leader>wqa :wqa<CR>
 nnoremap <leader>wa :wa<CR>
-
-" When I'm working on a thinkpad
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
+nnoremap <Leader>w :w<CR>
 
 " Clean the search results with ESC
-nnoremap <leader>/ :noh<CR>
-
-nnoremap <Leader>w :w<CR>
+nnoremap // :noh<CR>
 
 " Map jj to Esc
 inoremap jj <Esc>
-
-" Easier moving to start/end line
-nnoremap <leader>a ^
-nnoremap <leader>e $
-vnoremap <leader>a ^
-vnoremap <leader>e $<Left>
 
 " Replace
 nnoremap <C-r> :%s//g<Left><Left>
@@ -249,7 +276,7 @@ let g:javascript_plugin_ngdoc = 1
 
 autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 autocmd BufReadPre *.js let b:javascript_lib_use_requirejs = 1
-autocmd BufEnter *.js set sw=3 ts=3
+autocmd BufEnter *.js set tw=79 sw=3 ts=3 sta et fo=croql
 
 " ==================================
 " ===     Configure Jedi-VIM     ===
@@ -326,6 +353,8 @@ colo zmrok
 " ==================================
 
 nnoremap <silent> <Leader>0 :NERDTreeToggle<CR>
+" Close VIM if the only window left is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " ==================================
 " ===       Configure TagBar     ===
