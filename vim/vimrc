@@ -412,6 +412,10 @@ nnoremap <Leader>v "+p
 vnoremap <Leader>v "+p
 inoremap <Leader>v <ESC>"+pa
 
+" Moving lines
+nnoremap <silent> <C-[> :move+<CR>
+nnoremap <silent> <C-]> :move-2<CR>
+
 " ==================================
 " ===      Window navigation     ===
 " ==================================
@@ -428,6 +432,7 @@ noremap <down> <nop>
 noremap <left> <nop>
 noremap <right> <nop>
 
+" Navigation in insert mode
 inoremap <C-h> <ESC>i
 inoremap <C-j> <ESC>ji
 inoremap <C-k> <ESC>ki
