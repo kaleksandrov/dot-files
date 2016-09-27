@@ -1,9 +1,14 @@
+ ~/.screenrc                                                                                                                                                                                                                       << buffers
 startup_message off
 
+shell -${SHELL}
+
+defscrollback 5000
+
 # Window list at the bottom.
-hardstatus off
+hardstatus on
 hardstatus alwayslastline
-hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}]'
+hardstatus string '%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= %{KG} %H%{KW}|%{KY}%101`%{KW}|%D %M %d %Y%{= Kc} %C%A%{-}'
 
 # From Stephen Shirley
 # Don't block command output if the terminal stops responding
@@ -36,7 +41,3 @@ bell_msg ""
 
 # make search case-insensitive
 ignorecase on
-
-# Create initial windows
-screen -t home
-select 0
