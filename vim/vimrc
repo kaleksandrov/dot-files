@@ -466,8 +466,7 @@ noremap <left> <nop>
 noremap <right> <nop>
 
 " Navigation in insert mode
-inoremap <C-h> <ESC>i
-inoremap <C-j> <ESC>ji
-inoremap <C-k> <ESC>ki
-inoremap <C-l> <ESC>la
-inoremap <C-p> <ESC>pa
+inoremap <C-h> <left>
+inoremap <C-j> <down>
+inoremap <C-k> <up>
+inoremap <C-l> <right>
