@@ -253,8 +253,6 @@ vnoremap <leader>e $<Left>
 
 " Replace
 nnoremap <C-r> :%s//g<Left><Left>
-inoremap <C-r> <ESC><C-r>
-vnoremap <C-r> :s//g<Left><Left>
 
 " New line
 inoremap <S-Enter> <Esc>o
