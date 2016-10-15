@@ -464,9 +464,3 @@ noremap <up> <nop>
 noremap <down> <nop>
 noremap <left> <nop>
 noremap <right> <nop>
-
-" Navigation in insert mode
-inoremap <C-h> <left>
-inoremap <C-j> <down>
-inoremap <C-k> <up>
-inoremap <C-l> <right>
