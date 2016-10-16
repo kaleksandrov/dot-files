@@ -229,7 +229,11 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 " Remove trailing whitespace on <leader>S
-nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
+"nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
+nnoremap <silent> <leader>S :%s/\s\+$//ge<cr>
+
+" Delete white spaces on file save
+autocmd BufWritePre * :%s/\s\+$//ge
 
 " Quit window on <leader>q
 nnoremap <leader>qa :qa<CR>
