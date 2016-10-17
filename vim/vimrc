@@ -85,11 +85,7 @@ Plugin 'vim-scripts/EasyGrep'
 
 Plugin 'pangloss/vim-javascript'
 
-Plugin 'othree/javascript-libraries-syntax.vim'
-
 Plugin 'ctrlpvim/ctrlp.vim'
-
-Plugin 'moll/vim-node'
 
 " A bunch of snippets (engine)
 Plugin 'SirVer/ultisnips'
@@ -267,12 +263,6 @@ let g:javascript_ignore_javaScriptdoc = 1
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 
-" ==================================
-" Configure JS libs syntax highlight
-" ==================================
-
-autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
-autocmd BufReadPre *.js let b:javascript_lib_use_requirejs = 1
 autocmd BufEnter *.js set tw=79 sw=3 ts=3 sta et fo=croql
 
 " ==================================
@@ -439,10 +429,6 @@ nnoremap <Leader>v "+p
 vnoremap <Leader>v "+p
 inoremap <Leader>v <ESC>"+pa
 
-" Moving lines
-nnoremap <silent> <C-n> :move+<CR>
-nnoremap <silent> <C-m> :move-2<CR>
-
 " ==================================
 " ===      Window navigation     ===
 " ==================================
@@ -459,7 +445,7 @@ noremap <down> <nop>
 noremap <left> <nop>
 noremap <right> <nop>
 
-" Scrolling in Inser mode
+" Scrolling in Insert mode
 inoremap <C-E> <C-X><C-E>
 inoremap <C-Y> <C-X><C-Y>
 
@@ -479,3 +465,16 @@ cnoremap <C-l> <Right>
 cnoremap <C-n> <Down>
 " recall previous (older) command-line
 cnoremap <C-p> <Up>
+
+" Navigate throug buffers
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+
+" Move display lines instead of real lines
+nnoremap k  gk
+nnoremap gk k
+nnoremap j  gj
+nnoremap gj j
+
