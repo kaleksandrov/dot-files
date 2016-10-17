@@ -31,7 +31,8 @@ Plugin 'Soares/butane.vim'
 "Plugin 'ervandew/supertab'
 
 " Fancy status bar
-Plugin 'scrooloose/vim-statline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Adds formatting tools
 " Example: tabularize the selected text using '=' as a separator
@@ -330,6 +331,14 @@ let g:UltiSnipsExpandTrigger="<c-space>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
+
+" ==================================
+" =  Configure AirLine status bar  =
+" ==================================
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " ==================================
 " ===      Set color scheme      ===
