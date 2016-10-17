@@ -11,6 +11,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " File browser tree. Like Navigator in Eclipse.
+"
 Plugin 'scrooloose/nerdtree'
 
 " A pack of color schemes
@@ -38,9 +39,6 @@ Plugin 'vim-airline/vim-airline-themes'
 " Example: tabularize the selected text using '=' as a separator
 " :Tabularize /=
 Plugin 'godlygeek/tabular'
-
-" Makes NERDTree git-aware
-Plugin 'scrooloose/nerdtree-git-plugin'
 
 " Go to command
 " let g:jedi#goto_command             = "<leader>d"
