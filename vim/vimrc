@@ -28,15 +28,18 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'Soares/butane.vim'
 
 " Autocomplete functionality
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
 
 " Fancy status bar
-Plugin 'bling/vim-airline'
+Plugin 'scrooloose/vim-statline'
 
 " Adds formatting tools
 " Example: tabularize the selected text using '=' as a separator
 " :Tabularize /=
 Plugin 'godlygeek/tabular'
+
+" Makes NERDTree git-aware
+Plugin 'scrooloose/nerdtree-git-plugin'
 
 " Go to command
 " let g:jedi#goto_command             = "<leader>d"
@@ -61,7 +64,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'davidhalter/jedi-vim'
 
 " Adds external support for linters.
-Plugin 'syntastic'
+Plugin 'scrooloose/syntastic'
 
 " Adds some additional utilities and functionality for developing VIM
 Plugin 'L9'
@@ -327,13 +330,6 @@ let g:UltiSnipsExpandTrigger="<c-space>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
-
-
-" ==================================
-" =  Configure AirLine status bar  =
-" ==================================
-
-let g:airline#extensions#tabline#enabled = 1
 
 " ==================================
 " ===      Set color scheme      ===
