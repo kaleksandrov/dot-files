@@ -157,6 +157,8 @@ Plugin 'tpope/vim-surround'
 " u - UPPER_CASE
 Plugin 'tpope/vim-abolish'
 
+Plugin 'jiangmiao/auto-pairs'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -475,4 +477,3 @@ nnoremap k  gk
 nnoremap gk k
 nnoremap j  gj
 nnoremap gj j
-
