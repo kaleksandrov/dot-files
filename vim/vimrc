@@ -417,7 +417,7 @@ vnoremap <Leader>c "+yy
 " Paste from clipboard
 nnoremap <Leader>v "+p
 vnoremap <Leader>v "+p
-inoremap <Leader>v <ESC>"+pa
+inoremap <Leader>v <C-r>+
 
 " ==================================
 " ===      Window navigation     ===
