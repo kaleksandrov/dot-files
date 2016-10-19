@@ -414,9 +414,6 @@ let g:jsdoc_enable_es6                  = 0      " Enable to use ECMAScript6's S
 " Copy to clipboard
 vnoremap <Leader>c "+yy
 
-" Cut to clipboard
-vnoremap <Leader>x "+d
-
 " Paste from clipboard
 nnoremap <Leader>v "+p
 vnoremap <Leader>v "+p
