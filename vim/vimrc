@@ -206,6 +206,7 @@ set undolevels=1000  " use many muchos levels of undo
 set noerrorbells     " Don't blink on error
 set visualbell t_vb= " Don't beep on error
 set relativenumber
+let mapleader=","
 
 " Load and Save the configuration file
 nnoremap <silent> <Leader>lv :e $MYVIMRC<CR>
