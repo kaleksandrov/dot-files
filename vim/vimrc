@@ -206,6 +206,7 @@ set history=1000     " remember more commands and search history
 set undolevels=1000  " use many muchos levels of undo
 set noerrorbells     " Don't blink on error
 set visualbell t_vb= " Don't beep on error
+set relativenumber
 
 " Load and Save the configuration file
 nnoremap <silent> <Leader>lv :e $MYVIMRC<CR>
@@ -234,14 +235,6 @@ nnoremap <silent> <leader>S :%s/\s\+$//ge<cr>
 
 " Delete white spaces on file save
 autocmd BufWritePre * :%s/\s\+$//ge
-
-" Quit window on <leader>q
-nnoremap <leader>qa :qa<CR>
-nnoremap <leader>qq :q<CR>
-nnoremap <leader>wq :wq<CR>
-nnoremap <leader>wqa :wqa<CR>
-nnoremap <leader>wa :wa<CR>
-nnoremap <Leader>w :w<CR>
 
 " Easier moving to start/end line
 nnoremap <leader>a ^
