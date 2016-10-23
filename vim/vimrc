@@ -327,7 +327,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 " ===      Set color scheme      ===
 " ==================================
 
-colo zmrok
+colo twilight
 
 " ==================================
 " ===     Configure NERD tree    ===
@@ -347,7 +347,7 @@ nnoremap <silent> <Leader>9 :TagbarToggle<CR>
 " ======    Configure Butane   =====
 " ==================================
 
-nnoremap qq :Bclose<CR>
+nnoremap <leader>q :Bclose<CR>
 
 " ==================================
 " ===    Configure CtrlP find    ===
