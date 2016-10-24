@@ -327,7 +327,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 " ===      Set color scheme      ===
 " ==================================
 
-colo twilight
+colo lucius
 
 " ==================================
 " ===     Configure NERD tree    ===
