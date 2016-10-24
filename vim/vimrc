@@ -348,6 +348,7 @@ nnoremap <silent> <Leader>9 :TagbarToggle<CR>
 " ==================================
 
 nnoremap <leader>q :Bclose<CR>
+nnoremap <leader>Q :Bclose!<CR>
 
 " ==================================
 " ===    Configure CtrlP find    ===
@@ -467,3 +468,9 @@ nnoremap k  gk
 nnoremap gk k
 nnoremap j  gj
 nnoremap gj j
+
+" Run ctags
+nnoremap <silent> <leader>rc :!ctags -R .<CR>
+
+" Format XML
+map <F5> :%s/<\([^>]\)*>/\r&\r/g<enter>:g/^$/d<enter>vat=
