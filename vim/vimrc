@@ -472,3 +472,7 @@ nnoremap <silent> <leader>rc :!ctags -R .<CR>
 
 " Format XML
 map <F5> :%s/<\([^>]\)*>/\r&\r/g<enter>:g/^$/d<enter>vat=
+
+" Reexecute the last substitude command
+nnoremap & :&&<CR>
+xnoremap & :&&<CR>
