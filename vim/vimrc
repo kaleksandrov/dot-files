@@ -82,6 +82,9 @@ Plugin 'vim-scripts/EasyGrep'
 
 Plugin 'pangloss/vim-javascript'
 
+Plugin 'othree/javascript-libraries-syntax.vim'
+let g:used_javascript_libs = 'angularjs,jquery,requirejs'
+
 Plugin 'ctrlpvim/ctrlp.vim'
 
 " A bunch of snippets (engine)
@@ -206,6 +209,7 @@ set undolevels=1000  " use many muchos levels of undo
 set noerrorbells     " Don't blink on error
 set visualbell t_vb= " Don't beep on error
 set relativenumber
+set foldcolumn=1     " show an additional column for fold indicator
 let mapleader=","
 
 " Load and Save the configuration file
@@ -223,7 +227,7 @@ nnoremap <silent> <Leader>sv :so $MYVIMRC<CR>
 " zn - open all
 " zm - close all
 " Toggle folded text and clear search result highlight
-nnoremap <silent> <space> @=(foldlevel('.')?'za':"\<space>")<CR>:noh<CR>
+nnoremap <silent> <space> :noh<CR>
 
 " tab for brackets
 nnoremap <tab> %
