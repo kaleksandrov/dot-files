@@ -202,7 +202,7 @@ set title
 set dir=~/.vim/sessions//
 set backupdir=~/.vim/backup//
 set undodir=~/.vim/undo//
-set nowrap
+set wrap
 set showmatch
 set history=1000     " remember more commands and search history
 set undolevels=1000  " use many muchos levels of undo
