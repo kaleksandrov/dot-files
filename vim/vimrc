@@ -87,8 +87,15 @@ let g:used_javascript_libs = 'angularjs,jquery,requirejs'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 
+" VIM utilities
+Plugin 'MarcWeber/vim-addon-mw-utils'
+
+" VIM utilities
+Plugin 'tomtom/tlib_vim'
+
 " A bunch of snippets (engine)
-Plugin 'SirVer/ultisnips'
+Plugin 'garbas/vim-snipmate'
+
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
@@ -309,15 +316,6 @@ nnoremap <leader>ll :SyntasticCheck<CR>
 nnoremap <leader>ln :lnext<CR>
 nnoremap <leader>lp :lprevious<CR>
 nnoremap <leader>lr :SyntasticReset<CR>
-
-" ==================================
-" =====  Configure sniputils  ======
-" ==================================
-
-let g:UltiSnipsExpandTrigger="<c-space>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
 
 " ==================================
 " =  Configure AirLine status bar  =
