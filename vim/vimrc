@@ -27,6 +27,9 @@ Plugin 'scrooloose/nerdcommenter'
 " Close a sinlge buffer without closing the window
 Plugin 'Soares/butane.vim'
 
+" Autocomplete functionality
+Plugin 'ervandew/supertab'
+
 " Fancy status bar
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -108,10 +111,6 @@ autocmd FileType less set omnifunc=csscomplete#CompleteCSS
 " Tern is a stand-alone code-analysis engine for JavaScript
 Plugin 'ternjs/tern_for_vim'
 
-" JS beautifier
-" <Leader>ff - format
-Plugin 'vim-scripts/jsbeautify'
-
 " Highlight the matching tag
 Plugin 'gregsexton/MatchTag'
 
@@ -130,7 +129,7 @@ Plugin 'gregsexton/MatchTag'
 Plugin 'tpope/vim-eunuch'
 
 " Support for typescript
-Plugin 'othree/typescript-vim'
+Plugin 'leafgarland/typescript-vim'
 
 " Update the CSS completion with latest standards
 Plugin 'othree/csscomplete.vim'
@@ -164,6 +163,11 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-abolish'
 
 Plugin 'jiangmiao/auto-pairs'
+
+" Perforce integration plugin
+Plugin 'nfvs/vim-perforce'
+
+Plugin 'vim-scripts/maven-plugin'
 
 call vundle#end()
 filetype plugin indent on
@@ -214,7 +218,6 @@ set noerrorbells     " Don't blink on error
 set visualbell t_vb= " Don't beep on error
 set relativenumber
 set foldcolumn=1     " show an additional column for fold indicator
-set spell            " Enable spell checker
 let mapleader=","
 
 " Load and Save the configuration file
@@ -417,6 +420,13 @@ noremap <Leader>y "+y
 
 " Paste from clipboard
 noremap <Leader>p "+p
+noremap <Leader>P "+P
+
+vnoremap <Leader>p "+p
+vnoremap <Leader>P "+P
+
+inoremap <Leader>p "+p
+inoremap <Leader>P "+P
 
 " ==================================
 " ===      Window navigation     ===
@@ -476,5 +486,3 @@ map <F5> :%s/<\([^>]\)*>/\r&\r/g<enter>:g/^$/d<enter>vat=
 " Reexecute the last substitude command
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
-
-nnoremap <C-]> g<C-]>
