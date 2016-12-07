@@ -1,0 +1,15 @@
+nnoremap x :q<CR>
+nnoremap X :undo<CR>
+
+nnoremap J :tabNext<CR>
+nnoremap K :tabNext<CR>
+nnoremap H :back<CR>
+nnoremap L :forward<CR>
+
+nnoremap ^ :tabfirst<CR>
+nnoremap $ :tablast<CR>
+
+noremap j 3<C-e>
+noremap k 3<C-y>
+
+set! javascript.options.jit.chrome=true
