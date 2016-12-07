@@ -2,7 +2,7 @@ nnoremap x :q<CR>
 nnoremap X :undo<CR>
 
 nnoremap J :tabNext<CR>
-nnoremap K :tabNext<CR>
+nnoremap K :tabnext<CR>
 nnoremap H :back<CR>
 nnoremap L :forward<CR>
 
