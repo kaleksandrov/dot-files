@@ -169,7 +169,13 @@ Plugin 'nfvs/vim-perforce'
 
 Plugin 'vim-scripts/maven-plugin'
 
-Plugin 'vimperator/vimperator.vim'
+" Expand abreviations
+Plugin 'mattn/emmet-vim'
+
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'nathanaelkane/vim-indent-guides'
+
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 filetype plugin indent on
@@ -427,8 +433,8 @@ noremap <Leader>P "+P
 vnoremap <Leader>p "+p
 vnoremap <Leader>P "+P
 
-inoremap <Leader>p "+p
-inoremap <Leader>P "+P
+inoremap <Leader>p <C-r>+
+inoremap <Leader>P <C-r>+
 
 " ==================================
 " ===      Window navigation     ===
