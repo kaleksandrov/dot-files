@@ -12,4 +12,8 @@ nnoremap $ :tablast<CR>
 noremap j 3<C-e>
 noremap k 3<C-y>
 
+nnoremap { <C-u>
+nnoremap } <C-d>
+
+set editor='vim'
 set! javascript.options.jit.chrome=true

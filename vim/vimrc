@@ -169,6 +169,8 @@ Plugin 'nfvs/vim-perforce'
 
 Plugin 'vim-scripts/maven-plugin'
 
+Plugin 'vimperator/vimperator.vim'
+
 call vundle#end()
 filetype plugin indent on
 
