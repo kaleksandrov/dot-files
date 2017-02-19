@@ -27,9 +27,6 @@ Plugin 'scrooloose/nerdcommenter'
 " Close a sinlge buffer without closing the window
 Plugin 'Soares/butane.vim'
 
-" Autocomplete functionality
-Plugin 'ervandew/supertab'
-
 " Fancy status bar
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -226,7 +223,8 @@ set noerrorbells     " Don't blink on error
 set visualbell t_vb= " Don't beep on error
 set relativenumber
 set foldcolumn=1     " show an additional column for fold indicator
-let mapleader=","
+
+inoremap <C-]> <ESC> " leave insert mode using both square brakets
 
 " Load and Save the configuration file
 nnoremap <silent> <Leader>lv :e $MYVIMRC<CR>
@@ -277,6 +275,16 @@ let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 
 autocmd BufEnter *.js set tw=79 sw=3 ts=3 sta et fo=croql
+autocmd BufEnter *.ts set tw=79 sw=3 ts=3 sta et fo=croql
+
+" ==================================
+" ===             XML            ===
+" ==================================
+
+autocmd BufEnter *.xml set tw=79 sw=3 ts=3 sta et fo=croql
+autocmd BufEnter *.html set tw=79 sw=3 ts=3 sta et fo=croql
+autocmd BufEnter *.css set tw=79 sw=3 ts=3 sta et fo=croql
+autocmd BufEnter *.scss set tw=79 sw=3 ts=3 sta et fo=croql
 
 " ==================================
 " ===     Configure Jedi-VIM     ===
@@ -338,7 +346,8 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 " ===      Set color scheme      ===
 " ==================================
 
-colo lucius
+"colo lucius
+colo zmrok
 
 " ==================================
 " ===     Configure NERD tree    ===
