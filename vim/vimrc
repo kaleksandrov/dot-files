@@ -112,17 +112,6 @@ Plugin 'ternjs/tern_for_vim'
 Plugin 'gregsexton/MatchTag'
 
 " UNIX file modification operations
-" :Remove
-" :Unlink
-" :Move
-" :Rename
-" :Chmod
-" :Mkdir
-" :Find
-" :Locate
-" :Wall
-" :SudoWrite
-" :SudoEdit
 Plugin 'tpope/vim-eunuch'
 
 " Support for typescript
@@ -138,33 +127,17 @@ Plugin 'heavenshell/vim-jsdoc'
 Plugin 'kshenoy/vim-signature'
 
 " Surround actions
-" <command><target><replacement>
-
-" Commands
-" * cs - Change Surroundings
-" * ds - Change Surroundings
-"
-" Targets
-" * symbol
-" * t - xml tag
 Plugin 'tpope/vim-surround'
 
 " Enchances the search and replace capabilities
 " :Subvert/address{,es}/reference{,s}/g
 " cr<case> - converts to the given case
-" cases
-" s - snake_case
-" m - MixedCase
-" c - camelCase
-" u - UPPER_CASE
 Plugin 'tpope/vim-abolish'
 
 Plugin 'jiangmiao/auto-pairs'
 
 " Perforce integration plugin
 Plugin 'nfvs/vim-perforce'
-
-Plugin 'vim-scripts/maven-plugin'
 
 " Expand abreviations
 Plugin 'mattn/emmet-vim'
@@ -496,6 +469,9 @@ nnoremap gj j
 
 " Run ctags
 nnoremap <silent> <leader>rc :!ctags -R .<CR>
+
+" Reset the <C-i> mapping as it for some reason doesn't work
+unmap <C-i>
 
 " Format XML
 map <F5> :%s/<\([^>]\)*>/\r&\r/g<enter>:g/^$/d<enter>vat=
