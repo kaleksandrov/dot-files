@@ -17,11 +17,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'daviddavis/vim-colorpack'
 
 " Easily comment lines
-"
-" <Leader>cc          Comment
-" <Leader>c<Space>    Toggle comment
-" <Leader>ci          Comments selected lines individually
-" <Leader>cs          Comments sexily
 Plugin 'scrooloose/nerdcommenter'
 
 " Close a sinlge buffer without closing the window
@@ -31,31 +26,10 @@ Plugin 'Soares/butane.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-" Adds formatting tools
-" Example: tabularize the selected text using '=' as a separator
-" :Tabularize /=
+" Tabularize the selected text using '=' as a separator
 Plugin 'godlygeek/tabular'
 
-" Go to command
-" let g:jedi#goto_command             = "<leader>d"
-"
-" Go to assignments
-" let g:jedi#goto_assignments_command = "<leader>g"
-"
-" Go to deffinition
-" let g:jedi#goto_definitions_command = ""
-"
-" Show docstring
-" let g:jedi#documentation_command    = "K"
-"
-" Show usages
-" let g:jedi#usages_command           = "<leader>n"
-"
-" Autocomplete
-" let g:jedi#completions_command      = "<C-Space>"
-"
-" Rename
-" let g:jedi#rename_command           = "<leader>r"
+" Python IDE
 Plugin 'davidhalter/jedi-vim'
 
 " Adds external support for linters.
@@ -67,21 +41,19 @@ Plugin 'L9'
 " Adds tab view that is showing the methods and fields of the opened class. The same as Outline in Eclipse.
 Plugin 'Tagbar'
 
+" Support for ActionScript
 Plugin 'actionscript'
 
-"<Leader>vv  - Grep for the word under the cursor, match all occurences, like |gstar|
-"<Leader>vV  - Grep for the word under the cursor, match whole word, like |star|
-"<Leader>va  - Like vv, but add to existing list
-"<Leader>vA  - Like vV, but add to existing list
-"<Leader>vr  - Perform a global search search on the word under the cursor and prompt for a pattern with which to replace it.
-"<Leader>vo  - Select the files to search in and set grep options
+" Integration with Grep and VimGrep
 Plugin 'vim-scripts/EasyGrep'
 
+" Support for JavaScript
 Plugin 'pangloss/vim-javascript'
 
+" Highlight some JavaScript libraries
 Plugin 'othree/javascript-libraries-syntax.vim'
-let g:used_javascript_libs = 'angularjs,jquery,requirejs'
 
+" Fuzzy file/buffer finder
 Plugin 'ctrlpvim/ctrlp.vim'
 
 " VIM utilities
@@ -102,8 +74,6 @@ Plugin 'othree/html5.vim'
 
 " LESS support
 Plugin 'groenewege/vim-less'
-autocmd BufNewFile,BufRead *.less set filetype=less
-autocmd FileType less set omnifunc=csscomplete#CompleteCSS
 
 " Tern is a stand-alone code-analysis engine for JavaScript
 Plugin 'ternjs/tern_for_vim'
@@ -130,10 +100,9 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'tpope/vim-surround'
 
 " Enchances the search and replace capabilities
-" :Subvert/address{,es}/reference{,s}/g
-" cr<case> - converts to the given case
 Plugin 'tpope/vim-abolish'
 
+" Highlith XML/HTML opening or closing tag
 Plugin 'jiangmiao/auto-pairs'
 
 " Perforce integration plugin
@@ -145,9 +114,30 @@ Plugin 'mattn/emmet-vim'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'nathanaelkane/vim-indent-guides'
 
+" Git support - adds sign infront of the file line indication if the text was
+" added/remove/edited
 Plugin 'airblade/vim-gitgutter'
 
-Plugin 'ervandew/supertab'
+" Git support - commands
+Plugin 'tpope/vim-fugitive'
+
+" Add Git support in NERDTree
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+" Support for GUI color schemes in the non-gui environments
+Plugin 'godlygeek/csapprox'
+
+" Enchances the VIM search
+Plugin 'henrik/vim-indexed-search'
+
+" Shows the VIM's undo tree (history)
+Plugin 'mbbill/undotree'
+
+" Corrects file path/name if wrong
+Plugin 'EinfachToll/DidYouMean'
+
+" Allows method parameters, array elements, etc. to be moved left or right
+Plugin 'AndrewRadev/sideways.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -205,16 +195,6 @@ inoremap <C-]> <ESC> " leave insert mode using both square brakets
 nnoremap <silent> <Leader>lv :e $MYVIMRC<CR>
 nnoremap <silent> <Leader>sv :so $MYVIMRC<CR>
 
-" zf - create
-" zd - delete
-" zo - open
-" zO - open recursively
-" zc - close
-" zC - close recursively
-" za - toggle
-" zA - toggle recursively
-" zn - open all
-" zm - close all
 " Toggle folded text and clear search result highlight
 nnoremap <silent> <space> :noh<CR>
 
@@ -223,7 +203,6 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 " Remove trailing whitespace on <leader>S
-"nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <silent> <leader>S :%s/\s\+$//ge<cr>
 
 " Delete white spaces on file save
@@ -252,14 +231,14 @@ let g:javascript_plugin_ngdoc = 1
 autocmd BufEnter *.js set tw=79 sw=3 ts=3 sta et fo=croql
 autocmd BufEnter *.ts set tw=79 sw=3 ts=3 sta et fo=croql
 
+let g:used_javascript_libs = 'angularjs,jquery,requirejs'
+
 " ==================================
 " ===             XML            ===
 " ==================================
 
 autocmd BufEnter *.xml set tw=79 sw=3 ts=3 sta et fo=croql
 autocmd BufEnter *.html set tw=79 sw=3 ts=3 sta et fo=croql
-autocmd BufEnter *.css set tw=79 sw=3 ts=3 sta et fo=croql
-autocmd BufEnter *.scss set tw=79 sw=3 ts=3 sta et fo=croql
 
 " ==================================
 " ===     Configure Jedi-VIM     ===
@@ -284,10 +263,14 @@ autocmd BufEnter *.js nnoremap <Leader>n :TernRefs<CR>
 autocmd BufEnter *.js nnoremap <Leader>r :TernRename<CR>
 
 " ==================================
-" ===  Configure CSS completion  ===
+" ===      Configure CSS         ===
 " ==================================
 
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
+autocmd BufNewFile,BufRead *.less set filetype=less
+autocmd FileType less set omnifunc=csscomplete#CompleteCSS
+autocmd BufEnter *.css set tw=79 sw=3 ts=3 sta et fo=croql
+autocmd BufEnter *.scss set tw=79 sw=3 ts=3 sta et fo=croql
 
 " ==================================
 " ===     Configure Syntastic    ===
@@ -321,8 +304,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 " ===      Set color scheme      ===
 " ==================================
 
-"colo lucius
-colo zmrok
+colo lucius
 
 " ==================================
 " ===     Configure NERD tree    ===
@@ -349,34 +331,6 @@ nnoremap <leader>Q :Bclose!<CR>
 " ===    Configure CtrlP find    ===
 " ==================================
 
-" Basic Usage:
-"
-"     Run :CtrlP or :CtrlP [starting-directory] to invoke CtrlP in find file mode.
-"     Run :CtrlPBuffer or :CtrlPMRU to start CtrlP in find buffer or find MRU file mode.
-"     Run :CtrlPMixed to search in Files, Buffers and MRU files at the same time.
-"
-" Check :help ctrlp-commands and :help ctrlp-extensions for other commands.
-" Once CtrlP is open:
-"
-"     Press <F5> to purge the cache for the current directory to get new files, remove deleted files and apply new ignore options.
-"     Press <c-f> and <c-b> to cycle between modes.
-"     Press <c-d> to switch to filename search instead of full path.
-"     Press <c-r> to switch to regexp mode.
-"     Use <c-j>, <c-k> or the arrow keys to navigate the result list.
-"     Use <c-t> or <c-v>, <c-x> to open the selected entry in a new tab or in a new split.
-"     Use <c-n>, <c-p> to select the next/previous string in the prompt's history.
-"     Use <c-y> to create a new file and its parent directories.
-"     Use <c-z> to mark/unmark multiple files and <c-o> to open them.
-"
-" Run :help ctrlp-mappings or submit ? in CtrlP for more mapping help.
-"
-"     Submit two or more dots .. to go up the directory tree by one or multiple levels.
-"     End the input with a colon : followed by a command to execute it after opening the file:
-"         Use :25 to jump to line 25.
-"         Use :/any\:\ string to jump to the first instance of any: string.
-"         Use :+setfiletype\ myfiletype|25 to set the filetype to myfiletype then jump to line 25.
-"         Use :diffthis when opening files marked by <c-z> to run :diffthis on the first 4 files.
-
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 0
@@ -387,21 +341,20 @@ nnoremap <C-e> :CtrlPBuffer<CR>
 " =    Configure JS Doc support    =
 " ==================================
 
-let g:jsdoc_allow_input_prompt          = 1      " Allow prompt for interactive input.
-let g:jsdoc_input_description           = 1      " Prompt for a function description
-let g:jsdoc_additional_descriptions     = 1      " Prompt for a value for @name, add it to the JSDoc block comment along with the @function tag.
-let g:jsdoc_return                      = 1      " Add the @return tag.
-let g:jsdoc_return_type                 = 1      " Prompt for and add a type for the aforementioned @return tag.
-let g:jsdoc_return_description          = 1      " Prompt for and add a description for the @return tag.
-let g:jsdoc_access_descriptions         = 1      " Set value to 1 to turn on access tags like @access <private|public>. Set value to 2 to turn on access tags like @<private|public>
-let g:jsdoc_underscore_private          = 1      " Set value to 1 to turn on detecting underscore starting functions as private convention
-let g:jsdoc_allow_shorthand             = 0      " Set value to 1 to allow ECMAScript6 shorthand syntax. Since ver 0.5.0 deprecated. Use let g:jsdoc_enable_es6 instead.
-let g:jsdoc_param_description_separator = ' '    " Characters used to separate @param name and description.
-let g:jsdoc_custom_args_hook            = {}     " Override default type and description. See help more detail.
-let g:jsdoc_custom_args_regex_only      = 0      " When using custom_args_hook, only match against regexes
-let g:jsdoc_type_hook                   = {}     " Allow to insert default description depending on the type.
-let g:jsdoc_enable_es6                  = 0      " Enable to use ECMAScript6's Shorthand function, Arrow function.
-"g:jsdoc_tags                        	see :h 	" Allow use of alternate tags (the ones that support synonyms) per JSDoc documentation. Can be changed on a per tag basis, for example: let g:jsdoc_tags = {} | let g:jsdoc_tags['param'] = 'arg'
+let g:jsdoc_allow_input_prompt          = 1
+let g:jsdoc_input_description           = 1
+let g:jsdoc_additional_descriptions     = 1
+let g:jsdoc_return                      = 1
+let g:jsdoc_return_type                 = 1
+let g:jsdoc_return_description          = 1
+let g:jsdoc_access_descriptions         = 1
+let g:jsdoc_underscore_private          = 1
+let g:jsdoc_allow_shorthand             = 0
+let g:jsdoc_param_description_separator = ' '
+let g:jsdoc_custom_args_hook            = {}
+let g:jsdoc_custom_args_regex_only      = 0
+let g:jsdoc_type_hook                   = {}
+let g:jsdoc_enable_es6                  = 0
 
 " ==================================
 " = Configure clipboard management =
@@ -419,6 +372,19 @@ vnoremap <Leader>P "+P
 
 inoremap <Leader>p <C-r>+
 inoremap <Leader>P <C-r>+
+
+" ==================================
+" ===          Undotree          ===
+" ==================================
+
+nnoremap <F5> :UndotreeToggle<cr>
+
+" ==================================
+" ===     Configure behavior     ===
+" ==================================
+
+nnoremap <Leader>sl :SidewaysLeft
+nnoremap <Leader>sr :SidewaysRight
 
 " ==================================
 " ===      Window navigation     ===
@@ -444,14 +410,14 @@ inoremap <C-Y> <C-X><C-Y>
 
 " start of line
 cnoremap <C-a> <Home>
-" back one character
-cnoremap <C-h> <Left>
-" delete character under cursor
-cnoremap <C-D> <Del>
 " end of line
 cnoremap <C-e> <End>
+" back one character
+cnoremap <C-h> <Left>
 " forward one character
 cnoremap <C-l> <Right>
+" delete character under cursor
+cnoremap <C-d> <Del>
 " recall newer command-line
 cnoremap <C-n> <Down>
 " recall previous (older) command-line
@@ -474,10 +440,3 @@ nnoremap <silent> <leader>rc :!ctags -R .<CR>
 
 " Reset the <C-i> mapping as it for some reason doesn't work
 unmap <C-i>
-
-" Format XML
-map <F5> :%s/<\([^>]\)*>/\r&\r/g<enter>:g/^$/d<enter>vat=
-
-" Reexecute the last substitude command
-nnoremap & :&&<CR>
-xnoremap & :&&<CR>
