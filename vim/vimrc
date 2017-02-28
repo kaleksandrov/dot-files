@@ -383,8 +383,8 @@ nnoremap <F5> :UndotreeToggle<cr>
 " ===     Configure behavior     ===
 " ==================================
 
-nnoremap <Leader>sl :SidewaysLeft
-nnoremap <Leader>sr :SidewaysRight
+nnoremap <Leader>sl :SidewaysLeft<CR>
+nnoremap <Leader>sr :SidewaysRight<CR>
 
 " ==================================
 " ===      Window navigation     ===
