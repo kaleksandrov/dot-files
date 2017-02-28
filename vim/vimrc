@@ -147,6 +147,8 @@ Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'airblade/vim-gitgutter'
 
+Plugin 'ervandew/supertab'
+
 call vundle#end()
 filetype plugin indent on
 
