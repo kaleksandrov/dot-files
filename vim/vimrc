@@ -196,11 +196,7 @@ nnoremap <silent> <Leader>lv :e $MYVIMRC<CR>
 nnoremap <silent> <Leader>sv :so $MYVIMRC<CR>
 
 " Toggle folded text and clear search result highlight
-nnoremap <silent> <space> :noh<CR>
-
-" tab for brackets
-nnoremap <tab> %
-vnoremap <tab> %
+nnoremap <silent> <space> :noh<CR>za
 
 " Remove trailing whitespace on <leader>S
 nnoremap <silent> <leader>S :%s/\s\+$//ge<cr>
@@ -437,6 +433,3 @@ nnoremap gj j
 
 " Run ctags
 nnoremap <silent> <leader>rc :!ctags -R .<CR>
-
-" Reset the <C-i> mapping as it for some reason doesn't work
-unmap <C-i>
