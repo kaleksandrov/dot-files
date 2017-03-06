@@ -1,0 +1,20 @@
+export PATH=$HOME/.bin:$PATH
+
+export NVM_DIR="$HOME/.nvm"
+
+alias gs='git status '
+alias ga='git add '
+alias gb='git branch '
+alias gc='git commit'
+alias gca='git commit -a'
+alias gd='git diff'
+alias go='git checkout '
+
+function nvm {
+    which nvm
+    if [ $? == 1 ]
+    then
+        . "/usr/local/opt/nvm/nvm.sh"
+    fi
+    \nvm
+}
