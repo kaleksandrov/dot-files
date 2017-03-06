@@ -9,6 +9,7 @@ alias gc='git commit'
 alias gca='git commit -a'
 alias gd='git diff'
 alias go='git checkout '
+alias gpom='git push origin master'
 
 function nvm {
     which nvm
