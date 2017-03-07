@@ -139,6 +139,15 @@ Plugin 'EinfachToll/DidYouMean'
 " Allows method parameters, array elements, etc. to be moved left or right
 Plugin 'AndrewRadev/sideways.vim'
 
+"" Beter JSON
+"Plugin 'elzr/vim-json'
+
+" Yet Another JavaScript Syntax for Vim
+Plugin 'othree/yajs.vim'
+
+" Angular stuff
+Plugin 'burnettk/vim-angular'
+
 call vundle#end()
 filetype plugin indent on
 
