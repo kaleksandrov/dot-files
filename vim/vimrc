@@ -433,3 +433,5 @@ nnoremap gj j
 
 " Run ctags
 nnoremap <silent> <leader>rc :!ctags -R .<CR>
+
+nnoremap ; :
