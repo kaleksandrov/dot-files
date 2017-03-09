@@ -148,6 +148,18 @@ Plugin 'othree/yajs.vim'
 " Angular stuff
 Plugin 'burnettk/vim-angular'
 
+" TypeScrupt support - awsome plugin
+Plugin 'Quramy/tsuquyomi'
+
+" Async execution library
+Plugin 'Shougo/vimproc.vim'
+
+" Provides syntax highlight for contents in Template Strings.
+Plugin 'Quramy/vim-js-pretty-template'
+
+" Provides function of indent for both JavaScript and TypeScript
+Plugin 'jason0x43/vim-js-indent'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -390,6 +402,12 @@ nnoremap <F5> :UndotreeToggle<cr>
 
 nnoremap <Leader>sl :SidewaysLeft<CR>
 nnoremap <Leader>sr :SidewaysRight<CR>
+
+" ==================================
+" ===      TypeScript IDE        ===
+" ==================================
+
+let g:tsuquyomi_completion_detail = 1
 
 " ==================================
 " ===      Window navigation     ===
