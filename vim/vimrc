@@ -118,9 +118,6 @@ Plugin 'nathanaelkane/vim-indent-guides'
 " added/remove/edited
 Plugin 'airblade/vim-gitgutter'
 
-" Git support - commands
-Plugin 'tpope/vim-fugitive'
-
 " Add Git support in NERDTree
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
