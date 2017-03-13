@@ -213,8 +213,11 @@ inoremap <C-]> <ESC> " leave insert mode using both square brakets
 nnoremap <silent> <Leader>lv :e $MYVIMRC<CR>
 nnoremap <silent> <Leader>sv :so $MYVIMRC<CR>
 
+" Toggle folded text
+nnoremap <silent> <S-space> za
+
 " Toggle folded text and clear search result highlight
-nnoremap <silent> <space> :noh<CR>za
+nnoremap <silent> <space> :noh<CR>
 
 " Remove trailing whitespace on <leader>S
 nnoremap <silent> <leader>S :%s/\s\+$//ge<cr>
