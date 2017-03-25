@@ -157,6 +157,12 @@ Plugin 'Quramy/vim-js-pretty-template'
 " Provides function of indent for both JavaScript and TypeScript
 Plugin 'jason0x43/vim-js-indent'
 
+" The missing motion for Vim
+Plugin 'justinmk/vim-sneak'
+
+" A tool for aligning text by some character.
+Plugin 'tommcdo/vim-lion'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -234,6 +240,17 @@ vnoremap <leader>e $<Left>
 " New line
 inoremap <S-Enter> <Esc>o
 inoremap <C-Enter> <Esc>O
+
+" ==================================
+" ===     Configure  sneak       ===
+" ==================================
+
+nmap f <Plug>Sneak_s
+nmap F <Plug>Sneak_S
+xmap f <Plug>Sneak_s
+xmap F <Plug>Sneak_S
+omap f <Plug>Sneak_s
+omap F <Plug>Sneak_S
 
 " ==================================
 " ===     Configure VIM JS       ===
@@ -447,12 +464,6 @@ cnoremap <C-d> <Del>
 cnoremap <C-n> <Down>
 " recall previous (older) command-line
 cnoremap <C-p> <Up>
-
-" Navigate throug buffers
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> ]B :blast<CR>
 
 " Move display lines instead of real lines
 nnoremap k  gk
