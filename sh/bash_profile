@@ -1,5 +1,9 @@
+#/bin/bash
+
 export PATH=$HOME/.bin:$PATH
 export TERM='xterm-256color'
+
+# Git aliases
 
 alias gs='git status '
 alias ga='git add '
@@ -13,3 +17,14 @@ alias gp='git push'
 alias gpom='git push origin master'
 alias gu='git pull'
 alias gf='git fetch'
+
+# Brew aliases
+
+alias bi='brew install '
+alias bs='brew search '
+alias bh='brew home '
+alias bu='brew update '
+alias bg='brew upgrade '
+alias bci='brew cask install '
+alias bcs='brew cask search '
+alias bch='brew cask home '
