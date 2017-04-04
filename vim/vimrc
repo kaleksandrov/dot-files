@@ -29,9 +29,6 @@ Plugin 'vim-airline/vim-airline-themes'
 " Tabularize the selected text using '=' as a separator
 Plugin 'godlygeek/tabular'
 
-" Python IDE
-Plugin 'davidhalter/jedi-vim'
-
 " Adds external support for linters.
 Plugin 'scrooloose/syntastic'
 
@@ -63,7 +60,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 
 " A bunch of snippets (engine)
-Plugin 'garbas/vim-snipmate'
+Plugin 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
@@ -74,9 +71,6 @@ Plugin 'othree/html5.vim'
 
 " LESS support
 Plugin 'groenewege/vim-less'
-
-" Tern is a stand-alone code-analysis engine for JavaScript
-Plugin 'ternjs/tern_for_vim'
 
 " Highlight the matching tag
 Plugin 'gregsexton/MatchTag'
@@ -90,35 +84,21 @@ Plugin 'leafgarland/typescript-vim'
 " Update the CSS completion with latest standards
 Plugin 'othree/csscomplete.vim'
 
-" JSDOC support
-Plugin 'heavenshell/vim-jsdoc'
-
 " Manage marks
 Plugin 'kshenoy/vim-signature'
 
 " Surround actions
 Plugin 'tpope/vim-surround'
 
-" Enchances the search and replace capabilities
-Plugin 'tpope/vim-abolish'
-
-" Highlith XML/HTML opening or closing tag
-Plugin 'jiangmiao/auto-pairs'
-
-" Perforce integration plugin
-Plugin 'nfvs/vim-perforce'
-
 " Expand abreviations
 Plugin 'mattn/emmet-vim'
-
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'nathanaelkane/vim-indent-guides'
 
 " Git support - adds sign infront of the file line indication if the text was
 " added/remove/edited
 Plugin 'airblade/vim-gitgutter'
 
 " Add Git support in NERDTree
+" May be slow sometimes
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " Support for GUI color schemes in the non-gui environments
@@ -130,38 +110,11 @@ Plugin 'henrik/vim-indexed-search'
 " Shows the VIM's undo tree (history)
 Plugin 'mbbill/undotree'
 
-" Corrects file path/name if wrong
-Plugin 'EinfachToll/DidYouMean'
-
 " Allows method parameters, array elements, etc. to be moved left or right
 Plugin 'AndrewRadev/sideways.vim'
 
-"" Beter JSON
-"Plugin 'elzr/vim-json'
-
-" Yet Another JavaScript Syntax for Vim
-Plugin 'othree/yajs.vim'
-
-" Angular stuff
-Plugin 'burnettk/vim-angular'
-
-" TypeScrupt support - awsome plugin
-Plugin 'Quramy/tsuquyomi'
-
-" Async execution library
-Plugin 'Shougo/vimproc.vim'
-
-" Provides syntax highlight for contents in Template Strings.
-Plugin 'Quramy/vim-js-pretty-template'
-
-" Provides function of indent for both JavaScript and TypeScript
-Plugin 'jason0x43/vim-js-indent'
-
-" The missing motion for Vim
-Plugin 'justinmk/vim-sneak'
-
-" A tool for aligning text by some character.
-Plugin 'tommcdo/vim-lion'
+" Awsome library for autocompletion
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
@@ -242,17 +195,6 @@ inoremap <S-Enter> <Esc>o
 inoremap <C-Enter> <Esc>O
 
 " ==================================
-" ===     Configure  sneak       ===
-" ==================================
-
-nmap f <Plug>Sneak_s
-nmap F <Plug>Sneak_S
-xmap f <Plug>Sneak_s
-xmap F <Plug>Sneak_S
-omap f <Plug>Sneak_s
-omap F <Plug>Sneak_S
-
-" ==================================
 " ===     Configure VIM JS       ===
 " ==================================
 
@@ -268,6 +210,14 @@ autocmd BufEnter *.ts set tw=79 sw=3 ts=3 sta et fo=croql
 let g:used_javascript_libs = 'angularjs,jquery,requirejs'
 
 " ==================================
+" ===   Configure ultisnip       ===
+" ==================================
+
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" ==================================
 " ===             XML            ===
 " ==================================
 
@@ -275,7 +225,7 @@ autocmd BufEnter *.xml set tw=79 sw=3 ts=3 sta et fo=croql
 autocmd BufEnter *.html set tw=79 sw=3 ts=3 sta et fo=croql
 
 " ==================================
-" ===     Configure Jedi-VIM     ===
+" ===     Configure Pythin       ===
 " ==================================
 
 autocmd FileType python setlocal completeopt-=preview
@@ -287,14 +237,14 @@ autocmd BufEnter *.sc setlocal filetype=python
 " ===     Configure Tern JS      ===
 " ==================================
 
-autocmd BufEnter *.js nnoremap <Leader>dd :TernDef<CR>
-autocmd BufEnter *.js nnoremap <Leader>dp :TernDefPreview<CR>
-autocmd BufEnter *.js nnoremap <Leader>ds :TernDefSplit<CR>
-autocmd BufEnter *.js nnoremap <Leader>dt :TernDefTab<CR>
-autocmd BufEnter *.js nnoremap <Leader>kk :TernDoc<CR>
-autocmd BufEnter *.js nnoremap <Leader>kb :TernDocBrowse<CR>
-autocmd BufEnter *.js nnoremap <Leader>n :TernRefs<CR>
-autocmd BufEnter *.js nnoremap <Leader>r :TernRename<CR>
+nnoremap <Leader>dd :TernDef<CR>
+nnoremap <Leader>dp :TernDefPreview<CR>
+nnoremap <Leader>ds :TernDefSplit<CR>
+nnoremap <Leader>dt :TernDefTab<CR>
+nnoremap <Leader>kk :TernDoc<CR>
+nnoremap <Leader>kb :TernDocBrowse<CR>
+nnoremap <Leader>n :TernRefs<CR>
+nnoremap <Leader>r :TernRename<CR>
 
 " ==================================
 " ===      Configure CSS         ===
@@ -361,7 +311,6 @@ nnoremap <silent> <Leader>9 :TagbarToggle<CR>
 " ==================================
 
 nnoremap <leader>q :Bclose<CR>
-nnoremap <leader>Q :Bclose!<CR>
 
 " ==================================
 " ===    Configure CtrlP find    ===
@@ -372,25 +321,6 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 0
 
 nnoremap <C-e> :CtrlPBuffer<CR>
-
-" ==================================
-" =    Configure JS Doc support    =
-" ==================================
-
-let g:jsdoc_allow_input_prompt          = 1
-let g:jsdoc_input_description           = 1
-let g:jsdoc_additional_descriptions     = 1
-let g:jsdoc_return                      = 1
-let g:jsdoc_return_type                 = 1
-let g:jsdoc_return_description          = 1
-let g:jsdoc_access_descriptions         = 1
-let g:jsdoc_underscore_private          = 1
-let g:jsdoc_allow_shorthand             = 0
-let g:jsdoc_param_description_separator = ' '
-let g:jsdoc_custom_args_hook            = {}
-let g:jsdoc_custom_args_regex_only      = 0
-let g:jsdoc_type_hook                   = {}
-let g:jsdoc_enable_es6                  = 0
 
 " ==================================
 " = Configure clipboard management =
@@ -413,7 +343,7 @@ inoremap <Leader>P <C-r>+
 " ===          Undotree          ===
 " ==================================
 
-nnoremap <F5> :UndotreeToggle<cr>
+nnoremap <Leader>5 :UndotreeToggle<cr>
 
 " ==================================
 " ===     Configure behavior     ===
@@ -421,12 +351,6 @@ nnoremap <F5> :UndotreeToggle<cr>
 
 nnoremap <Leader>sl :SidewaysLeft<CR>
 nnoremap <Leader>sr :SidewaysRight<CR>
-
-" ==================================
-" ===      TypeScript IDE        ===
-" ==================================
-
-let g:tsuquyomi_completion_detail = 1
 
 " ==================================
 " ===      Window navigation     ===
