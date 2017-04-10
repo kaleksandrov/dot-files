@@ -3,20 +3,22 @@
 export PATH=$HOME/.bin:$PATH
 export TERM='xterm-256color'
 
+# Common aliases
+
+alias ll='ls -l '
+alias la='ls -la '
+alias rm='rm -v '
+alias cp='cp -v '
+
 # Git aliases
 
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
-alias gba='git branch -a '
 alias gc='git commit '
-alias gcm='git commit -m '
-alias gca='git commit -a '
-alias gcam='git commit -a -m '
 alias gd='git diff '
 alias go='git checkout '
 alias gp='git push '
-alias gpom='git push origin master '
 alias gu='git pull '
 alias gf='git fetch '
 alias gm='git merge '
@@ -39,3 +41,12 @@ alias bcs='brew cask search '
 alias bch='brew cask home '
 alias bcu='brew cask uninstall '
 alias bcz='brew cask zap '
+
+# Perforce aliases
+
+alias p4w='p4 workspace '
+alias p4a='p4 add '
+alias p4e='p4 edit '
+alias p4d='p4 delete '
+alias p4c='p4 change '
+alias p4dc='p4 describe '

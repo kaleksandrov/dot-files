@@ -116,6 +116,9 @@ Plugin 'AndrewRadev/sideways.vim'
 " Awsome library for autocompletion
 Plugin 'Valloric/YouCompleteMe'
 
+" Angular stuff
+Plugin 'burnettk/vim-angular'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -361,12 +364,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-" Don't use the arrow keys!!
-noremap <up> <nop>
-noremap <down> <nop>
-noremap <left> <nop>
-noremap <right> <nop>
 
 " Scrolling in Insert mode
 inoremap <C-E> <C-X><C-E>
