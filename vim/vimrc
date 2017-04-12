@@ -119,6 +119,12 @@ Plugin 'Valloric/YouCompleteMe'
 " Angular stuff
 Plugin 'burnettk/vim-angular'
 
+" Highlith XML/HTML opening or closing tag
+Plugin 'jiangmiao/auto-pairs'
+
+" Perforce integration plugin
+Plugin 'nfvs/vim-perforce'
+
 call vundle#end()
 filetype plugin indent on
 
