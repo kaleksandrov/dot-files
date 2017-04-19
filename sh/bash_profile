@@ -52,3 +52,37 @@ alias p4e='p4 edit '
 alias p4d='p4 delete '
 alias p4c='p4 change '
 alias p4dc='p4 describe '
+
+# Reviewboard
+
+alias post-review='/build/apps/bin/post-review --diff-only --no-make-review-diff '
+
+# Toolchain utils
+
+TOOLCHAIN=/build/toolchain
+APPS=/build/apps
+
+function load-toolchain {
+    if mount | grep toolchain > /dev/null
+    then
+        echo "Toolchain already mounted"
+    else
+        OS=$(uname)
+        if [ $OS == "Darwin"  ]
+        then
+            sudo mount -t nfs build-toolchain.eng.vmware.com:/toolchain $TOOLCHAIN
+            sudo mount -t nfs build-toolchain.eng.vmware.com:/apps $APPS
+        elif [ $OS == "Linux"  ]
+        then
+            echo "Not implememnted yet..."
+        else
+            echo "Unknonw OS: $OS"
+        fi
+    fi
+}
+
+function unload-toolchain {
+    sudo umount $TOOLCHAIN
+    sudo umount $APPS
+}
+
