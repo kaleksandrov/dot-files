@@ -74,9 +74,10 @@ function load-toolchain {
             sudo mount -t nfs build-toolchain.eng.vmware.com:/apps $APPS
         elif [ $OS == "Linux"  ]
         then
-            echo "Not implememnted yet..."
+            sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-toolchain/toolchain /build/toolchain
+            sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-apps/apps /build/apps
         else
-            echo "Unknonw OS: $OS"
+            echo "Unsupported operating system: $OS"
         fi
     fi
 }
