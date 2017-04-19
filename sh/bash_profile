@@ -23,6 +23,8 @@ alias gu='git pull '
 alias gf='git fetch '
 alias gm='git merge '
 alias gmt='git mergetool '
+alias gl='git log '
+alias gll='git log --oneline '
 
 # Brew aliases
 
