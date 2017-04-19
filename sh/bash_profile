@@ -15,6 +15,7 @@ alias cp='cp -v '
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
+alias gbm="git branch -a | grep $(whoami)"
 alias gc='git commit '
 alias gd='git diff '
 alias go='git checkout '
@@ -74,8 +75,8 @@ function load-toolchain {
             sudo mount -t nfs build-toolchain.eng.vmware.com:/apps $APPS
         elif [ $OS == "Linux"  ]
         then
-            sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-toolchain/toolchain /build/toolchain
-            sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-apps/apps /build/apps
+            sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-toolchain/toolchain $TOOLCHAIN
+            sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-apps/apps $APPS
         else
             echo "Unsupported operating system: $OS"
         fi
