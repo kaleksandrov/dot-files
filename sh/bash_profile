@@ -53,6 +53,15 @@ alias p4d='p4 delete '
 alias p4c='p4 change '
 alias p4dc='p4 describe '
 
+# Maven aliases
+
+alias mvnci='mvn clean install -Dmaven.test.skip=true '
+alias mvncit='mvn clean install '
+alias mvnc='mvn clean '
+alias mvni='mvn install -Dmaven.test.skip=true '
+alias mvnit='mvn install '
+alias mvncih5='mvn clean install -Dmaven.test.skip=true -Pfull,gobuild,h5'
+
 # Reviewboard
 
 alias post-review='/build/apps/bin/post-review --diff-only --no-make-review-diff '
