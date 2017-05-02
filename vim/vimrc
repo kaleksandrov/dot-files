@@ -113,8 +113,10 @@ Plugin 'mbbill/undotree'
 " Allows method parameters, array elements, etc. to be moved left or right
 Plugin 'AndrewRadev/sideways.vim'
 
-" Awsome library for autocompletion
-Plugin 'Valloric/YouCompleteMe'
+if v:version > 750
+    " Awsome library for autocompletion
+    Plugin 'Valloric/YouCompleteMe'
+endif
 
 " Angular stuff
 Plugin 'burnettk/vim-angular'
