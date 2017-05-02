@@ -53,11 +53,11 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 " Fuzzy file/buffer finder
 Plugin 'ctrlpvim/ctrlp.vim'
 
-" VIM utilities
-Plugin 'MarcWeber/vim-addon-mw-utils'
+"" VIM utilities
+"Plugin 'MarcWeber/vim-addon-mw-utils'
 
-" VIM utilities
-Plugin 'tomtom/tlib_vim'
+"" VIM utilities
+"Plugin 'tomtom/tlib_vim'
 
 " A bunch of snippets (engine)
 "Plugin 'SirVer/ultisnips'
