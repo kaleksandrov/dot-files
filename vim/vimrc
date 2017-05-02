@@ -53,14 +53,14 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 " Fuzzy file/buffer finder
 Plugin 'ctrlpvim/ctrlp.vim'
 
-"" VIM utilities
-"Plugin 'MarcWeber/vim-addon-mw-utils'
-
-"" VIM utilities
-"Plugin 'tomtom/tlib_vim'
-
 " A bunch of snippets (engine)
-"Plugin 'SirVer/ultisnips'
+if v:version > 740
+    Plugin 'SirVer/ultisnips'
+else
+    Plugin 'MarcWeber/vim-addon-mw-utils'
+    Plugin 'tomtom/tlib_vim'
+    Plugin 'garbas/vim-snipmate'
+endif
 
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
@@ -116,6 +116,8 @@ Plugin 'AndrewRadev/sideways.vim'
 if v:version > 750
     " Awsome library for autocompletion
     Plugin 'Valloric/YouCompleteMe'
+else
+    Plugin 'davidhalter/jedi-vim'
 endif
 
 " Angular stuff
