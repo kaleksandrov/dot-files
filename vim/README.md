@@ -13,13 +13,24 @@ This is my vim cofiguration. I hope you will find it useful :)
 1. Run ```:PluginInstall```. This will install all plugins described in the .vimrc file.
 
 ## Plugins
-1. [VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim) - Vundle is short for Vim bundle and is a Vim plugin manager.
+1. [VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim) - Vim plugin manager
     * Install plugins  - ```:PluginInstall```
     * Uninstall plugins - ```:PluginClean```
     * Update plugins ```:PluginUpdate```
-1. scrooloose/nerdtree - File tree navigator
-1. daviddavis/vim-colorpack - Additional color themese
-1. scrooloose/nerdcommenter = Shortcuts for (un)commenting lines/sections for different languages
+1. [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) - Allows you to explore your filesystem and to open files and directories. It presents the filesystem to you in the form of a tree which you manipulate with the keyboard and/or mouse. It also allows you to perform simple filesystem operations.
+    * Toggle navigator panel - ```<leader>0```
+1. [daviddavis/vim-colorpack](https://github.com/daviddavis/vim-colorpack) - Additional color themes
+1. [scrooloose/nerdcommenter](https://github.com/scrooloose/nerdcommenter) = Shortcuts for (un)commenting lines/sections for different languages
+    * Comment out the current line or text selected in visual mode. - ```<leader>cc```
+    * Same as cc but forces nesting. - ```<leader>cn```
+    * Toggles the comment state of the selected line(s). If the topmost selected line is commented, all selected lines are uncommented and vice versa. - ```<leader>c<space>```
+    * Comments the given lines using only one set of multipart delimiters. - ```<leader>cm```
+    * Toggles the comment state of the selected line(s) individually. - ```<leader>ci```
+    * Comments out the selected lines with a pretty block formatted layout. - ```<leader>cs```
+    * Same as cc except that the commented line(s) are yanked first. - ```<leader>cy```
+    * Comments the current line from the cursor to the end of line. - ```<leader>c$```
+    * Adds comment delimiters to the end of line and goes into insert mode between them. - ```<leader>cA```
+    * Uncomments the selected line(s). - ```<leaeder>cu```
 1. Soares/butane.vim - Enchances buffer support
 1. vim-airline/vim-airline - Cool status line
 1. vim-airline/vim-airline-themes - Color themese for the status line
