@@ -11,6 +11,8 @@ This is my vim cofiguration. I hope you will find it useful :)
 1. Copy the vimrc file: ```ln -s <PATH-TO-PROJECT>/dot-files/vim/vimrc ~/.vimrc```
 1. Start vim/gvim
 1. Run ```:PluginInstall```. This will install all plugins described in the .vimrc file.
+1. If you want to use the ```YouCompleteMe``` plugin check its release notes in order to install its server part
+1. If you want to use the ```TernForVim``` plugin check its release notes in order to install its server part
 
 ## Plugin list
 1. VundleVim/Vundle.vim
@@ -58,20 +60,20 @@ This is my vim cofiguration. I hope you will find it useful :)
 
 ## Plugin details
 
-### [VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim)
+### [Vundle.vim](https://github.com/VundleVim/Vundle.vim)
 Vim plugin manager
 * ```:PluginInstall``` - Install plugins
 * ```:PluginClean```   - Uninstall plugins
 * ```:PluginUpdate```  - Update plugins
 
-### [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
+### [nerdtree](https://github.com/scrooloose/nerdtree)
 Allows you to explore your filesystem and to open files and directories. It presents the filesystem to you in the form of a tree which you manipulate with the keyboard and/or mouse. It also allows you to perform simple filesystem operations.
 * ```<leader>0``` - Toggle navigator panel
 
-### [daviddavis/vim-colorpack](https://github.com/daviddavis/vim-colorpack)
+### [vim-colorpack](https://github.com/daviddavis/vim-colorpack)
 Additional color themes
 
-### [scrooloose/nerdcommenter](https://github.com/scrooloose/nerdcommenter)
+### [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 Shortcuts for (un)commenting lines/sections for different languages
 * ```<leader>cc```       - Comment out the current line or text selected in visual mode.
 * ```<leader>cn```       - Same as cc but forces nesting.
@@ -84,34 +86,38 @@ Shortcuts for (un)commenting lines/sections for different languages
 * ```<leader>cA```       - Adds comment delimiters to the end of line and goes into insert mode between them.
 * ```<leaeder>cu```      - Uncomments the selected line(s).
 
-### [Soares/butane.vim](https://github.com/Soares/butane.vim)
+### [butane.vim](https://github.com/Soares/butane.vim)
 Currently Butane provides only one simple command, the Bclose command, which closes a buffer without changing the layout of your windows.
 * ```<leader>q``` - Close a buffer
 
-### [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)
+### [vim-airline](https://github.com/vim-airline/vim-airline)
 Lean & mean status/tabline for vim that's light as air.
 
-### [vim-airline/vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
+### [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
 Color themese for the status line
 
-### [godlygeek/tabular](https://github.com/godlygeek/tabular)
+### [tabular](https://github.com/godlygeek/tabular)
 Line up text based on a character.
 * ```:Tabularize /<character>``` - Line up
 
-### [scrooloose/syntastic](https://github.com/vim-syntastic/syntastic)
+### [syntastic](https://github.com/vim-syntastic/syntastic)
 Syntastic is a syntax checking plugin for Vim
+* ```<leader>ll``` - Check for errors
+* ```<leader>ln``` - Go to the next error
+* ```<leader>lp``` - Go to the previous error
+* ```<leader>lr``` - Reset errors
 
 ### [L9](http://www.vim.org/scripts/script.php?script_id=3252)
 A Vim-script library, which provides some utility functions and commands for programming in Vim
 
-### [majutsushi/tagbar](https://github.com/majutsushi/tagbar)
+### [tagbar](https://github.com/majutsushi/tagbar)
 Provides an easy way to browse the tags of the current file and get an overview of its structure
 * ```<leader>9``` - Toggle tagbar panel
 
 ### actionscript
 ActionScript support
 
-### [vim-scripts/EasyGrep](https://github.com/vim-scripts/EasyGrep)
+### [EasyGrep](https://github.com/vim-scripts/EasyGrep)
 Plugin for performing search and replace operations through multiple files. Vim already has builtin support for searching through files with its 'vimgrep' and 'grep' commands, but EasyGrep makes using them much, much easier. It also provides a powerful "Replace in Files" operation, something that is not very easy to do in Vim by default. With EasyGrep, you can specify with high-precision exactly the type of files you want to search, whether it be all files, only open buffers, only files matching a pattern, etc. Additionally, you can easily specify searching through hidden files, case-sensitivity, performing a recursive search, and many more options that make searching more easy.
 * Keymappings:
     * ```<Leader>vv``` - Grep for the word under the cursor, match all occurences, like |gstar|
@@ -128,10 +134,10 @@ Plugin for performing search and replace operations through multiple files. Vim 
     * ```:ReplaceUndo                   ``` - Undoes the last :Replace operation.  Does not stack successive searches; only the last replace may be undone.  This function may not work well when edits are made between a call to Replace and a call to ReplaceUndo.
     * ```:GrepOptions [arg]             ``` - Open a window to set grep options.
 
-### [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript)
+### [vim-javascript](https://github.com/pangloss/vim-javascript)
 JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
 
-### [othree/javascript-libraries-syntax.vim](https://github.com/othree/javascript-libraries-syntax.vim)
+### [javascript-libraries-syntax.vim](https://github.com/othree/javascript-libraries-syntax.vim)
 Syntax file for JavaScript libraries.
 * jQuery
 * underscore.js
@@ -152,7 +158,7 @@ Syntax file for JavaScript libraries.
 * Vue
 * d3
 
-### [ctrlpvim/ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
+### [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
 Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 * ```<c-p>```                            -  Open a file finder
 * ```<c-e>```                            -  Open a buffer finder
@@ -166,25 +172,32 @@ Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 * ```<c-z>```                            -  Mark/unmark multiple files
 * ```<c-o>```                            -  Open marked files
 
-### [SirVer/ultisnips](https://github.com/SirVer/ultisnips)
+### [ultisnips](https://github.com/SirVer/ultisnips)
 The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!
 
-### [honza/vim-snippets](https://github.com/honza/vim-snippets)
-Snippets files for various programming languages
+### [MarcWeber/vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
 
-### [othree/html5-syntax.vim](https://github.com/othree/html5-syntax.vim)
+### [tomtom/tlib_vim](https://github.com/tomtom/tlib_vim)
+Some utility functions needed by **vim-snipmate**
+
+### [garbas/vim-snipmate](https://github.com/garbas/vim-snipmate)
+
+### [vim-snippets](https://github.com/honza/vim-snippets)
+Provide support for textual snippets, similar to TextMate or other Vim plugins
+
+### [html5-syntax.vim](https://github.com/othree/html5-syntax.vim)
 HTML5 language syntax highlighing
 
-### [othree/html5.vim](https://github.com/othree/html5.vim)
+### [html5.vim](https://github.com/othree/html5.vim)
 HTML5 + inline SVG omnicomplete function, indent and syntax for Vim
 
-### [groenewege/vim-less](https://github.com/groenewege/vim-less)
+### [vim-less](https://github.com/groenewege/vim-less)
 Syntax highlighting, indenting and autocompletion for the dynamic stylesheet language LESS
 
-### [gregsexton/MatchTag](https://github.com/gregsexton/MatchTag)
+### [MatchTag](https://github.com/gregsexton/MatchTag)
 Highlights the matching HTML tag when the cursor is positioned on a tag
 
-### [tpope/vim-eunuch](https://github.com/tpope/vim-eunuch)
+### [vim-eunuch](https://github.com/tpope/vim-eunuch)
 Vim sugar for the UNIX shell commands that need it the most.
 * ```:Remove   ``` - Delete a buffer and the file on disk simultaneously.
 * ```:Unlink   ``` - Like :Remove, but keeps the now empty buffer.
@@ -198,13 +211,13 @@ Vim sugar for the UNIX shell commands that need it the most.
 * ```:SudoWrite``` - Write a privileged file with sudo.
 * ```:SudoEdit ``` - Edit a privileged file with sudo.
 
-### [leafgarland/typescript-vim](https://github.com/leafgarland/typescript-vim)
+### [typescript-vim](https://github.com/leafgarland/typescript-vim)
 Syntax file and other settings for TypeScript
 
-### [othree/csscomplete.vim](https://github.com/othree/csscomplete.vim)
+### [csscomplete.vim](https://github.com/othree/csscomplete.vim)
 CSS Omni Complete Function for CSS3
 
-### [kshenoy/vim-signature](https://github.com/kshenoy/vim-signature)
+### [vim-signature](https://github.com/kshenoy/vim-signature)
 Plugin to place, toggle and display marks.
 * ```mx        ``` - Toggle mark 'x' and display it in the leftmost column
 * ```dmx       ``` - Remove mark 'x' where x is a-zA-Z
@@ -232,7 +245,7 @@ Plugin to place, toggle and display marks.
 * ```m?        ``` - Open location list and display markers from current buffer
 * ```m<BS>     ``` - Remove all markers
 
-### [tpope/vim-surround](https://github.com/tpope/vim-surround)
+### [vim-surround](https://github.com/tpope/vim-surround)
 Surround.vim is all about "surroundings": parentheses, brackets, quotes, XML tags, and more. The plugin provides mappings to easily delete, change and add such surroundings in pairs.
 * ```cs'"```   - Change surrounding single quotes with double quotes
 * ```cs'<q>``` - Change surrounding single quotes with ```<q>``` tag
@@ -240,19 +253,19 @@ Surround.vim is all about "surroundings": parentheses, brackets, quotes, XML tag
 * ```ds"```    - Delete surrounding double quotes
 * ```ysiw]```  - Surrount the word under the cursor with square brackets
 
-### [mattn/emmet-vim](https://github.com/mattn/emmet-vim)
+### [emmet-vim](https://github.com/mattn/emmet-vim)
 Provides support for expanding abbreviations similar
 * ```<c-y>,``` - Expand the abbreviation
 
-### [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+### [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 Shows a git diff in the 'gutter' (sign column). It shows whether each line has been added, modified, and where lines have been removed. You can also stage and undo individual hunks.
 
-### [Xuyuanp/nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)
+### [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)
 A plugin of NERDTree showing git status flags
 
-### [godlygeek/csapprox](https://github.com/godlygeek/csapprox)
+### [csapprox](https://github.com/godlygeek/csapprox)
 
-### [henrik/vim-indexed-search](https://github.com/henrik/vim-indexed-search)
+### [vim-indexed-search](https://github.com/henrik/vim-indexed-search)
 This plugin redefines 6 search commands (/,?,n,N,*,#). At every
 search command, it automatically prints>
        "At match #N out of M matches".
@@ -261,11 +274,11 @@ search command, it automatically prints>
 match (N). This helps to get oriented when searching forward and
 backward.
 
-### [mbbill/undotree](https://github.com/mbbill/undotree)
+### [undotree](https://github.com/mbbill/undotree)
 Shows a tree with the changes made on the file
 * ```<Leader>5 ``` - Toggle the undo tree panel
 
-### [AndrewRadev/sideways.vim](https://github.com/AndrewRadev/sideways.vim)
+### [sideways.vim](https://github.com/AndrewRadev/sideways.vim)
 Move the item under the cursor left or right, where an "item" is defined by a delimiter
 * Keymappings:
     * ```<leader>sl```         - move left
@@ -274,7 +287,7 @@ Move the item under the cursor left or right, where an "item" is defined by a de
     * ```:SidewaysLeft<CR>```  - Move left
     * ```:SidewaysRight<CR>``` - Move right
 
-### [Valloric/YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+### [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 Fast, as-you-type, fuzzy-search code completion engine for Vim. It has several completion engines:
 * An identifier-based engine that works with every programming language,
 * A Clang-based engine that provides native semantic code completion for C/C++/Objective-C/Objective-C++ (from now on referred to as "the C-family languages"),
@@ -286,16 +299,77 @@ Fast, as-you-type, fuzzy-search code completion engine for Vim. It has several c
 * A racer-based completion engine for Rust,
 * An omnifunc-based completer that uses data from Vim's omnicomplete system to provide semantic completions for many other languages (Ruby, PHP etc.).
 
-### [burnettk/vim-angular](https://github.com/burnettk/vim-angular)
+### [davidhalter/jedi-vim](https://github.com/davidhalter/jedi-vim)
+Awesome Python autocompletion with VIM
+* ```<c-space>``` -  Completion
+* ```<leader>g``` -  Goto assignment
+* ```<leader>d``` -  Goto definition
+* ```<leader>r``` -  Rename
+* ```K        ``` -  Show a popup with the pydoc
+* ```<leader>n``` -  Show all the usages
+
+### [ternjs/tern_for_vim](https://github.com/ternjs/tern_for_vim)
+Provides Tern-based JavaScript editing support.  In JavaScript files, the package will hook into omni completion to handle autocompletion.
+* Commands:
+    * ```:TernDef```    - Jump to the definition of the thing under the cursor.
+    * ```:TernDoc```    - Look up the documentation of something.
+    * ```:TernType```   - Find the type of the thing under the cursor.
+    * ```:TernRefs```   - Show all references to the variable or property under the cursor.
+    * ```:TernRename``` - Rename the variable under the cursor.
+* Keymappings:
+    * ```<Leader>dd``` - Go to definition
+    * ```<Leader>dp``` - Show definition in a preview
+    * ```<Leader>ds``` - Show definition in a split view
+    * ```<Leader>dt``` - Show definition in a separate tab
+    * ```<Leader>kk``` - Show doc
+    * ```<Leader>kb``` - Browse the doc
+    * ```<Leader>n```  - Show references
+    * ```<Leader>r```  - Rename
+
+### [vim-angular](https://github.com/burnettk/vim-angular)
 Some niceties for using Vim with the AngularJS framework
 
-### [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs)
+### [auto-pairs](https://github.com/jiangmiao/auto-pairs)
 Insert or delete brackets, parens, quotes in pair.
 
-### [nfvs/vim-perforce](https://github.com/nfvs/vim-perforce)
+### [vim-perforce](https://github.com/nfvs/vim-perforce)
 Vim Perforce integration for the 21st century!
 
 * ```:P4info ```    - Display perforce information.
 * ```:P4edit```     - Start editing the current file (opened in the default changelist).
 * ```:P4revert```   - Revert the current file (a confirmation prompt is displayed).
 * ```:P4movetocl``` - Move the current file to a different changelist.
+
+## Custom mappings
+
+### Normal mode
+* ```<c-]>     ``` - The same as ```<esc>``` and ```<c-[```
+* ```<leader>lv``` - Load the ```vimrc` file
+* ```<leader>sv``` - Source the ```vimrc``` file
+* ```<s-space> ``` - Toggle folded text
+* ```<space>   ``` - Clear highlighted text
+* ```<leader>a ``` - Go to the beginning of the line
+* ```<leader>e ``` - Go to the end of the line
+* ```<C-h>     ``` - Go to the left panel
+* ```<C-j>     ``` - Go to the down panel
+* ```<C-k>     ``` - Go to the upper panel
+* ```<C-l>     ``` - Go to the left panel
+* ```<leader>rc``` - Run ```ctags``` command in the current folder
+* ```;         ``` - The same as ```:```
+
+### Visual mode
+* ```<leader>a ``` - Go to the beginning of the line
+* ```<leader>e ``` - Go to the end of the line
+
+### Inser mode
+* ```<s-enter> ``` - New line below
+* ```<c-enter> ``` - New line above
+
+### Command mode
+* ```<C-a>     ``` - Go to the beginning of the line
+* ```<C-e>     ``` - Go to the end of the line
+* ```<C-h>     ``` - Go one character to the left
+* ```<C-l>     ``` - Go one character to the right
+* ```<C-d>     ``` - Delete the character under the cursor
+* ```<C-n>     ``` - Next
+* ```<C-p>     ``` - Previous

@@ -118,6 +118,7 @@ if v:version > 750
     Plugin 'Valloric/YouCompleteMe'
 else
     Plugin 'davidhalter/jedi-vim'
+    Plugin 'ternjs/tern_for_vim'
 endif
 
 " Angular stuff
@@ -191,9 +192,6 @@ nnoremap <silent> <S-space> za
 " Toggle folded text and clear search result highlight
 nnoremap <silent> <space> :noh<CR>
 
-" Remove trailing whitespace on <leader>S
-nnoremap <silent> <leader>S :%s/\s\+$//ge<cr>
-
 " Delete white spaces on file save
 autocmd BufWritePre * :%s/\s\+$//ge
 
@@ -238,7 +236,7 @@ autocmd BufEnter *.xml set tw=79 sw=3 ts=3 sta et fo=croql
 autocmd BufEnter *.html set tw=79 sw=3 ts=3 sta et fo=croql
 
 " ==================================
-" ===     Configure Pythin       ===
+" ===     Configure Python       ===
 " ==================================
 
 autocmd FileType python setlocal completeopt-=preview
