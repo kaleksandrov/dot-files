@@ -13,10 +13,10 @@ This is my vim cofiguration. I hope you will find it useful :)
 1. Run ```:PluginInstall```. This will install all plugins described in the .vimrc file.
 
 ## Plugins
-1. VundleVim/Vundle.vim - Plugin manager
-    1. Install plugins  - ```:PluginInstall```
-    1. Uninstall plugins - ```:PluginClean```
-    1. Update plugins ```:PluginUpdate```
+1. [VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim) - Vundle is short for Vim bundle and is a Vim plugin manager.
+    * Install plugins  - ```:PluginInstall```
+    * Uninstall plugins - ```:PluginClean```
+    * Update plugins ```:PluginUpdate```
 1. scrooloose/nerdtree - File tree navigator
 1. daviddavis/vim-colorpack - Additional color themese
 1. scrooloose/nerdcommenter = Shortcuts for (un)commenting lines/sections for different languages
