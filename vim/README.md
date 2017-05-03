@@ -142,17 +142,17 @@ Highlights the matching HTML tag when the cursor is positioned on a tag
 
 ### [tpope/vim-eunuch](https://github.com/tpope/vim-eunuch)
 Vim sugar for the UNIX shell commands that need it the most.
-    * ```:Remove   ``` - Delete a buffer and the file on disk simultaneously.
-    * ```:Unlink   ``` - Like :Remove, but keeps the now empty buffer.
-    * ```:Move     ``` - Rename a buffer and the file on disk simultaneously.
-    * ```:Rename   ``` - Like :Move, but relative to the current file's containing directory.
-    * ```:Chmod    ``` - Change the permissions of the current file.
-    * ```:Mkdir    ``` - Create a directory, defaulting to the parent of the current file.
-    * ```:Find     ``` - Run find and load the results into the quickfix list.
-    * ```:Locate   ``` - Run locate and load the results into the quickfix list.
-    * ```:Wall     ``` - Write every open window. Handy for kicking off tools like guard.
-    * ```:SudoWrite``` - Write a privileged file with sudo.
-    * ```:SudoEdit ``` - Edit a privileged file with sudo.
+* ```:Remove   ``` - Delete a buffer and the file on disk simultaneously.
+* ```:Unlink   ``` - Like :Remove, but keeps the now empty buffer.
+* ```:Move     ``` - Rename a buffer and the file on disk simultaneously.
+* ```:Rename   ``` - Like :Move, but relative to the current file's containing directory.
+* ```:Chmod    ``` - Change the permissions of the current file.
+* ```:Mkdir    ``` - Create a directory, defaulting to the parent of the current file.
+* ```:Find     ``` - Run find and load the results into the quickfix list.
+* ```:Locate   ``` - Run locate and load the results into the quickfix list.
+* ```:Wall     ``` - Write every open window. Handy for kicking off tools like guard.
+* ```:SudoWrite``` - Write a privileged file with sudo.
+* ```:SudoEdit ``` - Edit a privileged file with sudo.
 
 ### [leafgarland/typescript-vim](https://github.com/leafgarland/typescript-vim)
 Syntax file and other settings for TypeScript
@@ -194,7 +194,7 @@ Surround.vim is all about "surroundings": parentheses, brackets, quotes, XML tag
 * ```cs'<q>``` - Change surrounding single quotes with ```<q>``` tag
 * ```cst'```   - Change surrounding tag with a single quote
 * ```ds"```    - Delete surrounding double quotes
-* ```ysiw]     - Surrount the word under the cursor with square brackets
+* ```ysiw]```  - Surrount the word under the cursor with square brackets
 
 ### [mattn/emmet-vim](https://github.com/mattn/emmet-vim)
 Provides support for expanding abbreviations similar
@@ -230,7 +230,28 @@ Move the item under the cursor left or right, where an "item" is defined by a de
     * ```:SidewaysLeft<CR>```  - Move left
     * ```:SidewaysRight<CR>``` - Move right
 
-### Valloric/YouCompleteMe
-### burnettk/vim-angular
-### jiangmiao/auto-pairs
-### nfvs/vim-perforce
+### [Valloric/YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+Fast, as-you-type, fuzzy-search code completion engine for Vim. It has several completion engines:
+* An identifier-based engine that works with every programming language,
+* A Clang-based engine that provides native semantic code completion for C/C++/Objective-C/Objective-C++ (from now on referred to as "the C-family languages"),
+* A Jedi-based completion engine for Python 2 and 3 (using the JediHTTP wrapper),
+* An OmniSharp-based completion engine for C#,
+* A combination of Gocode and Godef semantic engines for Go,
+* A TSServer-based completion engine for TypeScript,
+* A Tern-based completion engine for JavaScript,
+* A racer-based completion engine for Rust,
+* An omnifunc-based completer that uses data from Vim's omnicomplete system to provide semantic completions for many other languages (Ruby, PHP etc.).
+
+### [burnettk/vim-angular](https://github.com/burnettk/vim-angular)
+Some niceties for using Vim with the AngularJS framework
+
+### [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs)
+Insert or delete brackets, parens, quotes in pair.
+
+### [nfvs/vim-perforce](https://github.com/nfvs/vim-perforce)
+Vim Perforce integration for the 21st century!
+
+* ```:P4info ```    - Display perforce information.
+* ```:P4edit```     - Start editing the current file (opened in the default changelist).
+* ```:P4revert```   - Revert the current file (a confirmation prompt is displayed).
+* ```:P4movetocl``` - Move the current file to a different changelist.
