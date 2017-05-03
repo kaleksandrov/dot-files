@@ -14,9 +14,9 @@ This is my vim cofiguration. I hope you will find it useful :)
 
 ## Plugins
 1. VundleVim/Vundle.vim - Plugin manager
-    :PluginInstall
-    :PluginClean
-    :PluginUpdate
+    1. Install plugins  - ```:PluginInstall```
+    1. Uninstall plugins - ```:PluginClean```
+    1. Update plugins ```:PluginUpdate```
 1. scrooloose/nerdtree - File tree navigator
 1. daviddavis/vim-colorpack - Additional color themese
 1. scrooloose/nerdcommenter = Shortcuts for (un)commenting lines/sections for different languages
