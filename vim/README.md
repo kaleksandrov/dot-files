@@ -13,10 +13,11 @@ This is my vim cofiguration. I hope you will find it useful :)
 1. Run ```:PluginInstall```. This will install all plugins described in the .vimrc file.
 
 ## Plugins
-### [VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim) - Vim plugin manager
-    * Install plugins  - ```:PluginInstall```
-    * Uninstall plugins - ```:PluginClean```
-    * Update plugins ```:PluginUpdate```
+### [VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim)
+Vim plugin manager
+* Install plugins  - ```:PluginInstall```
+* Uninstall plugins - ```:PluginClean```
+* Update plugins ```:PluginUpdate```
 ### [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) - Allows you to explore your filesystem and to open files and directories. It presents the filesystem to you in the form of a tree which you manipulate with the keyboard and/or mouse. It also allows you to perform simple filesystem operations.
     * Toggle navigator panel - ```<leader>0```
 ### [daviddavis/vim-colorpack](https://github.com/daviddavis/vim-colorpack) - Additional color themes
