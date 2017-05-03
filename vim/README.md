@@ -14,50 +14,6 @@ This is my vim cofiguration. I hope you will find it useful :)
 1. If you want to use the ```YouCompleteMe``` plugin check its release notes in order to install its server part
 1. If you want to use the ```TernForVim``` plugin check its release notes in order to install its server part
 
-## Plugin list
-1. VundleVim/Vundle.vim
-1. scrooloose/nerdtree
-1. daviddavis/vim-colorpack
-1. scrooloose/nerdcommenter
-1. Soares/butane.vim
-1. vim-airline/vim-airline
-1. vim-airline/vim-airline-themes
-1. godlygeek/tabular
-1. scrooloose/syntastic
-1. L9
-1. Tagbar
-1. actionscript
-1. vim-scripts/EasyGrep
-1. pangloss/vim-javascript
-1. othree/javascript-libraries-syntax.vim
-1. ctrlpvim/ctrlp.vim
-1. SirVer/ultisnips
-1. MarcWeber/vim-addon-mw-utils
-1. tomtom/tlib_vim
-1. garbas/vim-snipmate
-1. honza/vim-snippets
-1. othree/html5-syntax.vim
-1. othree/html5.vim
-1. groenewege/vim-less
-1. gregsexton/MatchTag
-1. tpope/vim-eunuch
-1. leafgarland/typescript-vim
-1. othree/csscomplete.vim
-1. kshenoy/vim-signature
-1. tpope/vim-surround
-1. mattn/emmet-vim
-1. airblade/vim-gitgutter
-1. Xuyuanp/nerdtree-git-plugin
-1. godlygeek/csapprox
-1. henrik/vim-indexed-search
-1. mbbill/undotree
-1. AndrewRadev/sideways.vim
-1. Valloric/YouCompleteMe
-1. davidhalter/jedi-vim
-1. burnettk/vim-angular
-1. jiangmiao/auto-pairs
-1. nfvs/vim-perforce
-
 ## Plugin details
 
 ### [Vundle.vim](https://github.com/VundleVim/Vundle.vim)
@@ -175,12 +131,12 @@ Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 ### [ultisnips](https://github.com/SirVer/ultisnips)
 The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!
 
-### [MarcWeber/vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
+### [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
 
-### [tomtom/tlib_vim](https://github.com/tomtom/tlib_vim)
+### [tlib_vim](https://github.com/tomtom/tlib_vim)
 Some utility functions needed by **vim-snipmate**
 
-### [garbas/vim-snipmate](https://github.com/garbas/vim-snipmate)
+### [vim-snipmate](https://github.com/garbas/vim-snipmate)
 
 ### [vim-snippets](https://github.com/honza/vim-snippets)
 Provide support for textual snippets, similar to TextMate or other Vim plugins
@@ -299,7 +255,7 @@ Fast, as-you-type, fuzzy-search code completion engine for Vim. It has several c
 * A racer-based completion engine for Rust,
 * An omnifunc-based completer that uses data from Vim's omnicomplete system to provide semantic completions for many other languages (Ruby, PHP etc.).
 
-### [davidhalter/jedi-vim](https://github.com/davidhalter/jedi-vim)
+### [jedi-vim](https://github.com/davidhalter/jedi-vim)
 Awesome Python autocompletion with VIM
 * ```<c-space>``` -  Completion
 * ```<leader>g``` -  Goto assignment
@@ -361,7 +317,7 @@ Vim Perforce integration for the 21st century!
 * ```<leader>a ``` - Go to the beginning of the line
 * ```<leader>e ``` - Go to the end of the line
 
-### Inser mode
+### Insert mode
 * ```<s-enter> ``` - New line below
 * ```<c-enter> ``` - New line above
 
