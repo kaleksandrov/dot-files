@@ -16,6 +16,7 @@ This is my vim cofiguration. I hope you will find it useful :)
 
 ### [VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim)
 Vim plugin manager
+
     * ```:PluginInstall``` - Install plugins
     * ```:PluginClean```   - Uninstall plugins
     * ```:PluginUpdate```  - Update plugins
