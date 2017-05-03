@@ -122,25 +122,115 @@ Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 * ```<c-z>```                            -  Mark/unmark multiple files
 * ```<c-o>```                            -  Open marked files
 
-1. [SirVer/ultisnips](https://github.com/SirVer/ultisnips) - The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!
-1. [honza/vim-snippets](https://github.com/honza/vim-snippets) - Snippets files for various programming languages
-1. othree/html5-syntax.vim - Support for HTML5
-1. othree/html5.vim - Support for HTML5
-1. groenewege/vim-less - Support for LESS languate
-1. gregsexton/MatchTag - Highlights the matching HTML tag when the cursor is positioned on a tag
-1. tpope/vim-eunuch - Vim sugar for the UNIX shell commands that need it the most.
-1. leafgarland/typescript-vim - Support for TypeScrupt language
-1. othree/csscomplete.vim - Support for CSS language
-1. kshenoy/vim-signature
-1. tpope/vim-surround
-1. mattn/emmet-vim
-1. airblade/vim-gitgutter
-1. Xuyuanp/nerdtree-git-plugin
-1. godlygeek/csapprox
-1. henrik/vim-indexed-search
-1. mbbill/undotree
-1. AndrewRadev/sideways.vim
-1. Valloric/YouCompleteMe
-1. burnettk/vim-angular
-1. jiangmiao/auto-pairs
-1. nfvs/vim-perforce
+### [SirVer/ultisnips](https://github.com/SirVer/ultisnips)
+The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!
+
+### [honza/vim-snippets](https://github.com/honza/vim-snippets)
+Snippets files for various programming languages
+
+### [othree/html5-syntax.vim](https://github.com/othree/html5-syntax.vim)
+HTML5 language syntax highlighing
+
+### [othree/html5.vim](https://github.com/othree/html5.vim)
+HTML5 + inline SVG omnicomplete function, indent and syntax for Vim
+
+### [groenewege/vim-less](https://github.com/groenewege/vim-less)
+Syntax highlighting, indenting and autocompletion for the dynamic stylesheet language LESS
+
+### [gregsexton/MatchTag](https://github.com/gregsexton/MatchTag)
+Highlights the matching HTML tag when the cursor is positioned on a tag
+
+### [tpope/vim-eunuch](https://github.com/tpope/vim-eunuch)
+Vim sugar for the UNIX shell commands that need it the most.
+    * ```:Remove   ``` - Delete a buffer and the file on disk simultaneously.
+    * ```:Unlink   ``` - Like :Remove, but keeps the now empty buffer.
+    * ```:Move     ``` - Rename a buffer and the file on disk simultaneously.
+    * ```:Rename   ``` - Like :Move, but relative to the current file's containing directory.
+    * ```:Chmod    ``` - Change the permissions of the current file.
+    * ```:Mkdir    ``` - Create a directory, defaulting to the parent of the current file.
+    * ```:Find     ``` - Run find and load the results into the quickfix list.
+    * ```:Locate   ``` - Run locate and load the results into the quickfix list.
+    * ```:Wall     ``` - Write every open window. Handy for kicking off tools like guard.
+    * ```:SudoWrite``` - Write a privileged file with sudo.
+    * ```:SudoEdit ``` - Edit a privileged file with sudo.
+
+### [leafgarland/typescript-vim](https://github.com/leafgarland/typescript-vim)
+Syntax file and other settings for TypeScript
+
+### [othree/csscomplete.vim](https://github.com/othree/csscomplete.vim)
+CSS Omni Complete Function for CSS3
+
+### [kshenoy/vim-signature](https://github.com/kshenoy/vim-signature)
+Plugin to place, toggle and display marks.
+* ```mx        ``` - Toggle mark 'x' and display it in the leftmost column
+* ```dmx       ``` - Remove mark 'x' where x is a-zA-Z
+
+* ```m,        ``` - Place the next available mark
+* ```m.        ``` - If no mark on line, place the next available mark. Otherwise, remove (first) existing mark.
+* ```m-        ``` - Delete all marks from the current line
+* ```m<Space>  ``` - Delete all marks from the current buffer
+* ```]`        ``` - Jump to next mark
+* ```[`        ``` - Jump to prev mark
+* ```]'        ``` - Jump to start of next line containing a mark
+* ```['        ``` - Jump to start of prev line containing a mark
+* ````]        ``` - Jump by alphabetical order to next mark
+* ````[        ``` - Jump by alphabetical order to prev mark
+* ```']        ``` - Jump by alphabetical order to start of next line having a mark
+* ```'[        ``` - Jump by alphabetical order to start of prev line having a mark
+* ```m/        ``` - Open location list and display marks from current buffer
+
+* ```m[0-9]    ``` - Toggle the corresponding marker !@#$%^&*()
+* ```m<S-[0-9]>``` - Remove all markers of the same type
+* ```]-        ``` - Jump to next line having a marker of the same type
+* ```[-        ``` - Jump to prev line having a marker of the same type
+* ```]=        ``` - Jump to next line having a marker of any type
+* ```[=        ``` - Jump to prev line having a marker of any type
+* ```m?        ``` - Open location list and display markers from current buffer
+* ```m<BS>     ``` - Remove all markers
+
+### [tpope/vim-surround](https://github.com/tpope/vim-surround)
+Surround.vim is all about "surroundings": parentheses, brackets, quotes, XML tags, and more. The plugin provides mappings to easily delete, change and add such surroundings in pairs.
+* ```cs'"```   - Change surrounding single quotes with double quotes
+* ```cs'<q>``` - Change surrounding single quotes with ```<q>``` tag
+* ```cst'```   - Change surrounding tag with a single quote
+* ```ds"```    - Delete surrounding double quotes
+* ```ysiw]     - Surrount the word under the cursor with square brackets
+
+### [mattn/emmet-vim](https://github.com/mattn/emmet-vim)
+Provides support for expanding abbreviations similar
+* ```<c-y>,``` - Expand the abbreviation
+
+### [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+Shows a git diff in the 'gutter' (sign column). It shows whether each line has been added, modified, and where lines have been removed. You can also stage and undo individual hunks.
+
+### [Xuyuanp/nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)
+A plugin of NERDTree showing git status flags
+
+### [godlygeek/csapprox](https://github.com/godlygeek/csapprox)
+
+### [henrik/vim-indexed-search](https://github.com/henrik/vim-indexed-search)
+This plugin redefines 6 search commands (/,?,n,N,*,#). At every
+search command, it automatically prints>
+       "At match #N out of M matches".
+>
+-- the total number of matches (M) and the number(index) of current
+match (N). This helps to get oriented when searching forward and
+backward.
+
+### [mbbill/undotree](https://github.com/mbbill/undotree)
+Shows a tree with the changes made on the file
+* ```<Leader>5 ``` - Toggle the undo tree panel
+
+### [AndrewRadev/sideways.vim](https://github.com/AndrewRadev/sideways.vim)
+Move the item under the cursor left or right, where an "item" is defined by a delimiter
+* Keymappings:
+    * ```<leader>sl```         - move left
+    * ```<leader>sr```         - move right
+* Commands:
+    * ```:SidewaysLeft<CR>```  - Move left
+    * ```:SidewaysRight<CR>``` - Move right
+
+### Valloric/YouCompleteMe
+### burnettk/vim-angular
+### jiangmiao/auto-pairs
+### nfvs/vim-perforce
