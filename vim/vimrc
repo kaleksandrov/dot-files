@@ -36,7 +36,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'L9'
 
 " Adds tab view that is showing the methods and fields of the opened class. The same as Outline in Eclipse.
-Plugin 'Tagbar'
+Plugin 'majutsushi/tagbar'
 
 " Support for ActionScript
 Plugin 'actionscript'
