@@ -2,7 +2,7 @@
 ## What is this?
 This is my vim cofiguration. I hope you will find it useful :)
 
-![screenshot](https://raw.github.com/kaleksandrov/dot-files/master/vim/screenshot.png)
+![screenshot](https://raw.github.com/kaleksandrov/dot-files/master/vim/img.png)
 
 ## How to install
 1. Install vim
