@@ -190,8 +190,8 @@ Plugin to place, toggle and display marks.
 * ```[`        ``` - Jump to prev mark
 * ```]'        ``` - Jump to start of next line containing a mark
 * ```['        ``` - Jump to start of prev line containing a mark
-* ````]        ``` - Jump by alphabetical order to next mark
-* ````[        ``` - Jump by alphabetical order to prev mark
+* ```\`]        ``` - Jump by alphabetical order to next mark
+* ```\`[        ``` - Jump by alphabetical order to prev mark
 * ```']        ``` - Jump by alphabetical order to start of next line having a mark
 * ```'[        ``` - Jump by alphabetical order to start of prev line having a mark
 * ```m/        ``` - Open location list and display marks from current buffer
