@@ -36,7 +36,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'L9'
 
 " Adds tab view that is showing the methods and fields of the opened class. The same as Outline in Eclipse.
-Plugin 'Tagbar'
+Plugin 'majutsushi/tagbar'
 
 " Support for ActionScript
 Plugin 'actionscript'
@@ -53,14 +53,14 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 " Fuzzy file/buffer finder
 Plugin 'ctrlpvim/ctrlp.vim'
 
-" VIM utilities
-Plugin 'MarcWeber/vim-addon-mw-utils'
-
-" VIM utilities
-Plugin 'tomtom/tlib_vim'
-
 " A bunch of snippets (engine)
-"Plugin 'SirVer/ultisnips'
+if v:version > 740
+    Plugin 'SirVer/ultisnips'
+else
+    Plugin 'MarcWeber/vim-addon-mw-utils'
+    Plugin 'tomtom/tlib_vim'
+    Plugin 'garbas/vim-snipmate'
+endif
 
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
@@ -113,8 +113,13 @@ Plugin 'mbbill/undotree'
 " Allows method parameters, array elements, etc. to be moved left or right
 Plugin 'AndrewRadev/sideways.vim'
 
-" Awsome library for autocompletion
-Plugin 'Valloric/YouCompleteMe'
+if v:version > 750
+    " Awsome library for autocompletion
+    Plugin 'Valloric/YouCompleteMe'
+else
+    Plugin 'davidhalter/jedi-vim'
+    Plugin 'ternjs/tern_for_vim'
+endif
 
 " Angular stuff
 Plugin 'burnettk/vim-angular'
@@ -187,9 +192,6 @@ nnoremap <silent> <S-space> za
 " Toggle folded text and clear search result highlight
 nnoremap <silent> <space> :noh<CR>
 
-" Remove trailing whitespace on <leader>S
-nnoremap <silent> <leader>S :%s/\s\+$//ge<cr>
-
 " Delete white spaces on file save
 autocmd BufWritePre * :%s/\s\+$//ge
 
@@ -234,7 +236,7 @@ autocmd BufEnter *.xml set tw=79 sw=3 ts=3 sta et fo=croql
 autocmd BufEnter *.html set tw=79 sw=3 ts=3 sta et fo=croql
 
 " ==================================
-" ===     Configure Pythin       ===
+" ===     Configure Python       ===
 " ==================================
 
 autocmd FileType python setlocal completeopt-=preview
