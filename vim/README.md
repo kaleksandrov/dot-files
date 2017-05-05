@@ -15,6 +15,7 @@ This is my vim cofiguration. I hope you will find it useful :)
 1. Create ```~/.vim/backup``` folder: ```mkdir ~/.vim/backup```
 1. Start vim/gvim
 1. Run ```:PluginInstall```. This will install all plugins described in the .vimrc file.
+1. In order for the Tagbar to work, you need to install [Exuberant ctags](http://ctags.sourceforge.net)
 1. If you want to use the ```YouCompleteMe``` plugin check its release notes in order to install its server part
 1. If you want to use the ```TernForVim``` plugin check its release notes in order to install its server part
 
