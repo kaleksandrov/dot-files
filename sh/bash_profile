@@ -77,11 +77,10 @@ alias post-review='/build/apps/bin/post-review --diff-only --no-make-review-diff
 export P4CONFIG=.p4config
 export P4MERGE=vim
 
-
 export HISTFILE="/tmp/$USER.bash_history"
 export HISTSIZE=10000
 
-# Toolchain utils
+# VMware toolchain and apps
 
 TOOLCHAIN=/build/toolchain
 APPS=/build/apps
@@ -95,10 +94,26 @@ function load-toolchain {
         if [ $OS == "Darwin"  ]
         then
             sudo mount -t nfs build-toolchain.eng.vmware.com:/toolchain $TOOLCHAIN
-            sudo mount -t nfs build-toolchain.eng.vmware.com:/apps $APPS
         elif [ $OS == "Linux"  ]
         then
             sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-toolchain/toolchain $TOOLCHAIN
+        else
+            echo "Unsupported operating system: $OS"
+        fi
+    fi
+}
+
+function load-apps {
+    if mount | grep apps > /dev/null
+    then
+        echo "Apps already mounted"
+    else
+        OS=$(uname)
+        if [ $OS == "Darwin"  ]
+        then
+            sudo mount -t nfs build-toolchain.eng.vmware.com:/apps $APPS
+        elif [ $OS == "Linux"  ]
+        then
             sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-apps/apps $APPS
         else
             echo "Unsupported operating system: $OS"
@@ -106,8 +121,20 @@ function load-toolchain {
     fi
 }
 
+function load-vmw {
+    load-toolchain
+    load-apps
+}
+
 function unload-toolchain {
     sudo umount $TOOLCHAIN
+}
+
+function unload-apps {
     sudo umount $APPS
 }
 
+function unload-vmw {
+    unload-toolchain
+    unload-apps
+}
