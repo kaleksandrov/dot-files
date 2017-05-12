@@ -423,4 +423,7 @@ set splitright
 " Run ctags
 nnoremap <silent> <leader>rc :!ctags -R .<CR>
 
+" Toggle the paste option
+set pastetoggle=<f5>
+
 nnoremap ; :
