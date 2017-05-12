@@ -426,4 +426,6 @@ nnoremap <silent> <leader>rc :!ctags -R .<CR>
 " Toggle the paste option
 set pastetoggle=<f5>
 
+nnoremap <leader>ts :tselect <C-r><C-w><CR>
+
 nnoremap ; :
