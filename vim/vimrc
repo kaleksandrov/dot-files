@@ -130,6 +130,9 @@ Plugin 'jiangmiao/auto-pairs'
 " Perforce integration plugin
 Plugin 'nfvs/vim-perforce'
 
+" Dash support
+Plugin 'rizzatti/dash.vim'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -362,6 +365,12 @@ nnoremap <Leader>5 :UndotreeToggle<cr>
 
 nnoremap <Leader>sl :SidewaysLeft<CR>
 nnoremap <Leader>sr :SidewaysRight<CR>
+
+" ==================================
+" ===             Dash           ===
+" ==================================
+
+nnoremap <leader>dd :Dash<CR>
 
 " ==================================
 " ===       Make grep faster     ===
