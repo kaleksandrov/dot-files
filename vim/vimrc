@@ -131,7 +131,12 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'nfvs/vim-perforce'
 
 " Dash support
-Plugin 'rizzatti/dash.vim'
+if has("unix")
+    let s:uname = system("uname")
+    if s:uname == "Darwin\n"
+        Plugin 'rizzatti/dash.vim'
+    endif
+endif
 
 call vundle#end()
 filetype plugin indent on

@@ -52,6 +52,7 @@ alias bcz='brew cask zap '
 
 # Perforce aliases
 
+alias p4s='p4 sync '
 alias p4w='p4 workspace '
 alias p4a='p4 add '
 alias p4e='p4 edit '
