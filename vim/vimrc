@@ -247,18 +247,39 @@ autocmd BufEnter *.py set tw=79 sw=3 ts=3 sta et fo=croql
 autocmd BufEnter *.sc set tw=79 sw=3 ts=3 sta et fo=croql
 autocmd BufEnter *.sc setlocal filetype=python
 
-" ==================================
-" ===     Configure Tern JS      ===
-" ==================================
+if v:version > 750
 
-nnoremap <Leader>dd :TernDef<CR>
-nnoremap <Leader>dp :TernDefPreview<CR>
-nnoremap <Leader>ds :TernDefSplit<CR>
-nnoremap <Leader>dt :TernDefTab<CR>
-nnoremap <Leader>kk :TernDoc<CR>
-nnoremap <Leader>kb :TernDocBrowse<CR>
-nnoremap <Leader>n :TernRefs<CR>
-nnoremap <Leader>r :TernRename<CR>
+   " ==================================
+   " ===   Configure YouCompleteMe  ===
+   " ==================================
+
+   nnoremap <Leader>df :YcmCompleter GoToDefinition<CR>
+   nnoremap <Leader>dc :YcmCompleter GoToDeclaration<CR>
+   nnoremap <Leader>rf :YcmCompleter GoToReferences<CR>
+   nnoremap <Leader>kk :YcmCompleter GetDoc<CR>
+   nnoremap <Leader>kb :YcmCompleter GetDoc<CR>
+   nnoremap <Leader>rn :YcmCompleter RefactorRename
+
+else
+
+   " ==================================
+   " ===     Configure Tern JS      ===
+   " ==================================
+
+   nnoremap <Leader>df :TernDef<CR>
+   nnoremap <Leader>dc :TernDef<CR>
+   nnoremap <Leader>rf :TernRefs<CR>
+   nnoremap <Leader>kk :TernDoc<CR>
+   nnoremap <Leader>kb :TernDocBrowse<CR>
+   nnoremap <Leader>rn :TernRename<CR>
+
+   " ==================================
+   " ===     Configure Jedi VIM     ===
+   " ==================================
+
+   " TODO make Jedi-VIM's shorctus the same as those for YCM
+
+endif
 
 " ==================================
 " ===      Configure CSS         ===
