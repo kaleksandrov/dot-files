@@ -104,6 +104,9 @@ Plugin 'godlygeek/csapprox'
 " Enchances the VIM search
 Plugin 'henrik/vim-indexed-search'
 
+" Highlights and strips the trailing whitespaces
+Plugin 'ntpeters/vim-better-whitespace'
+
 " Shows the VIM's undo tree (history)
 Plugin 'mbbill/undotree'
 
@@ -144,6 +147,7 @@ filetype plugin indent on
 
 syntax on
 
+set synmaxcol=200
 set autoindent
 set copyindent
 set smartindent
@@ -156,8 +160,9 @@ set expandtab
 set incsearch
 set hlsearch
 set cursorline
-set number
 set encoding=utf8
+set t_Co=256
+set fileencoding=utf-8
 set wildchar=<Tab>
 set wildmenu
 set wildmode=list:full
@@ -166,26 +171,32 @@ set smartcase
 set smarttab
 set ff=unix
 set scrolloff=4
-set noshowcmd
+set showcmd
+set showmode
 set hidden
 set ruler
 set laststatus=2
 set undofile
-set modelines=0
 set title
 set dir=~/.vim/sessions//
 set backupdir=~/.vim/backup//
 set undodir=~/.vim/undo//
 set wrap
 set showmatch
-set history=1000     " remember more commands and search history
-set undolevels=1000  " use many muchos levels of undo
-set noerrorbells     " Don't blink on error
-set visualbell t_vb= " Don't beep on error
+set list                                                        " Show invisibles (tabs, line endings etc.)
+set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:.,extends:❯,precedes:❮ " Choose symbols to show invisibles
+set showbreak=↪                                                 " Show line breaks
+set lazyredraw                                                  " Don’t refresh while executing a macro
+set history=1000                                                " remember more commands and search history
+set undolevels=1000                                             " use many muchos levels of undo
+set noerrorbells                                                " Don't blink on error
+set visualbell t_vb=                                            " Don't beep on error
 set relativenumber
-set foldcolumn=1     " show an additional column for fold indicator
+set number
+set foldcolumn=1                                                " show an additional column for fold indicator
+set timeoutlen=500
 
-inoremap <C-]> <ESC> " leave insert mode using both square brakets
+inoremap <C-]> <ESC>                                            " leave insert mode using both square brakets
 
 " Load and Save the configuration file
 nnoremap <silent> <Leader>lv :e $MYVIMRC<CR>
@@ -196,9 +207,6 @@ nnoremap <silent> <S-space> za
 
 " Toggle folded text and clear search result highlight
 nnoremap <silent> <space> :noh<CR>
-
-" Delete white spaces on file save
-autocmd BufWritePre * :%s/\s\+$//ge
 
 " Easier moving to start/end line
 nnoremap <leader>a ^
@@ -240,6 +248,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 autocmd BufEnter *.xml set tw=79 sw=3 ts=3 sta et fo=croql
 autocmd BufEnter *.html set tw=79 sw=3 ts=3 sta et fo=croql
 
+" Close HTML elemente with XHTML rules
+let xml_use_xhtml = 1
+
 " ==================================
 " ===     Configure Python       ===
 " ==================================
@@ -248,6 +259,9 @@ autocmd FileType python setlocal completeopt-=preview
 autocmd BufEnter *.py set tw=79 sw=3 ts=3 sta et fo=croql
 autocmd BufEnter *.sc set tw=79 sw=3 ts=3 sta et fo=croql
 autocmd BufEnter *.sc setlocal filetype=python
+
+" Better syntax hightlighting for Python
+let python_highlight_all = 1
 
 if v:version > 750
 
@@ -467,3 +481,7 @@ set pastetoggle=<f5>
 nnoremap <leader>ts :tselect <C-r><C-w><CR>
 
 nnoremap ; :
+
+if has("gui_running")
+	" Do stuff related to the GUI only
+endif
