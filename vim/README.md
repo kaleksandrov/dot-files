@@ -78,23 +78,6 @@ Provides an easy way to browse the tags of the current file and get an overview 
 ### actionscript
 ActionScript support
 
-### [EasyGrep](https://github.com/vim-scripts/EasyGrep)
-Plugin for performing search and replace operations through multiple files. Vim already has builtin support for searching through files with its 'vimgrep' and 'grep' commands, but EasyGrep makes using them much, much easier. It also provides a powerful "Replace in Files" operation, something that is not very easy to do in Vim by default. With EasyGrep, you can specify with high-precision exactly the type of files you want to search, whether it be all files, only open buffers, only files matching a pattern, etc. Additionally, you can easily specify searching through hidden files, case-sensitivity, performing a recursive search, and many more options that make searching more easy.
-* Keymappings:
-    * ```<Leader>vv``` - Grep for the word under the cursor, match all occurences, like |gstar|
-    * ```<Leader>vV``` - Grep for the word under the cursor, match whole word, like |star|
-    * ```<Leader>va``` - Like vv, but add to existing list
-    * ```<Leader>vA``` - Like vV, but add to existing list
-    * ```<Leader>vr``` - Perform a global search search on the word under the cursor and prompt for a pattern with which to replace it.
-    * ```<Leader>vo``` - Select the files to search in and set grep options
-
-* Commands:
-    * ```:Grep [arg]                    ``` - Search for the specified arg, like <Leader>vv.  When an ! is added, search like <Leader>vV
-    * ```:GrepAdd [arg]                 ``` - Search for the specified arg, add to existing file list, as in <Leader>va.  When an ! is added, search like <Leader>vA
-    * ```:Replace [target] [replacement]``` - Perform a global search and replace.  The function searches the same set of files a grep for the desired target and opens a dialog to confirm replacement.
-    * ```:ReplaceUndo                   ``` - Undoes the last :Replace operation.  Does not stack successive searches; only the last replace may be undone.  This function may not work well when edits are made between a call to Replace and a call to ReplaceUndo.
-    * ```:GrepOptions [arg]             ``` - Open a window to set grep options.
-
 ### [vim-javascript](https://github.com/pangloss/vim-javascript)
 JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
 
