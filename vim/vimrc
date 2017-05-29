@@ -41,9 +41,6 @@ Plugin 'majutsushi/tagbar'
 " Support for ActionScript
 Plugin 'actionscript'
 
-" Integration with Grep and VimGrep
-Plugin 'vim-scripts/EasyGrep'
-
 " Support for JavaScript
 Plugin 'pangloss/vim-javascript'
 
@@ -271,18 +268,24 @@ else
    " ===     Configure Tern JS      ===
    " ==================================
 
-   nnoremap <Leader>df :TernDef<CR>
-   nnoremap <Leader>dc :TernDef<CR>
-   nnoremap <Leader>rf :TernRefs<CR>
-   nnoremap <Leader>kk :TernDoc<CR>
-   nnoremap <Leader>kb :TernDocBrowse<CR>
-   nnoremap <Leader>rn :TernRename<CR>
+   autocmd FileType javascript nnoremap <Leader>df :TernDef<CR>
+   autocmd FileType javascript nnoremap <Leader>dc :TernDef<CR>
+   autocmd FileType javascript nnoremap <Leader>rf :TernRefs<CR>
+   autocmd FileType javascript nnoremap <Leader>kk :TernDoc<CR>
+   autocmd FileType javascript nnoremap <Leader>kb :TernDocBrowse<CR>
+   autocmd FileType javascript nnoremap <Leader>rn :TernRename<CR>
 
    " ==================================
    " ===     Configure Jedi VIM     ===
    " ==================================
 
-   " TODO make Jedi-VIM's shorctus the same as those for YCM
+   let g:jedi#goto_command = "<leader>dc"
+   let g:jedi#goto_assignments_command = "<leader>da"
+   let g:jedi#goto_definitions_command = "<leader>df"
+   let g:jedi#documentation_command = "<leader>kk"
+   let g:jedi#usages_command = "<leader>rf"
+   let g:jedi#completions_command = "<C-Space>"
+   let g:jedi#rename_command = "<leader>rn"
 
 endif
 
