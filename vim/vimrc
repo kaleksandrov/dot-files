@@ -131,10 +131,16 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'nfvs/vim-perforce'
 
 " Dash support
-if has("unix")
+if has("win32")
+    " Windows
+    Plugin 'KabbAmine/zeavim.vim'
+elseif has("unix")
     let s:uname = system("uname")
     if s:uname == "Darwin\n"
+        " Mac OSX
         Plugin 'rizzatti/dash.vim'
+    else
+        Plugin 'KabbAmine/zeavim.vim'
     endif
 endif
 
@@ -413,10 +419,19 @@ nnoremap <Leader>sr :SidewaysRight<CR>
 " ===             Dash           ===
 " ==================================
 
-if has("unix")
+if has("win32")
+    " Windows
+    nnoremap <leader>dd :Zeavim<CR>
+    vnoremap <leader>dd :Zeavim<CR>
+elseif has("unix")
     let s:uname = system("uname")
     if s:uname == "Darwin\n"
+        " Mac OSX
         nnoremap <leader>dd :Dash<CR>
+    else
+        " Linux
+        nnoremap <leader>dd :Zeavim<CR>
+        vnoremap <leader>dd :Zeavim<CR>
     endif
 endif
 
