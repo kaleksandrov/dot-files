@@ -181,7 +181,7 @@ set title
 set dir=~/.vim/sessions//
 set backupdir=~/.vim/backup//
 set undodir=~/.vim/undo//
-set wrap
+set nowrap
 set showmatch
 set list                                                        " Show invisibles (tabs, line endings etc.)
 set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:.,extends:❯,precedes:❮ " Choose symbols to show invisibles
@@ -413,7 +413,13 @@ nnoremap <Leader>sr :SidewaysRight<CR>
 " ===             Dash           ===
 " ==================================
 
-nnoremap <leader>dd :Dash<CR>
+if has("unix")
+    let s:uname = system("uname")
+    if s:uname == "Darwin\n"
+        nnoremap <leader>dd :Dash<CR>
+    endif
+endif
+
 
 " ==================================
 " ===       Make grep faster     ===
