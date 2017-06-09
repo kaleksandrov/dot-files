@@ -29,9 +29,6 @@ Plugin 'vim-airline/vim-airline-themes'
 " Tabularize the selected text using '=' as a separator
 Plugin 'godlygeek/tabular'
 
-" Adds external support for linters.
-Plugin 'scrooloose/syntastic'
-
 " Adds some additional utilities and functionality for developing VIM
 Plugin 'L9'
 
@@ -57,6 +54,14 @@ else
     Plugin 'MarcWeber/vim-addon-mw-utils'
     Plugin 'tomtom/tlib_vim'
     Plugin 'garbas/vim-snipmate'
+endif
+
+" Adds external support for linters.
+if v:version >= 800
+    " Async
+    Plugin 'w0rp/ale'
+else
+    Plugin 'scrooloose/syntastic'
 endif
 
 " Snippets are separated from the engine. Add this if you want them:
@@ -234,8 +239,8 @@ let g:javascript_ignore_javaScriptdoc = 1
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 
-autocmd BufEnter *.js set tw=79 sw=3 ts=3 sta et fo=croql
-autocmd BufEnter *.ts set tw=79 sw=3 ts=3 sta et fo=croql
+autocmd BufEnter *.js set tw=79 sw=4 ts=4 sta et fo=croql
+autocmd BufEnter *.ts set tw=79 sw=4 ts=4 sta et fo=croql
 
 let g:used_javascript_libs = 'angularjs,jquery,requirejs'
 
@@ -251,8 +256,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " ===             XML            ===
 " ==================================
 
-autocmd BufEnter *.xml set tw=79 sw=3 ts=3 sta et fo=croql
-autocmd BufEnter *.html set tw=79 sw=3 ts=3 sta et fo=croql
+autocmd BufEnter *.xml set tw=79 sw=4 ts=4 sta et fo=croql
+autocmd BufEnter *.html set tw=79 sw=4 ts=4 sta et fo=croql
 
 " Close HTML elemente with XHTML rules
 let xml_use_xhtml = 1
@@ -262,8 +267,8 @@ let xml_use_xhtml = 1
 " ==================================
 
 autocmd FileType python setlocal completeopt-=preview
-autocmd BufEnter *.py set tw=79 sw=3 ts=3 sta et fo=croql
-autocmd BufEnter *.sc set tw=79 sw=3 ts=3 sta et fo=croql
+autocmd BufEnter *.py set tw=79 sw=4 ts=4 sta et fo=croql
+autocmd BufEnter *.sc set tw=79 sw=4 ts=4 sta et fo=croql
 autocmd BufEnter *.sc setlocal filetype=python
 
 " Better syntax hightlighting for Python
@@ -316,28 +321,41 @@ endif
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
 autocmd BufNewFile,BufRead *.less set filetype=less
 autocmd FileType less set omnifunc=csscomplete#CompleteCSS
-autocmd BufEnter *.css set tw=79 sw=3 ts=3 sta et fo=croql
-autocmd BufEnter *.scss set tw=79 sw=3 ts=3 sta et fo=croql
+autocmd BufEnter *.css set tw=79 sw=4 ts=4 sta et fo=croql
+autocmd BufEnter *.scss set tw=79 sw=4 ts=4 sta et fo=croql
 
-" ==================================
-" ===     Configure Syntastic    ===
-" ==================================
+if v:version >= 800
+    " ==================================
+    " ===        Configure ALE       ===
+    " ==================================
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+    let g:ale_open_list=1
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map={ "mode": "passive" }
-let g:sytastic_enable_highlighting=1
-let g:syntastic_javascript_checkers = ['jshint']
-nnoremap <leader>ll :SyntasticCheck<CR>
-nnoremap <leader>ln :lnext<CR>
-nnoremap <leader>lp :lprevious<CR>
-nnoremap <leader>lr :SyntasticReset<CR>
+    nnoremap <leader>ll :ALEEnable<CR>
+    nnoremap <leader>ln :ALENext<CR>
+    nnoremap <leader>lp :ALEPrevious<CR>
+    nnoremap <leader>lr :ALEDisable<CR>
+else
+    " ==================================
+    " ===     Configure Syntastic    ===
+    " ==================================
+
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 0
+    let g:syntastic_check_on_wq = 0
+    let g:syntastic_mode_map={ "mode": "passive" }
+    let g:sytastic_enable_highlighting=1
+    let g:syntastic_javascript_checkers = ['jshint']
+    nnoremap <leader>ll :SyntasticCheck<CR>
+    nnoremap <leader>ln :lnext<CR>
+    nnoremap <leader>lp :lprevious<CR>
+    nnoremap <leader>lr :SyntasticReset<CR>
+endif
 
 " ==================================
 " =  Configure AirLine status bar  =
