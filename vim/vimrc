@@ -101,9 +101,6 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Support for GUI color schemes in the non-gui environments
 Plugin 'godlygeek/csapprox'
 
-" Enchances the VIM search
-Plugin 'henrik/vim-indexed-search'
-
 " Highlights and strips the trailing whitespaces
 Plugin 'ntpeters/vim-better-whitespace'
 
