@@ -104,6 +104,9 @@ Plugin 'godlygeek/csapprox'
 " Highlights and strips the trailing whitespaces
 Plugin 'ntpeters/vim-better-whitespace'
 
+" Easy navigate through the current file
+Plugin 'easymotion/vim-easymotion'
+
 " Shows the VIM's undo tree (history)
 Plugin 'mbbill/undotree'
 
