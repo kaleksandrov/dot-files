@@ -169,7 +169,7 @@ set backup
 set writebackup
 set tabstop=4
 set shiftwidth=4
-set softtabstop=4
+set softtabstop=0
 set expandtab
 set incsearch
 set hlsearch
@@ -279,41 +279,41 @@ let python_highlight_all = 1
 
 if v:version > 750
 
-   " ==================================
-   " ===   Configure YouCompleteMe  ===
-   " ==================================
+    " ==================================
+    " ===   Configure YouCompleteMe  ===
+    " ==================================
 
-   nnoremap <Leader>df :YcmCompleter GoToDefinition<CR>
-   nnoremap <Leader>dc :YcmCompleter GoToDeclaration<CR>
-   nnoremap <Leader>rf :YcmCompleter GoToReferences<CR>
-   nnoremap <Leader>kk :YcmCompleter GetDoc<CR>
-   nnoremap <Leader>kb :YcmCompleter GetDoc<CR>
-   nnoremap <Leader>rn :YcmCompleter RefactorRename
+    nnoremap <Leader>df :YcmCompleter GoToDefinition<CR>
+    nnoremap <Leader>dc :YcmCompleter GoToDeclaration<CR>
+    nnoremap <Leader>rf :YcmCompleter GoToReferences<CR>
+    nnoremap <Leader>kk :YcmCompleter GetDoc<CR>
+    nnoremap <Leader>kb :YcmCompleter GetDoc<CR>
+    nnoremap <Leader>rn :YcmCompleter RefactorRename
 
 else
 
-   " ==================================
-   " ===     Configure Tern JS      ===
-   " ==================================
+    " ==================================
+    " ===     Configure Tern JS      ===
+    " ==================================
 
-   autocmd FileType javascript nnoremap <Leader>df :TernDef<CR>
-   autocmd FileType javascript nnoremap <Leader>dc :TernDef<CR>
-   autocmd FileType javascript nnoremap <Leader>rf :TernRefs<CR>
-   autocmd FileType javascript nnoremap <Leader>kk :TernDoc<CR>
-   autocmd FileType javascript nnoremap <Leader>kb :TernDocBrowse<CR>
-   autocmd FileType javascript nnoremap <Leader>rn :TernRename<CR>
+    autocmd FileType javascript nnoremap <Leader>df :TernDef<CR>
+    autocmd FileType javascript nnoremap <Leader>dc :TernDef<CR>
+    autocmd FileType javascript nnoremap <Leader>rf :TernRefs<CR>
+    autocmd FileType javascript nnoremap <Leader>kk :TernDoc<CR>
+    autocmd FileType javascript nnoremap <Leader>kb :TernDocBrowse<CR>
+    autocmd FileType javascript nnoremap <Leader>rn :TernRename<CR>
 
-   " ==================================
-   " ===     Configure Jedi VIM     ===
-   " ==================================
+    " ==================================
+    " ===     Configure Jedi VIM     ===
+    " ==================================
 
-   let g:jedi#goto_command = "<leader>dc"
-   let g:jedi#goto_assignments_command = "<leader>da"
-   let g:jedi#goto_definitions_command = "<leader>df"
-   let g:jedi#documentation_command = "<leader>kk"
-   let g:jedi#usages_command = "<leader>rf"
-   let g:jedi#completions_command = "<C-Space>"
-   let g:jedi#rename_command = "<leader>rn"
+    let g:jedi#goto_command = "<leader>dc"
+    let g:jedi#goto_assignments_command = "<leader>da"
+    let g:jedi#goto_definitions_command = "<leader>df"
+    let g:jedi#documentation_command = "<leader>kk"
+    let g:jedi#usages_command = "<leader>rf"
+    let g:jedi#completions_command = "<C-Space>"
+    let g:jedi#rename_command = "<leader>rn"
 
 endif
 
@@ -463,14 +463,14 @@ endif
 
 " The Silver Searcher
 if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
+    " Use ag over grep
+    set grepprg=ag\ --nogroup\ --nocolor
 
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
-  " bind K to grep word under cursor
-  nnoremap KK :grep "\b<C-R><C-W>\b"<CR>:cw<CR>
+    " bind K to grep word under cursor
+    nnoremap KK :grep "\b<C-R><C-W>\b"<CR>:cw<CR>
 endif
 
 " ==================================
@@ -525,5 +525,6 @@ nnoremap <leader>ts :tselect <C-r><C-w><CR>
 nnoremap ; :
 
 if has("gui_running")
-	" Do stuff related to the GUI only
+    " Do stuff related to the GUI only
+    nnoremap <f8> :set guifont=*<CR>
 endif
