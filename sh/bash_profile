@@ -73,6 +73,10 @@ alias mvncih5='mvn clean install -Dmaven.test.skip=true -Pfull,gobuild,h5'
 
 alias post-review='/build/apps/bin/post-review --diff-only --no-make-review-diff '
 
+#Python
+alias py2='/usr/bin/env python2'
+alias py3='/usr/bin/env python3'
+
 # Perforce config
 
 export P4CONFIG=.p4config
