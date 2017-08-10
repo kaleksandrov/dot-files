@@ -99,43 +99,43 @@ APPS=/build/apps
 
 function load-toolchain {
     if mount | grep toolchain > /dev/null
-        then
-            echo "Toolchain already mounted"
+    then
+        echo "Toolchain already mounted"
     else
         OS=$(uname)
-            if [ $OS == "Darwin"  ]
-                then
-                    sudo mount -t nfs build-toolchain.eng.vmware.com:/toolchain $TOOLCHAIN
-                    elif [ $OS == "Linux"  ]
-                    then
-                    sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-toolchain/toolchain $TOOLCHAIN
-            else
-                echo "Unsupported operating system: $OS"
-                    fi
-                    fi
+        if [ $OS == "Darwin"  ]
+        then
+            sudo mount -t nfs build-toolchain.eng.vmware.com:/toolchain $TOOLCHAIN
+        elif [ $OS == "Linux"  ]
+        then
+            sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-toolchain/toolchain $TOOLCHAIN
+        else
+            echo "Unsupported operating system: $OS"
+        fi
+    fi
 }
 
 function load-apps {
     if mount | grep apps > /dev/null
-        then
-            echo "Apps already mounted"
+    then
+        echo "Apps already mounted"
     else
         OS=$(uname)
-            if [ $OS == "Darwin"  ]
-                then
-                    sudo mount -t nfs build-toolchain.eng.vmware.com:/apps $APPS
-                    elif [ $OS == "Linux"  ]
-                    then
-                    sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-apps/apps $APPS
-            else
-                echo "Unsupported operating system: $OS"
-                    fi
-                    fi
+        if [ $OS == "Darwin"  ]
+        then
+            sudo mount -t nfs build-toolchain.eng.vmware.com:/apps $APPS
+        elif [ $OS == "Linux"  ]
+        then
+            sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-apps/apps $APPS
+        else
+            echo "Unsupported operating system: $OS"
+        fi
+    fi
 }
 
 function load-vmw {
     load-toolchain
-        load-apps
+    load-apps
 }
 
 function unload-toolchain {
@@ -148,5 +148,5 @@ function unload-apps {
 
 function unload-vmw {
     unload-toolchain
-        unload-apps
+    unload-apps
 }
