@@ -121,13 +121,14 @@ Plugin 'mbbill/undotree'
 " Allows method parameters, array elements, etc. to be moved left or right
 Plugin 'AndrewRadev/sideways.vim'
 
-if v:version > 750
-    " Awsome library for autocompletion
-    Plugin 'Valloric/YouCompleteMe'
-else
-    Plugin 'davidhalter/jedi-vim'
-    Plugin 'ternjs/tern_for_vim'
-endif
+" Python IDE-like features
+Plugin 'davidhalter/jedi-vim'
+
+" JavaScript IDE-like features
+Plugin 'ternjs/tern_for_vim'
+
+" Autocompletion with TAB
+Plugin 'ervandew/supertab'
 
 " Angular stuff
 Plugin 'burnettk/vim-angular'
@@ -210,8 +211,6 @@ set number
 set foldcolumn=1                                                " show an additional column for fold indicator
 set timeoutlen=500
 
-inoremap <C-]> <ESC>                                            " leave insert mode using both square brakets
-
 " Load and Save the configuration file
 nnoremap <silent> <Leader>lv :e $MYVIMRC<CR>
 nnoremap <silent> <Leader>sv :so $MYVIMRC<CR>
@@ -277,45 +276,28 @@ autocmd BufEnter *.sc setlocal filetype=python
 " Better syntax hightlighting for Python
 let python_highlight_all = 1
 
-if v:version > 750
+" ==================================
+" ===     Configure Tern JS      ===
+" ==================================
 
-    " ==================================
-    " ===   Configure YouCompleteMe  ===
-    " ==================================
+autocmd FileType javascript nnoremap <Leader>df :TernDef<CR>
+autocmd FileType javascript nnoremap <Leader>dc :TernDef<CR>
+autocmd FileType javascript nnoremap <Leader>rf :TernRefs<CR>
+autocmd FileType javascript nnoremap <Leader>kk :TernDoc<CR>
+autocmd FileType javascript nnoremap <Leader>kb :TernDocBrowse<CR>
+autocmd FileType javascript nnoremap <Leader>rn :TernRename<CR>
 
-    nnoremap <Leader>df :YcmCompleter GoToDefinition<CR>
-    nnoremap <Leader>dc :YcmCompleter GoToDeclaration<CR>
-    nnoremap <Leader>rf :YcmCompleter GoToReferences<CR>
-    nnoremap <Leader>kk :YcmCompleter GetDoc<CR>
-    nnoremap <Leader>kb :YcmCompleter GetDoc<CR>
-    nnoremap <Leader>rn :YcmCompleter RefactorRename
+" ==================================
+" ===     Configure Jedi VIM     ===
+" ==================================
 
-else
-
-    " ==================================
-    " ===     Configure Tern JS      ===
-    " ==================================
-
-    autocmd FileType javascript nnoremap <Leader>df :TernDef<CR>
-    autocmd FileType javascript nnoremap <Leader>dc :TernDef<CR>
-    autocmd FileType javascript nnoremap <Leader>rf :TernRefs<CR>
-    autocmd FileType javascript nnoremap <Leader>kk :TernDoc<CR>
-    autocmd FileType javascript nnoremap <Leader>kb :TernDocBrowse<CR>
-    autocmd FileType javascript nnoremap <Leader>rn :TernRename<CR>
-
-    " ==================================
-    " ===     Configure Jedi VIM     ===
-    " ==================================
-
-    let g:jedi#goto_command = "<leader>dc"
-    let g:jedi#goto_assignments_command = "<leader>da"
-    let g:jedi#goto_definitions_command = "<leader>df"
-    let g:jedi#documentation_command = "<leader>kk"
-    let g:jedi#usages_command = "<leader>rf"
-    let g:jedi#completions_command = "<C-Space>"
-    let g:jedi#rename_command = "<leader>rn"
-
-endif
+let g:jedi#goto_command = "<leader>dc"
+let g:jedi#goto_assignments_command = "<leader>da"
+let g:jedi#goto_definitions_command = "<leader>df"
+let g:jedi#documentation_command = "<leader>kk"
+let g:jedi#usages_command = "<leader>rf"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#rename_command = "<leader>rn"
 
 " ==================================
 " ===      Configure CSS         ===
@@ -400,11 +382,11 @@ nnoremap <leader>q :Bclose<CR>
 " ===    Configure CtrlP find    ===
 " ==================================
 
-let g:ctrlp_map = '<c-p>'
+let g:ctrlp_map = '<c-p><c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 0
 
-nnoremap <C-e> :CtrlPBuffer<CR>
+nnoremap <c-p><c-e> :CtrlPBuffer<CR>
 
 " ==================================
 " = Configure clipboard management =
@@ -477,12 +459,6 @@ endif
 " ===      Window navigation     ===
 " ==================================
 
-" Easy navigation between panes
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
 " Scrolling in Insert mode
 inoremap <C-E> <C-X><C-E>
 inoremap <C-Y> <C-X><C-Y>
@@ -521,8 +497,6 @@ nnoremap <silent> <leader>rc :!ctags -R .<CR>
 set pastetoggle=<f5>
 
 nnoremap <leader>ts :tselect <C-r><C-w><CR>
-
-nnoremap ; :
 
 if has("gui_running")
     " Do stuff related to the GUI only
