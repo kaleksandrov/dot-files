@@ -8,7 +8,7 @@ export PS1="(\j)[\e[0;32m\w\e[0m](\!)\$ "
 
 # Common aliases
 
-which exa > /dev/null
+which exa &> /dev/null
 if [ $? == 0 ]
 then
     alias ls='exa'
@@ -111,7 +111,8 @@ function load-toolchain {
             sudo mount -t nfs build-toolchain.eng.vmware.com:/toolchain $TOOLCHAIN
         elif [ $OS == "Linux"  ]
         then
-            sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-toolchain/toolchain $TOOLCHAIN
+            sudo mount -t nfs build-toolchain.eng.vmware.com:/toolchain $TOOLCHAIN
+            #sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-toolchain/toolchain $TOOLCHAIN
         else
             echo "Unsupported operating system: $OS"
         fi
@@ -129,7 +130,8 @@ function load-apps {
             sudo mount -t nfs build-toolchain.eng.vmware.com:/apps $APPS
         elif [ $OS == "Linux"  ]
         then
-            sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-apps/apps $APPS
+            sudo mount -t nfs build-toolchain.eng.vmware.com:/apps $APPS
+            #sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-apps/apps $APPS
         else
             echo "Unsupported operating system: $OS"
         fi
