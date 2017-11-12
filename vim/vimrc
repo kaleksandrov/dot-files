@@ -241,8 +241,9 @@ let g:javascript_ignore_javaScriptdoc = 1
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 
-autocmd BufEnter *.js set tw=79 sw=4 ts=4 sta et fo=croql
-autocmd BufEnter *.ts set tw=79 sw=4 ts=4 sta et fo=croql
+autocmd BufEnter *.js set tw=79 sw=3 ts=3 sta et fo=croql
+autocmd BufEnter *.ts set tw=79 sw=3 ts=3 sta et fo=croql
+autocmd BufEnter *.json set tw=79 sw=3 ts=3 sta et fo=croql
 
 let g:used_javascript_libs = 'angularjs,jquery,requirejs'
 
@@ -497,6 +498,26 @@ nnoremap <silent> <leader>rc :!ctags -R .<CR>
 set pastetoggle=<f5>
 
 nnoremap <leader>ts :tselect <C-r><C-w><CR>
+
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+cnoremap <up> <nop>
+cnoremap <down> <nop>
+cnoremap <left> <nop>
+cnoremap <right> <nop>
+
+vnoremap <up> <nop>
+vnoremap <down> <nop>
+vnoremap <left> <nop>
+vnoremap <right> <nop>
 
 if has("gui_running")
     " Do stuff related to the GUI only
