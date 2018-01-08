@@ -155,3 +155,16 @@ function unload-vmw {
     unload-toolchain
     unload-apps
 }
+
+function load-keys {
+    eval $(ssh-agent -s)
+    pushd ~/.ssh
+    PKEYS=$(ls | grep ".pub" | sed "s/\.pub//g")
+    echo $PKEYS
+    for KEY in $PKEYS
+    do
+        echo $KEY
+        ssh-add $KEY
+    done
+    popd
+}
