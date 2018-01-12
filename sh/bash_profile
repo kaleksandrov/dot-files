@@ -159,13 +159,14 @@ function unload-vmw {
 
 function load-keys {
     eval $(ssh-agent -s)
-    pushd ~/.ssh
+    pushd ~/.ssh  >> /dev/null
     PKEYS=$(ls | grep ".pub" | sed "s/\.pub//g")
+    echo "Found keys:"
     echo $PKEYS
     for KEY in $PKEYS
     do
         echo $KEY
         ssh-add $KEY
     done
-    popd
+    popd >> /dev/null
 }
