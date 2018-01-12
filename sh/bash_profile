@@ -78,6 +78,7 @@ alias mvncih5='mvn clean install -Dmaven.test.skip=true -Pfull,gobuild,h5'
 # Reviewboard
 
 alias post-review='/build/apps/bin/post-review --diff-only --no-make-review-diff '
+alias gobuild='/build/apps/bin/gobuild '
 
 #Python
 alias py2='/usr/bin/env python2'
