@@ -386,6 +386,13 @@ nnoremap <leader>q :Bclose<CR>
 let g:ctrlp_map = '<c-p><c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 0
+if has("win32")
+   set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+   set wildignore+=*/node_modules/*
+else
+   set wildignore+=*\\.git\\*,*\\.hg\\*,*\\.svn\\*
+   set wildignore+=*\\node_modules\\*
+endif
 
 nnoremap <c-p><c-e> :CtrlPBuffer<CR>
 
