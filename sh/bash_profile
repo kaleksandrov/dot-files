@@ -176,3 +176,11 @@ function load-keys {
     done
     popd >> /dev/null
 }
+
+function vsphere-ui-start {
+    $VIRGO_DIR/bin/catalina.sh jpda run
+}
+
+function vsphere-ui-log {
+    tail -f $VIRGO_DIR/logs/vsphere_client_virgo.log
+}
