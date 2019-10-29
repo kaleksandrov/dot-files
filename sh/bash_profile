@@ -4,18 +4,28 @@ export PATH=$HOME/.bin:$PATH
 export TERM='xterm-256color'
 
 # Make the prompt more useful
-export PS1="(\j)[\e[0;32m\W\e[0m](\!)\$ "
+if [ $SHELL = "/bin/zsh" ]
+then
+    export PROMPT="(%j)[%~](%!)%# "
+elif [ $SHELL = "/bin/bash" ]
+then
+    export PS1="(\j)[\e[0;32m\W\e[0m](\!)\$ "
+else
+    echo "Not supported shell"
+fi
 
 # History file configuration
-
-shopt -s histappend # Append to history file, don't overwrite it
+if [ $SHELL = "/bin/bash" ]
+then
+    shopt -s histappend # Append to history file, don't overwrite it
+fi
 HISTSIZE=100000
 HISTFILESIZE=300000
 
 # Common aliases
 
 which exa &> /dev/null
-if [ $? == 0 ]
+if [ $? -eq 0 ]
 then
     alias ls='exa'
 fi
@@ -113,10 +123,10 @@ function load-toolchain {
         echo "Toolchain already mounted"
     else
         OS=$(uname)
-        if [ $OS == "Darwin"  ]
+        if [ $OS = "Darwin"  ]
         then
             sudo mount -t nfs build-toolchain.eng.vmware.com:/toolchain $TOOLCHAIN
-        elif [ $OS == "Linux"  ]
+        elif [ $OS = "Linux"  ]
         then
             sudo mount -t nfs build-toolchain.eng.vmware.com:/toolchain $TOOLCHAIN
             #sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-toolchain/toolchain $TOOLCHAIN
@@ -132,10 +142,10 @@ function load-apps {
         echo "Apps already mounted"
     else
         OS=$(uname)
-        if [ $OS == "Darwin"  ]
+        if [ $OS = "Darwin"  ]
         then
             sudo mount -t nfs build-toolchain.eng.vmware.com:/apps $APPS
-        elif [ $OS == "Linux"  ]
+        elif [ $OS = "Linux"  ]
         then
             sudo mount -t nfs build-toolchain.eng.vmware.com:/apps $APPS
             #sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-apps/apps $APPS
@@ -167,8 +177,6 @@ function load-keys {
     eval $(ssh-agent -s)
     pushd ~/.ssh  >> /dev/null
     PKEYS=$(ls | grep ".pub" | sed "s/\.pub//g")
-    echo "Found keys:"
-    echo $PKEYS
     for KEY in $PKEYS
     do
         echo $KEY
