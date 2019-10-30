@@ -173,16 +173,9 @@ function unload-vmw {
     unload-apps
 }
 
-function load-keys {
+function load-key {
     eval $(ssh-agent -s)
-    pushd ~/.ssh  >> /dev/null
-    PKEYS=$(ls | grep ".pub" | sed "s/\.pub//g")
-    for KEY in $PKEYS
-    do
-        echo $KEY
-        ssh-add $KEY
-    done
-    popd >> /dev/null
+    ssh-add ~/.ssh/$1
 }
 
 function vsphere-ui-start {
