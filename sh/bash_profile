@@ -114,8 +114,9 @@ export HISTSIZE=10000
 
 # VMware toolchain and apps
 
-TOOLCHAIN=/build/toolchain
-APPS=/build/apps
+BUILD_ROOT=~/Dev/build
+TOOLCHAIN=$BUILD_ROOT/toolchain
+APPS=$BUILD_ROOT/apps
 
 function load-toolchain {
     if mount | grep toolchain > /dev/null
@@ -128,8 +129,7 @@ function load-toolchain {
             sudo mount -t nfs build-toolchain.eng.vmware.com:/toolchain $TOOLCHAIN
         elif [ $OS = "Linux"  ]
         then
-            sudo mount -t nfs build-toolchain.eng.vmware.com:/toolchain $TOOLCHAIN
-            #sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-toolchain/toolchain $TOOLCHAIN
+            sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-toolchain/toolchain $TOOLCHAIN
         else
             echo "Unsupported operating system: $OS"
         fi
@@ -147,8 +147,7 @@ function load-apps {
             sudo mount -t nfs build-toolchain.eng.vmware.com:/apps $APPS
         elif [ $OS = "Linux"  ]
         then
-            sudo mount -t nfs build-toolchain.eng.vmware.com:/apps $APPS
-            #sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-apps/apps $APPS
+            sudo mount -t cifs -o username=$TOOLCHAIN_USERNAME,domain=$TOOLCHAIN_DOMAIN,ro //build-apps/apps $APPS
         else
             echo "Unsupported operating system: $OS"
         fi
