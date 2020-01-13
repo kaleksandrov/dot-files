@@ -227,7 +227,8 @@ if executable('fzf')
             set rtp+=/usr/local/opt/fzf
         else
             " Linux
-            set rtp+=~/.fzf
+            " TODO Needs to be updated after every FZF update
+            set rtp+=~/.linuxbrew/Cellar/fzf/0.20.0
         endif
     endif
 
