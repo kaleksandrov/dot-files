@@ -39,20 +39,20 @@ alias grep='grep -i '
 
 # Git aliases
 
-alias gs='git status '
-alias ga='git add '
-alias gb='git branch '
-alias gbf="git branch -a | grep "
-alias gc='git commit '
-alias gd='git diff '
-alias go='git checkout '
-alias gp='git push '
-alias gu='git pull '
-alias gf='git fetch '
-alias gm='git merge '
-alias gmt='git mergetool '
-alias gl='git log '
-alias gll='git log --oneline '
+#alias gs='git status '
+#alias ga='git add '
+#alias gb='git branch '
+#alias gbf="git branch -a | grep "
+#alias gc='git commit '
+#alias gd='git diff '
+#alias go='git checkout '
+#alias gp='git push '
+#alias gu='git pull '
+#alias gf='git fetch '
+#alias gm='git merge '
+#alias gmt='git mergetool '
+#alias gl='git log '
+#alias gll='git log --oneline '
 
 # Brew aliases
 
