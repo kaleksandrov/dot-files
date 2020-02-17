@@ -62,6 +62,11 @@ Plugin 'majutsushi/tagbar'
 nnoremap <silent> <Leader>9 :TagbarToggle<CR>
 
 " ==================================
+" Go support
+" ==================================
+Plugin 'fatih/vim-go'
+
+" ==================================
 " JS support
 " ==================================
 Plugin 'pangloss/vim-javascript'
