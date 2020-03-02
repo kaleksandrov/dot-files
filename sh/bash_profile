@@ -2,6 +2,7 @@
 
 export PATH=$HOME/.bin:$PATH
 export TERM='xterm-256color'
+export GIT_TERMINAL_PROMPT=1
 
 # Make the prompt more useful
 if [ $SHELL = "/bin/zsh" ]
