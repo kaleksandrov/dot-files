@@ -109,6 +109,7 @@ alias reset-launchpad='defaults write com.apple.dock ResetLaunchPad -bool true; 
 
 export P4CONFIG=.p4config
 export P4MERGE=vim
+export P4EDITOR=vim
 
 export HISTFILE="/tmp/$USER.bash_history"
 export HISTSIZE=10000
