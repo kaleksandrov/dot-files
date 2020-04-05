@@ -82,6 +82,7 @@ alias p4e='p4 edit '
 alias p4d='p4 delete '
 alias p4c='p4 change '
 alias p4dc='p4 describe '
+alias changes="p4 changes -u $USER -s pending "
 
 # Maven aliases
 
@@ -95,7 +96,6 @@ alias mvncih5='mvn clean install -Dmaven.test.skip=true -Pfull,gobuild,h5'
 # Reviewboard
 
 alias post-review='post-review --diff-only --no-make-review-diff '
-alias changes="p4 changes -u $USER -s pending "
 
 #Python
 alias py2='/usr/bin/env python2'
@@ -104,6 +104,11 @@ alias py='py3'
 
 # Reset launchpad to default apps order
 alias reset-launchpad='defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock'
+
+# kubectl 
+alias k='kubectl '
+alias kns='kubens '
+alias kctx='kubectx '
 
 # Perforce config
 
