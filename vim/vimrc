@@ -18,6 +18,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 nnoremap <silent> <Leader>0 :NERDTreeToggle<CR>
 " Close VIM if the only window left is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+nnoremap <leader>f :NERDTreeFind<CR>
 
 " ==================================
 " A pack of color schemes
@@ -233,7 +234,7 @@ if executable('fzf')
         else
             " Linux
             " TODO Needs to be updated after every FZF update
-            set rtp+=~/.linuxbrew/Cellar/fzf/0.20.0
+            set rtp+=~/.linuxbrew/Cellar/fzf/0.24.4
         endif
     endif
 
@@ -266,7 +267,7 @@ else
     endif
 
     nnoremap <c-p><c-e> :CtrlPBuffer<CR>
-endif
+ endif
 
 " ==================================
 " Any Jump
@@ -379,6 +380,12 @@ autocmd FileType python setlocal completeopt-=preview
 autocmd BufEnter *.py set tw=79 sw=4 ts=4 sta et fo=croql
 autocmd BufEnter *.sc set tw=79 sw=4 ts=4 sta et fo=croql
 autocmd BufEnter *.sc setlocal filetype=python
+autocmd BufEnter *.bazel setlocal filetype=python
+autocmd BufEnter *.bazel set tw=79 sw=3 ts=3 sta et fo=croql
+autocmd BufEnter *.bzl setlocal filetype=python
+autocmd BufEnter *.bzl set tw=79 sw=3 ts=3 sta et fo=croql
+autocmd BufEnter WORKSPACE setlocal filetype=python
+autocmd BufEnter WORKSPACE set tw=79 sw=3 ts=3 sta et fo=croql
 autocmd BufNewFile,BufRead *.less set filetype=less
 autocmd BufEnter *.css set tw=79 sw=4 ts=4 sta et fo=croql
 autocmd BufEnter *.scss set tw=79 sw=4 ts=4 sta et fo=croql
@@ -406,6 +413,7 @@ if executable('ag')
 
     " bind K to grep word under cursor
     nnoremap KK :grep "\b<C-R><C-W>\b"<CR>:cw<CR>
+    command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 endif
 
 " ==================================
