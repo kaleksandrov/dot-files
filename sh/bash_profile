@@ -84,7 +84,10 @@ alias p4e='p4 edit '
 alias p4d='p4 delete '
 alias p4c='p4 change '
 alias p4dc='p4 describe '
-alias p4_changes="p4 changes -u $USER -s pending -c `p4 client -o | grep ^Client | sed "s/^Client\:\w*//g"`"
+function p4_changes() {
+    p4 changes -u $USER -s pending -c `p4 client -o | grep ^Client | sed "s/^Client\:\w*//g"`
+}
+#alias p4_changes="p4 changes -u $USER -s pending -c `p4 client -o | grep ^Client | sed "s/^Client\:\w*//g"`"
 
 # Maven aliases
 
