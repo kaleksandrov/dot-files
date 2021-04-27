@@ -1,6 +1,7 @@
 #/bin/bash
 
 export PATH=$HOME/.bin:$PATH
+export PATH=$PATH:/build/apps/contrib/bin
 export TERM='xterm-256color'
 export GIT_TERMINAL_PROMPT=1
 
@@ -74,6 +75,7 @@ alias bcu='brew cask uninstall '
 alias bcz='brew cask zap '
 
 # Perforce aliases
+P4_CLIENT=`p4 client -o | grep ^Client | sed "s/^Client\:\w*//g"`
 
 alias p4s='p4 sync '
 alias p4w='p4 workspace '
