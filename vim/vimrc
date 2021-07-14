@@ -234,7 +234,7 @@ if executable('fzf')
         else
             " Linux
             " TODO Needs to be updated after every FZF update
-            set rtp+=~/.linuxbrew/Cellar/fzf/0.24.4
+            set rtp+=~/.linuxbrew/Cellar/fzf/0.27.2
         endif
     endif
 
@@ -354,6 +354,7 @@ set foldcolumn=1                                                " show an additi
 set timeoutlen=500
 set background=dark
 colo jellybeans
+set colorcolumn=81
 set splitbelow
 set splitright
 
@@ -377,7 +378,7 @@ inoremap <C-Enter> <Esc>O
 autocmd BufEnter *.xml set tw=79 sw=4 ts=4 sta et fo=croql
 autocmd BufEnter *.html set tw=79 sw=4 ts=4 sta et fo=croql
 autocmd FileType python setlocal completeopt-=preview
-autocmd BufEnter *.py set tw=79 sw=4 ts=4 sta et fo=croql
+autocmd BufEnter *.py set tw=79 sw=3 ts=3 sta et fo=croql
 autocmd BufEnter *.sc set tw=79 sw=4 ts=4 sta et fo=croql
 autocmd BufEnter *.sc setlocal filetype=python
 autocmd BufEnter *.bazel setlocal filetype=python
