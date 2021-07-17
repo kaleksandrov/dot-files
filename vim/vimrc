@@ -132,6 +132,7 @@ Plugin 'othree/html5-syntax.vim'
 Plugin 'othree/html5.vim'
 Plugin 'groenewege/vim-less'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/tsuquyomi'
 Plugin 'othree/csscomplete.vim'
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
 autocmd FileType less set omnifunc=csscomplete#CompleteCSS
